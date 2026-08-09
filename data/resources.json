@@ -85,6 +85,28 @@
         { "title": "教室 / 场地借用", "url": "", "desc": "自习室、活动场地、会议室借用一般经教务或院系审批，社团活动多走学社联/团委流程。", "tag": "流程" },
         { "title": "校园网与 VPN", "url": "", "desc": "校内系统在校外多需 VPN 或零信任接入，账号随入学开通，留意计费与密码安全规则。", "tag": "网络" }
       ]
+    },
+    {
+      "name": "学院官网入口（长期有效）",
+      "icon": "🏛️",
+      "items": [
+        { "title": "学校官网", "url": "https://www.hufe.edu.cn/", "desc": "学校通知、校历、机构设置总入口，所有院系入口都从这儿进。", "tag": "必备" },
+        { "title": "招生网", "url": "https://www.hufe.edu.cn/zsw/", "desc": "招生政策、录取查询、各学院专业介绍，了解目标专业第一站。", "tag": "常用" },
+        { "title": "大数据与统计学院", "url": "https://www.hufe.edu.cn/sxtjxy/xygk/xyjj.htm", "desc": "想转大数据的目标学院，看专业、培养方案与师资。", "tag": "目标" },
+        { "title": "信息技术与管理学院", "url": "https://www.hufe.edu.cn/xxjsygl/", "desc": "含数据科学与大数据技术、人工智能、计算机等 IT 类专业。", "tag": "相关" },
+        { "title": "图书馆", "url": "https://www.hufe.edu.cn/tsg/", "desc": "馆藏检索、电子资源、借阅与续借服务入口。", "tag": "常用" },
+        { "title": "网络信息中心（VPN/统一认证）", "url": "https://www.hufe.edu.cn/wlxxzx/", "desc": "校外访问、VPN、统一身份认证使用指南。", "tag": "网络" }
+      ]
+    },
+    {
+      "name": "图书馆与数据库（长期有效）",
+      "icon": "📚",
+      "items": [
+        { "title": "图书馆官网", "url": "https://www.hufe.edu.cn/tsg/", "desc": "馆藏查询、借阅、续借、座位预约，写论文前先来查资料。", "tag": "常用" },
+        { "title": "中国知网 CNKI（校外访问）", "url": "https://fsso.cnki.net", "desc": "用学校统一身份登录即可免费下载论文，写报告、做科研必备。", "tag": "必备" },
+        { "title": "信息门户 / VPN 校外入口", "url": "https://vpn.hufe.edu.cn", "desc": "校外访问校内系统与数字图书资源的统一通道。", "tag": "网络" },
+        { "title": "馆藏电子资源", "url": "https://www.hufe.edu.cn/tsg/", "desc": "经图书馆官网进入，含知网、EBSCO、超星等数据库，校外多用 VPN/统一认证。", "tag": "资源" }
+      ]
     }
   ]
 }

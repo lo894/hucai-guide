@@ -1,0 +1,108 @@
+{
+  "updated": "2026-08-09",
+  "intro": "想转大数据，硬实力比什么都重要。下面几条路线都是免费、可自学的，长期能一直用。大一先上手 Python 和 SQL，大二再碰数据可视化与机器学习，循序渐进最稳。所有链接均为真实可访问主站。",
+  "paths": [
+    {
+      "name": "Python 编程",
+      "icon": "🐍",
+      "tag": "核心",
+      "desc": "大数据 / AI 的通用语言，也是数学建模、爬虫、数据分析的入口，建议大一开始。",
+      "steps": [
+        "先学基础语法：变量、循环、函数、列表 / 字典",
+        "再练文件读写、requests 爬虫、pandas 数据处理",
+        "做 3–5 个小项目（爬天气、分析成绩、清洗一份数据）",
+        "刷 LeetCode 简单题，培养算法手感"
+      ],
+      "resources": [
+        { "title": "菜鸟教程 Python3", "url": "https://www.runoob.com/python3/python3-tutorial.html", "desc": "中文入门最友好，边看边敲，适合零基础。" },
+        { "title": "廖雪峰 Python 教程", "url": "https://www.liaoxuefeng.com/wiki/1016959663602400", "desc": "体系清晰，进阶概念讲得透，适合系统学一遍。" },
+        { "title": "Python 官方文档", "url": "https://www.python.org", "desc": "权威一手资料，遇到语法问题查这里。" },
+        { "title": "B站 Python 入门", "url": "https://www.bilibili.com", "desc": "搜索「Python 入门」「pandas 数据分析」，跟着视频敲一遍最快上手。" }
+      ]
+    },
+    {
+      "name": "SQL 与数据库",
+      "icon": "🗄️",
+      "tag": "核心",
+      "desc": "数据都存在数据库里，SQL 是数据分析师 / 大数据开发的必备技能。",
+      "steps": [
+        "学 SELECT、WHERE、JOIN、GROUP BY 等基础查询",
+        "理解关系型数据库（MySQL）与 NoSQL 的区别",
+        "练真实查询：用学校教务数据或公开数据集写报表",
+        "了解 Hive / Spark SQL 等大数据查询引擎的概念"
+      ],
+      "resources": [
+        { "title": "W3School SQL 教程（中文）", "url": "https://www.w3school.com.cn/sql/index.asp", "desc": "交互式示例，边学边跑，零基础友好。" },
+        { "title": "廖雪峰 SQL 教程", "url": "https://www.liaoxuefeng.com/wiki/1177760294764384", "desc": "从原理到实战，讲得清楚。" },
+        { "title": "中国大学 MOOC·数据库原理", "url": "https://www.icourse163.org", "desc": "搜「数据库原理」，多所名校免费公开课，打理论基础。" }
+      ]
+    },
+    {
+      "name": "数据可视化",
+      "icon": "📊",
+      "tag": "推荐",
+      "desc": "把数据讲清楚的能力，论文、答辩、汇报都用得上。",
+      "steps": [
+        "先用 Excel / WPS 做基础图表",
+        "学 Matplotlib / Seaborn 画 Python 图",
+        "上手 ECharts 做交互式网页图表",
+        "学「用图讲故事」：选对图、突出结论"
+      ],
+      "resources": [
+        { "title": "Matplotlib 官方文档", "url": "https://matplotlib.org/", "desc": "Python 绘图基石，示例丰富直接抄。" },
+        { "title": "Apache ECharts", "url": "https://echarts.apache.org/zh/index.html", "desc": "百度开源，交互图表强大，做网页大屏常用。" },
+        { "title": "B站 数据可视化教程", "url": "https://www.bilibili.com", "desc": "搜索「Python 数据可视化」「Tableau」，找喜欢的风格模仿。" }
+      ]
+    },
+    {
+      "name": "机器学习入门",
+      "icon": "🤖",
+      "tag": "推荐",
+      "desc": "大数据的高阶玩法，建议 Python 和数学基础打好后再碰。",
+      "steps": [
+        "补线性代数、概率统计、微积分（大二课程别水）",
+        "学回归、分类、聚类等经典算法原理",
+        "用 scikit-learn 跑通一个小模型",
+        "读经典公开课，跟着做课后作业"
+      ],
+      "resources": [
+        { "title": "吴恩达 机器学习（Coursera）", "url": "https://www.coursera.org/learn/machine-learning", "desc": "入门最经典，讲得直观，英文吃力可找中文字幕版。" },
+        { "title": "李宏毅 机器学习（B站）", "url": "https://www.bilibili.com", "desc": "搜索「李宏毅 机器学习」，中文讲解、生动易懂，深度学习部分尤其好。" },
+        { "title": "scikit-learn 官方文档", "url": "https://scikit-learn.org/stable/", "desc": "Python 机器学习首选库，示例即学即用。" }
+      ]
+    },
+    {
+      "name": "Git 与开发协作",
+      "icon": "🔧",
+      "tag": "基础",
+      "desc": "工程协作的标配，课程设计、竞赛、实习都要用，早学早省心。",
+      "steps": [
+        "装 Git，学 add / commit / push / pull 基础流程",
+        "注册 GitHub，建自己的代码仓库",
+        "理解分支（branch）与合并（merge）",
+        "把课程作业、竞赛代码都存到仓库里"
+      ],
+      "resources": [
+        { "title": "Git 官方文档（中文）", "url": "https://git-scm.com/book/zh/v2", "desc": "最权威的免费中文书，从入门到进阶。" },
+        { "title": "廖雪峰 Git 教程", "url": "https://www.liaoxuefeng.com/wiki/896043488029600", "desc": "图文并茂，跟着敲一遍就会用。" },
+        { "title": "GitHub", "url": "https://github.com", "desc": "全球最大代码托管平台，也是展示个人项目的最好门面。" }
+      ]
+    },
+    {
+      "name": "Excel 与数据处理",
+      "icon": "📑",
+      "tag": "基础",
+      "desc": "财经类基本功，函数、透视表、图表是绕不开的。",
+      "steps": [
+        "掌握 VLOOKUP / XLOOKUP、SUMIFS 等常用函数",
+        "练数据透视表做汇总分析",
+        "学 Power Query 做数据清洗",
+        "结合 Python 处理更大的数据量"
+      ],
+      "resources": [
+        { "title": "微软 Excel 支持文档", "url": "https://support.microsoft.com/zh-cn/excel", "desc": "官方函数与功能说明，查漏补缺最准。" },
+        { "title": "菜鸟教程 Excel", "url": "https://www.runoob.com/excel/excel-tutorial.html", "desc": "常用操作速查，适合突击。" }
+      ]
+    }
+  ]
+}

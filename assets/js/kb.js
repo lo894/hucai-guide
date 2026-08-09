@@ -10,7 +10,7 @@ window.esc = function (s) {
 };
 
 const KB = (() => {
-  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job','transfer'];
+  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job','transfer','competitions','skills','plan'];
   const D = {};                 // 原始数据
   let docs = [];                // 知识片段
   let idx = new Map();          // 倒排索引 term -> [{d,tf}]
@@ -290,6 +290,37 @@ const KB = (() => {
         text: (r.why || '') + ' 建议课程：' + (r.courses || []).join('、') + ' 目标专业：' + (r.targets || []).join('、') + ' 准备：' + (r.prepare || []).join('；') });
       (TR.checklist || []).forEach(g => addDoc({ title: '转专业准备·' + g.group, page: 'transfer', module: '转专业', text: (g.items || []).map(i => i.name + '—' + i.why).join('；') }));
       (TR.faq || []).forEach(f => addDoc({ title: f.q, page: 'transfer', module: '转专业问答', w: 1.3, text: f.q + ' ' + f.a }));
+    }
+
+    /* 竞赛地图 */
+    const CP = D.competitions;
+    if (CP) {
+      addDoc({ title: '竞赛地图总览', page: 'compete', module: '竞赛', w: 1.2,
+        text: CP.intro + ' ' + (CP.groups || []).flatMap(g => (g.items || []).map(i => `${i.name}（${i.url}）：${i.fit} 时间${i.time}`)).join('；') });
+      (CP.groups || []).forEach(g => (g.items || []).forEach(it => addDoc({ title: it.name, page: 'compete', module: '竞赛·' + g.name, w: 1.35,
+        text: `${it.name}：${it.fit} 报名时间${it.time} 级别${it.level || ''} 网址 ${it.url || ''}` })));
+    }
+
+    /* 技能成长 */
+    const SK = D.skills;
+    if (SK) {
+      addDoc({ title: '技能成长总览', page: 'skills', module: '技能', w: 1.2,
+        text: SK.intro + ' ' + (SK.paths || []).map(p => `${p.name}：${p.desc}`).join('；') });
+      (SK.paths || []).forEach(p => {
+        addDoc({ title: p.name, page: 'skills', module: '技能', w: 1.3, text: `${p.name}：${p.desc} ${(p.steps || []).join('；')}` });
+        (p.resources || []).forEach(r => addDoc({ title: r.title, page: 'skills', module: '技能·资源', text: r.title + ' ' + r.desc + ' ' + (r.url || '') }));
+      });
+    }
+
+    /* 学业规划 */
+    const PL = D.plan;
+    if (PL) {
+      addDoc({ title: '学业规划总览', page: 'plan', module: '规划', w: 1.2,
+        text: PL.intro + ' ' + (PL.grades || []).map(g => `${g.year}：${(g.focus || []).join('；')}`).join(' ') });
+      (PL.grades || []).forEach(g => {
+        addDoc({ title: g.year + '学业重点', page: 'plan', module: '规划', w: 1.2, text: `${g.year}（${g.theme || ''}）：${(g.focus || []).join('；')} 建议去做：${(g.todo || []).join('；')}` });
+        (g.todo || []).forEach(t => addDoc({ title: g.year + '·' + t, page: 'plan', module: '规划', text: t }));
+      });
     }
 
     /* 建索引 */

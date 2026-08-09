@@ -77,6 +77,9 @@
       { id: "policies", ic: "📑", t: "政策文件", d: "学籍 · 奖助 · 考试" },
       { id: "transfer", ic: "🔁", t: "转专业", d: "工程软件 → 大数据" },
       { id: "resources", ic: "📚", t: "学习资源", d: "平台 · 证书 · 竞赛" },
+      { id: "compete", ic: "🏅", t: "竞赛地图", d: "数据·计算机·双创" },
+      { id: "skills", ic: "🚀", t: "技能成长", d: "Python·SQL·机器学习" },
+      { id: "plan", ic: "🧭", t: "学业规划", d: "大一到大四路线" },
       { id: "feed", ic: "📰", t: "最新动态", d: "网站自动抓取更新" },
       { id: "faq", ic: "💡", t: "常见问题", d: "新生最关心的问答" },
     ].map(e =>
@@ -1116,6 +1119,13 @@
     <div class="sec">${secH("两条路怎么选", "考研 vs 保研")}<div class="grid g2">${paths}</div></div>
     <div class="sec">${secH("全流程时间轴", "从大一到大四上")}<div class="tl">${tl}</div></div>
     ${P.forEngSoft ? `<div class="note ok" style="margin-bottom:14px"><span class="ni">🛠️</span><div><b>工程软件方向：</b>${esc(P.forEngSoft)}</div></div>` : ""}
+    ${P.bigdata ? `<div class="sec">${secH(P.bigdata.title || "大数据方向考研专题", "工程软件 → 数据科学的深造路")}
+      <div class="note ok" style="margin-bottom:12px"><span class="ni">🛠️</span><div>${esc(P.bigdata.desc || "")}</div></div>
+      <div class="card" style="margin-bottom:12px"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">🧭 可报考方向</div><div>${(P.bigdata.dirs || []).map(d => `<span class="tag navy">${esc(d)}</span>`).join(" ")}</div></div>
+      <div class="card" style="margin-bottom:12px"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">📚 核心考试科目</div><div>${(P.bigdata.subjects || []).map(s => `<span class="tag gold">${esc(s)}</span>`).join(" ")}</div></div>
+      <div class="card" style="margin-bottom:12px"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">🏫 院校梯度参考</div><ul class="lst">${(P.bigdata.schools || []).map(s => `<li>${esc(s)}</li>`).join("")}</ul></div>
+      <div class="card"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">💡 给工程软件同学的建议</div><ul class="lst">${(P.bigdata.advice || []).map(a => `<li>${esc(a)}</li>`).join("")}</ul></div>
+    </div>` : ""}
     <div class="sec">${secH("考研保研避坑", "")}<div class="card"><ul class="lst">${tips}</ul></div></div>`;
   }
 
@@ -1138,6 +1148,13 @@
       <div class="sec" style="margin:0">${secH("面试准备", "")}<div class="card"><ul class="lst">${interview}</ul></div></div>
     </div>
     <div class="sec">${secH("求职渠道", "")}<div class="grid g2">${channels}</div></div>
+    ${J.outcomes ? `<div class="sec">${secH(J.outcomes.title || "毕业去向参考", "与专业相关的方向")}
+      <div class="l" style="color:var(--tx2);font-size:13px;margin-bottom:12px">${esc(J.outcomes.note || "")}</div>
+      <div class="grid g2">
+        <div class="card"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">💼 典型就业方向</div><ul class="lst">${(J.outcomes.jobs || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
+        <div class="card"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">🎓 升学 / 深造方向</div><ul class="lst">${(J.outcomes.further || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
+      </div>
+    </div>` : ""}
     ${J.forEngSoft ? `<div class="note ok" style="margin-bottom:14px"><span class="ni">🛠️</span><div><b>工程软件方向：</b>${esc(J.forEngSoft)}</div></div>` : ""}
     <div class="sec">${secH("求职避坑", "")}<div class="card"><ul class="lst">${tips}</ul></div></div>`;
   }
@@ -1248,10 +1265,71 @@
     </div>`;
   }
 
+  /* ============================ 竞赛地图 ============================ */
+  function compete() {
+    const C = D().competitions;
+    if (!C) return "<div class='note warn'><span class='ni'>⚠️</span><div>竞赛数据加载失败，请刷新重试。</div></div>";
+    const groups = (C.groups || []).map(g => {
+      const items = (g.items || []).map(it => `
+        <div class="res">
+          <div class="rt">${esc(it.name)} ${it.url ? `<a class="rl" href="${esc(it.url)}" target="_blank" rel="noopener">↗</a>` : ""} ${it.tag ? `<span class="tag ${esc(it.tagCls || 'gold')}">${esc(it.tag)}</span>` : ""}</div>
+          <div class="rd">${esc(it.fit)}</div>
+          <div style="font-size:12px;color:var(--tx3);margin-top:4px">🗓️ ${esc(it.time || "")} ｜ 🏅 ${esc(it.level || "")}</div>
+        </div>`).join("");
+      return `<div class="sec">${secH(g.name, g.sub || "")}<div class="grid g2">${items}</div></div>`;
+    }).join("");
+    return `
+    <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(C.intro)}</div></div>
+    ${groups}
+    <div class="note ok" style="margin-top:8px"><span class="ni">✅</span><div>💡 工程软件想转大数据，优先冲 <b>数学建模 + 大数据挑战赛 + 蓝桥杯 / 软件杯</b> 这三类，简历和转专业面试都加分。</div></div>`;
+  }
+
+  /* ============================ 技能成长 ============================ */
+  function skills() {
+    const S = D().skills;
+    if (!S) return "<div class='note warn'><span class='ni'>⚠️</span><div>技能数据加载失败，请刷新重试。</div></div>";
+    const paths = (S.paths || []).map(p => {
+      const steps = (p.steps || []).map(s => `<li>${esc(s)}</li>`).join("");
+      const res = (p.resources || []).map(r =>
+        `<div class="res"><div class="rt">${esc(r.title)} ${r.url ? `<a class="rl" href="${esc(r.url)}" target="_blank" rel="noopener">↗</a>` : ""}</div><div class="rd">${esc(r.desc)}</div></div>`).join("");
+      return `<div class="card" style="margin-bottom:14px">
+        <div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:16px">${esc(p.icon || "")} ${esc(p.name)} <span class="tag navy">${esc(p.tag || "")}</span></h2></div>
+        <div class="l" style="color:var(--tx2);font-size:13px;margin-bottom:8px">${esc(p.desc || "")}</div>
+        ${steps ? `<ul class="lst">${steps}</ul>` : ""}
+        <div class="grid g2" style="margin-top:8px">${res}</div>
+      </div>`;
+    }).join("");
+    return `
+    <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(S.intro)}</div></div>
+    <div class="sec">${secH("免费学习路线（长期可复用）", "跟着走就行")}${paths}</div>`;
+  }
+
+  /* ============================ 学业规划 ============================ */
+  function plan() {
+    const P = D().plan;
+    if (!P) return "<div class='note warn'><span class='ni'>⚠️</span><div>规划数据加载失败，请刷新重试。</div></div>";
+    const grades = (P.grades || []).map(g => {
+      const focus = (g.focus || []).map(f => `<li>${esc(f)}</li>`).join("");
+      const todo = (g.todo || []).map(t => `<li>${esc(t)}</li>`).join("");
+      const warn = (g.warn || []).map(w => `<li>${esc(w)}</li>`).join("");
+      return `<div class="card" style="margin-bottom:14px;padding:16px">
+        <div class="sec-h" style="border:none;padding:0;margin-bottom:10px"><h2 style="font-size:17px">${esc(g.icon || "")} ${esc(g.year)} · <span style="color:var(--navy)">${esc(g.theme || "")}</span></h2></div>
+        <div class="grid g2">
+          <div><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:6px">🎯 本学年重点</div><ul class="lst">${focus}</ul></div>
+          <div><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:6px">✅ 建议去做</div><ul class="lst">${todo}</ul></div>
+        </div>
+        ${warn ? `<div class="note warn" style="margin-top:10px"><span class="ni">⚠️</span><div><ul class="lst" style="margin:0">${warn}</ul></div></div>` : ""}
+      </div>`;
+    }).join("");
+    return `
+    <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(P.intro)}</div></div>
+    <div class="sec">${secH("大学四年每年该盯什么", "全年级都能用")}${grades}</div>`;
+  }
+
   // 暴露给 map / ai / app 使用
   window.Render = {
     home, about, majors, engsoft, campus, dorm, checklist, training, laptop, policies, resources, courseSelection, faq,
-    timeline, cert, channels, postgrad, job, transfer,
+    timeline, cert, channels, postgrad, job, transfer, compete, skills, plan,
     majorHTML, findMajor,
     _mjF, _mjK,
     mjGrid, // 供首次渲染后调用
