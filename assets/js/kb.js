@@ -10,7 +10,7 @@ window.esc = function (s) {
 };
 
 const KB = (() => {
-  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job'];
+  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job','transfer'];
   const D = {};                 // 原始数据
   let docs = [];                // 知识片段
   let idx = new Map();          // 倒排索引 term -> [{d,tf}]
@@ -273,6 +273,23 @@ const KB = (() => {
         text: JB.intro + ' ' + (JB.timeline || []).map(t => `${t.t}：${t.d}`).join(' ') });
       (JB.channels || []).forEach(c => addDoc({ title: c.name, page: 'job', module: '求职渠道', text: c.use + (c.url ? (' 网址 ' + c.url) : '') }));
       if (JB.forEngSoft) addDoc({ title: '工程软件方向就业', page: 'job', module: '就业·工程软件', text: JB.forEngSoft });
+    }
+
+    /* 转专业（工程软件 → 大数据 重点） */
+    const TR = D.transfer;
+    if (TR) {
+      const p = TR.policy || {};
+      addDoc({ title: '转专业政策与申请条件', page: 'transfer', module: '转专业', w: 1.4,
+        text: (p.basis || '') + ' ' + (p.principles || []).join('；') + ' 可申请：' + (p.eligible || []).join('；') + ' 不可转：' + (p.ineligible || []).join('；') + ' 考核：' + (p.exam || []).join('；') });
+      (p.timeline || []).forEach(t => addDoc({ title: '转专业时间线·' + t.title, page: 'transfer', module: '转专业', text: t.desc }));
+      const bd = TR.bigdata || {};
+      (bd.colleges || []).forEach(c => addDoc({ title: '大数据相关专业·' + c.name, page: 'transfer', module: '大数据', w: 1.3,
+        text: c.intro + ' 专业：' + (c.majors || []).map(m => m.name + '—' + m.note).join('；') }));
+      const r = TR.route || {};
+      addDoc({ title: '工程软件转大数据路线', page: 'transfer', module: '转专业·工程软件', w: 1.4,
+        text: (r.why || '') + ' 建议课程：' + (r.courses || []).join('、') + ' 目标专业：' + (r.targets || []).join('、') + ' 准备：' + (r.prepare || []).join('；') });
+      (TR.checklist || []).forEach(g => addDoc({ title: '转专业准备·' + g.group, page: 'transfer', module: '转专业', text: (g.items || []).map(i => i.name + '—' + i.why).join('；') }));
+      (TR.faq || []).forEach(f => addDoc({ title: f.q, page: 'transfer', module: '转专业问答', w: 1.3, text: f.q + ' ' + f.a }));
     }
 
     /* 建索引 */

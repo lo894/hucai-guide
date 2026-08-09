@@ -75,6 +75,7 @@
       { id: "training", ic: "🎖️", t: "军训指南", d: "安排 · 装备 · 生存法则" },
       { id: "laptop", ic: "💻", t: "电脑选购", d: "按专业给你配配置" },
       { id: "policies", ic: "📑", t: "政策文件", d: "学籍 · 奖助 · 考试" },
+      { id: "transfer", ic: "🔁", t: "转专业", d: "工程软件 → 大数据" },
       { id: "resources", ic: "📚", t: "学习资源", d: "平台 · 证书 · 竞赛" },
       { id: "feed", ic: "📰", t: "最新动态", d: "网站自动抓取更新" },
       { id: "faq", ic: "💡", t: "常见问题", d: "新生最关心的问答" },
@@ -1141,10 +1142,116 @@
     <div class="sec">${secH("求职避坑", "")}<div class="card"><ul class="lst">${tips}</ul></div></div>`;
   }
 
+  /* ============================ 转专业（工程软件→大数据 重点） ============================ */
+  function transfer() {
+    const T = D().transfer;
+    if (!T) return "<div class='note warn'><span class='ni'>⚠️</span><div>转专业数据加载失败，请刷新重试。</div></div>";
+
+    const p = T.policy || {};
+    const big = T.bigdata || {};
+    const route = T.route || {};
+
+    const principles = (p.principles || []).map(x => `<li>${esc(x)}</li>`).join("");
+    const eligible = (p.eligible || []).map(x => `<li>${esc(x)}</li>`).join("");
+    const ineligible = (p.ineligible || []).map(x => `<li>${esc(x)}</li>`).join("");
+    const exam = (p.exam || []).map(x => `<li>${esc(x)}</li>`).join("");
+    const ratio = p.ratio || {};
+    const fullList = (ratio.full2025 || []).map(x => `<span class="tag red">${esc(x)}</span>`).join(" ");
+
+    const timeline = (p.timeline || []).map(t =>
+      `<div class="phase"><div class="ph">${esc(t.step)}</div><div class="pt">${esc(t.title)}</div><div class="l" style="color:var(--tx2);font-size:12.5px">${esc(t.desc)}</div></div>`
+    ).join("");
+
+    const colleges = (big.colleges || []).map(c => {
+      const ms = (c.majors || []).map(m =>
+        `<div class="dt"><div class="r1"><span class="nm">${esc(m.name)}</span></div><div class="nt">${esc(m.note)}</div></div>`
+      ).join("");
+      return `<div class="card"><div class="sec-h" style="border:none;margin-bottom:8px;padding:0"><h2 style="font-size:16px">${esc(c.name)}</h2></div>
+        <div class="l" style="color:var(--tx2);font-size:12.5px;margin-bottom:10px">${esc(c.intro)}</div>
+        <div class="dorm-c"><div class="dorm-h"><div class="t">相关专业</div></div><div class="dorm-b">${ms}</div></div>
+        ${c.link ? `<a class="lk" href="${esc(c.link)}" target="_blank" rel="noopener">学院官网 ↗</a>` : ""}
+      </div>`;
+    }).join("");
+
+    const steps = (route.steps || []).map(s =>
+      `<div class="phase"><div class="ph">${esc(s.phase)}</div><div class="pt">路线</div><ul class="lst">${(s.items || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>`
+    ).join("");
+    const courses = (route.courses || []).map(c => `<span class="tag navy">${esc(c)}</span>`).join(" ");
+    const prepare = (route.prepare || []).map(x => `<li>${esc(x)}</li>`).join("");
+    const targets = (route.targets || []).map(t => `<span class="tag gold">${esc(t)}</span>`).join(" ");
+
+    const checklist = (T.checklist || []).map(g =>
+      `<div class="card" style="margin-bottom:12px"><div class="sec-h" style="border:none;margin-bottom:8px;padding:0"><h2 style="font-size:15px">${esc(g.group)}</h2></div>
+        <div class="dorm-c"><div class="dorm-b">${(g.items || []).map(i => `<div class="dt"><div class="r1"><span class="nm">${esc(i.name)}</span></div><div class="nt">${esc(i.why)}</div></div>`).join("")}</div></div></div>`
+    ).join("");
+
+    const faq = (T.faq || []).map(f =>
+      `<div class="pol"><div class="pt">${esc(f.q)}</div><div class="ps">${esc(f.a)}</div></div>`
+    ).join("");
+
+    return `
+    <div class="note warn" style="margin-bottom:14px"><span class="ni">⚠️</span><div>${esc(T.note || "")}</div></div>
+
+    <div class="sec">${secH("政策依据与申请条件", "以当年官方通知为准")}
+      <div class="card">
+        <div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">📌 政策依据</div>
+        <div class="l" style="color:var(--tx2);font-size:13px;margin-bottom:12px">${esc(p.basis || "")}</div>
+        <div class="grid g2">
+          <div><div class="sec-h" style="border:none;margin-bottom:6px;padding:0"><h2 style="font-size:14px">✅ 可申请</h2></div><ul class="lst">${eligible}</ul></div>
+          <div><div class="sec-h" style="border:none;margin-bottom:6px;padding:0"><h2 style="font-size:14px">⛔ 不可转</h2></div><ul class="lst">${ineligible}</ul></div>
+        </div>
+        <div class="sec-h" style="border:none;margin:12px 0 6px;padding:0"><h2 style="font-size:14px">⚖️ 工作原则</h2></div>
+        <ul class="lst">${principles}</ul>
+        <div class="sec-h" style="border:none;margin:12px 0 6px;padding:0"><h2 style="font-size:14px">📝 考核方式</h2></div>
+        <ul class="lst">${exam}</ul>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">📊 名额比例</div>
+        <div class="l" style="color:var(--tx2);font-size:13px">转入：${esc(ratio.in || "")}<br>转出：${esc(ratio.out || "")}</div>
+        <div class="l" style="font-weight:700;color:var(--red);margin:10px 0 4px;font-size:13px">2025级已达转入上限的专业（本次不接收）：</div>
+        <div>${fullList}</div>
+      </div>
+    </div>
+
+    <div class="sec">${secH("转专业时间线", "一年一般一次，逾期不候")}
+      <div class="grid g2">${timeline}</div>
+    </div>
+
+    <div class="sec">${secH("大数据相关专业（想转入的方向）", "与工程软件同属 IT 大类，跨度友好")}
+      <div class="note tip" style="margin-bottom:12px"><span class="ni">ℹ️</span><div>${esc(big.intro || "")}</div></div>
+      <div class="grid g2">${colleges}</div>
+    </div>
+
+    <div class="sec">${secH(route.title || "转专业路线", "工程软件 → 大数据")}
+      <div class="note ok" style="margin-bottom:12px"><span class="ni">🛠️</span><div>${esc(route.why || "")}</div></div>
+      <div class="grid g2">${steps}</div>
+      <div class="card" style="margin-top:12px">
+        <div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">📚 建议提前补的核心课</div>
+        <div>${courses}</div>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">🎯 推荐目标专业</div>
+        <div>${targets}</div>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">💡 准备建议</div>
+        <ul class="lst">${prepare}</ul>
+      </div>
+    </div>
+
+    <div class="sec">${secH("转专业准备清单", "对着打钩")}
+      ${checklist}
+    </div>
+
+    <div class="sec">${secH("常见问题", "关于转专业你最关心的")}
+      ${faq}
+    </div>`;
+  }
+
   // 暴露给 map / ai / app 使用
   window.Render = {
     home, about, majors, engsoft, campus, dorm, checklist, training, laptop, policies, resources, courseSelection, faq,
-    timeline, cert, channels, postgrad, job,
+    timeline, cert, channels, postgrad, job, transfer,
     majorHTML, findMajor,
     _mjF, _mjK,
     mjGrid, // 供首次渲染后调用

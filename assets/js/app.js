@@ -20,6 +20,7 @@
     { id: "training", name: "军训指南", icon: "🎖️", sub: "安排·装备" },
     { id: "laptop", name: "电脑选购", icon: "💻", sub: "按专业配" },
     { id: "policies", name: "政策文件", icon: "📑", sub: "学籍·奖助" },
+    { id: "transfer", name: "转专业", icon: "🔁", sub: "工程软件→大数据" },
     { id: "resources", name: "学习资源", icon: "📚", sub: "平台·证书" },
     { id: "course", name: "选课攻略", icon: "🗓️", sub: "系统·轮次·技巧" },
     { id: "timeline", name: "四年时间轴", icon: "🧭", sub: "大一到大四路线" },
@@ -58,7 +59,7 @@
   function renderPage(id) {
     if (id === "map") return MapView.render();
     if (id === "feed") return Collector.render();
-    const fns = { home: Render.home, about: Render.about, majors: Render.majors, engsoft: Render.engsoft, campus: Render.campus, dorm: Render.dorm, checklist: Render.checklist, training: Render.training, laptop: Render.laptop, policies: Render.policies, resources: Render.resources, course: Render.courseSelection, faq: Render.faq, timeline: Render.timeline, cert: Render.cert, channels: Render.channels, postgrad: Render.postgrad, job: Render.job };
+    const fns = { home: Render.home, about: Render.about, majors: Render.majors, engsoft: Render.engsoft, campus: Render.campus, dorm: Render.dorm, checklist: Render.checklist, training: Render.training, laptop: Render.laptop, policies: Render.policies, transfer: Render.transfer, resources: Render.resources, course: Render.courseSelection, faq: Render.faq, timeline: Render.timeline, cert: Render.cert, channels: Render.channels, postgrad: Render.postgrad, job: Render.job };
     const el = pg(id);
     if (el && fns[id]) el.innerHTML = fns[id]();
     if (id === "majors" && Render.mjGrid) Render.mjGrid();
