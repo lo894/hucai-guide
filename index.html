@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>湖南财政经济学院 · 新生入学指南 2026</title>
+<meta name="description" content="湖南财政经济学院新生入学指南：51个专业培养计划、校园环境、宿舍条件、入学准备清单、军训指南、政策文件、校园地图与智能问答助手。">
+<link rel="stylesheet" href="assets/css/style.css?v=20260820">
+<style>
+  .gate{position:fixed;inset:0;z-index:9999;background:linear-gradient(160deg,#134e4a 0%,#1d6b63 55%,#0f3d3a 100%);display:flex;align-items:center;justify-content:center;}
+  .gate-box{width:min(92vw,360px);background:rgba(255,255,255,.96);border-radius:18px;padding:30px 26px 22px;box-shadow:0 18px 50px rgba(0,0,0,.28);text-align:center;font-family:inherit}
+  .gate-badge{width:62px;height:62px;border-radius:14px;margin-bottom:10px;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+  .gate-tt{font-size:20px;font-weight:800;color:#134e4a}
+  .gate-st{font-size:12.5px;color:#5b6b6a;margin:6px 0 18px;line-height:1.6}
+  .gate-in{width:100%;box-sizing:border-box;padding:12px 14px;border:1.5px solid #cfd9d8;border-radius:11px;font-size:15px;outline:none;transition:.15s}
+  .gate-in:focus{border-color:#e8643e;box-shadow:0 0 0 3px rgba(232,100,62,.15)}
+  .gate-btn{width:100%;margin-top:12px;padding:12px;border:none;border-radius:11px;background:#e8643e;color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:.15s}
+  .gate-btn:hover{background:#d4542e}
+  .gate-err{color:#c0392b;font-size:12.5px;min-height:18px;margin-top:10px}
+  .gate-foot{font-size:11px;color:#9aa8a6;margin-top:16px}
+  /* 未解锁时隐藏页面内容 */
+  body:not(.unlocked) .topbar,body:not(.unlocked) .main,body:not(.unlocked) .wm,body:not(.unlocked) .fab,body:not(.unlocked) .ai-hint,body:not(.unlocked) .ai-toast,body:not(.unlocked) .chat,body:not(.unlocked) .modal,body:not(.unlocked) .rw-bar,body:not(.unlocked) .rw-fly,body:not(.unlocked) .rw-pop{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- 访问口令门（前端基础防护，非加密） -->
+<div id="gate" class="gate">
+  <div class="gate-box">
+    <img src="assets/img/hufe_badge.png" class="gate-badge" alt="湖财校徽">
+    <div class="gate-tt">湖财新生指南 · 2026</div>
+    <div class="gate-st">本指南面向湖南财政经济学院新生，请输入访问口令</div>
+    <input id="gatePw" class="gate-in" type="password" placeholder="访问口令" autocomplete="off">
+    <button id="gateBtn" class="gate-btn">进入指南</button>
+    <div id="gateErr" class="gate-err"></div>
+    <div class="gate-foot">© L.大王 原创作品 · 禁止转载与商用</div>
+  </div>
+</div>
+
+<div class="ovl" id="ovl"></div>
+
+<!-- 水印 -->
+<div class="wm" aria-hidden="true"></div>
+
+<!-- 顶部导航（横向） -->
+<header class="topbar" id="header">
+  <div class="tb-row1">
+    <button class="tb-menu" id="menuBtn">☰</button>
+    <div class="brand" onclick="go('home');return false">
+      <img src="assets/img/hufe_badge.png" class="brand-badge" alt="湖财校徽">
+      <div class="brand-tx">
+        <div class="brand-tt">湖财新生指南</div>
+        <div class="brand-st">2026 迎新季</div>
+      </div>
+    </div>
+    <div class="tb-title" id="pgTitle">首页</div>
+    <div class="tb-sub" id="pgSub"></div>
+    <div class="tb-search">
+      <span class="si">🔍</span>
+      <input type="text" id="gs" placeholder="搜索专业、政策、宿舍…" autocomplete="off">
+      <div class="sug" id="sug"></div>
+    </div>
+  </div>
+  <nav class="tb-nav" id="nav"></nav>
+</header>
+
+<!-- 主区域 -->
+<div class="main">
+  <div class="content">
+
+  <div class="content">
+    <section class="page on" id="p-home"></section>
+    <section class="page" id="p-about"></section>
+    <section class="page" id="p-majors"></section>
+    <section class="page" id="p-engsoft"></section>
+    <section class="page" id="p-campus"></section>
+    <section class="page" id="p-dorm"></section>
+    <section class="page" id="p-map"></section>
+    <section class="page" id="p-checklist"></section>
+    <section class="page" id="p-training"></section>
+    <section class="page" id="p-laptop"></section>
+    <section class="page" id="p-policies"></section>
+    <section class="page" id="p-resources"></section>
+    <section class="page" id="p-course"></section>
+    <section class="page" id="p-timeline"></section>
+    <section class="page" id="p-cert"></section>
+    <section class="page" id="p-channels"></section>
+    <section class="page" id="p-postgrad"></section>
+    <section class="page" id="p-job"></section>
+    <section class="page" id="p-feed"></section>
+    <section class="page" id="p-faq"></section>
+    <footer class="site-foot">
+      数据更新 <b id="upd">—</b> · 非官方站点，以学校通知为准<br>
+      © <b>L.大王</b> 原创整理 · 以 <b>vibe coding</b> 独立搭建，内容均为人工整理（综合学校官网 + 个人查找等来源），非 AI 生成 · 仅供湖财新生个人参考，请勿商用或冒用原创
+    </footer>
+  </div>
+</div>
+
+<!-- 专业详情弹窗 -->
+<div class="modal" id="modal">
+  <div class="mbox" id="mbox"></div>
+</div>
+
+<!-- AI 助手提示 -->
+<div class="ai-hint" id="aiHint" onclick="if(window.AI)AI.open()">🎓 有问题？问问 AI 学长</div>
+
+<!-- AI 问答 -->
+<button class="fab" id="fab" title="问问 AI 学长"><span class="pulse"></span>🎓</button>
+
+<!-- 首次访问提示 -->
+<div class="ai-toast" id="aiToast">
+  <div class="at-ic">🎓</div>
+  <div class="at-tx">右下角有 <b>AI 新生助手</b>，专业 · 宿舍 · 军训 · 转专业都能问它～</div>
+  <button class="at-x" id="aiToastX">✕</button>
+</div>
+<!-- 互动打赏栏 -->
+<div class="rw-bar" id="rwBar">
+  <button class="rw-btn reward" id="rewardBtn" title="请作者喝杯咖啡">🪙<span>打赏+1</span></button>
+  <button class="rw-btn heart" id="heartBtn" title="比个心">💗<span>比心</span></button>
+  <button class="rw-btn mute" id="muteBtn" title="音效开关">🔊</button>
+</div>
+
+<div class="chat" id="chat">
+  <div class="ch-h">
+    <div class="av">🎓</div>
+    <div>
+      <div class="tt">湖财 AI 新生助手</div>
+      <div class="st"><span class="dot-s" id="aiDot" style="background:#7ed6a5"></span><span id="aiMode">本地知识库模式</span></div>
+    </div>
+    <div class="acts">
+      <button id="chatCfg" title="设置">⚙</button>
+      <button id="chatBig" title="放大">⛶</button>
+      <button id="chatClr" title="清空">↻</button>
+      <button id="chatX" title="关闭">✕</button>
+    </div>
+  </div>
+  <div class="ch-b" id="chatBody"></div>
+  <div class="ch-f">
+    <div class="ch-in">
+      <textarea id="chatIn" rows="1" placeholder="问点什么，比如「会计学专业学什么」「军训要带啥」…"></textarea>
+      <button class="snd" id="chatSend">➤</button>
+    </div>
+    <div class="ch-tip">基于本站知识库回答 · 重要信息请以学校官方通知为准</div>
+  </div>
+  <!-- 设置面板 -->
+  <div class="cfg" id="cfgPanel">
+    <div class="ch-h" style="background:var(--navy)">
+      <div class="av">⚙</div>
+      <div><div class="tt">AI 引擎设置</div><div class="st">可选接入大模型，获得更自然的回答</div></div>
+      <div class="acts"><button id="cfgBack">✕</button></div>
+    </div>
+    <div class="cfg-b">
+      <div class="sw" id="swLLM">
+        <div class="sb"></div>
+        <div>
+          <div class="st">启用大模型增强（RAG）</div>
+          <div class="sd">关闭时使用内置检索引擎，完全离线可用；开启后会把检索到的知识片段交给大模型润色作答。</div>
+        </div>
+      </div>
+      <div id="llmFields" style="display:none">
+        <div class="fld">
+          <label>API 地址（OpenAI 兼容格式）</label>
+          <input id="cfgUrl" placeholder="https://api.deepseek.com/v1/chat/completions">
+          <div class="hp">支持 DeepSeek / 通义千问 / 智谱 / OpenAI / 本地 Ollama 等任意 OpenAI 兼容接口</div>
+        </div>
+        <div class="fld">
+          <label>API Key</label>
+          <input id="cfgKey" type="password" placeholder="sk-...">
+          <div class="hp">仅保存在你本机浏览器（localStorage），不会上传到任何服务器</div>
+        </div>
+        <div class="fld">
+          <label>模型名称</label>
+          <input id="cfgModel" placeholder="deepseek-chat">
+        </div>
+      </div>
+      <div class="fld">
+        <label>回答风格</label>
+        <select id="cfgStyle">
+          <option value="normal">标准 — 条理清晰，重点突出</option>
+          <option value="short">简洁 — 直接给结论</option>
+          <option value="detail">详细 — 展开说明与建议</option>
+        </select>
+      </div>
+      <button class="btn" id="cfgSave" style="width:100%;justify-content:center">保存设置</button>
+      <div class="note tip" style="margin-top:14px">
+        <span class="ni">ℹ️</span>
+        <div>不配置大模型也能正常使用。内置检索引擎覆盖了本站全部 <b id="kbCount">0</b> 条知识片段，常见问题都能答上来。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/kb.js?v=20260818"></script>
+<script src="assets/js/collector.js?v=20260814"></script>
+<script src="assets/js/render.js?v=20260821"></script>
+<script src="assets/js/map.js?v=20260814"></script>
+<script src="assets/js/ai.js?v=20260814"></script>
+<script src="assets/js/app.js?v=20260818"></script>
+<script src="assets/js/reward.js?v=20260814"></script>
+<script src="assets/js/ui.js?v=20260814"></script>
+<script>
+(function(){
+  var t=document.getElementById('aiToast'),x=document.getElementById('aiToastX');
+  if(t&&x){
+    if(!localStorage.getItem('hucai_aihint_seen')){
+      setTimeout(function(){t.classList.add('show');},900);
+      var hide=function(){t.classList.remove('show');try{localStorage.setItem('hucai_aihint_seen','1');}catch(e){}};
+      x.addEventListener('click',hide);
+      setTimeout(hide,9000);
+    }
+  }
+})();
+</script>
+<script>
+/* 访问口令门：前端基础防护（口令在源码中，仅作轻量门禁，非加密） */
+(function(){
+  var PW = "hucai2026";
+  var gate = document.getElementById('gate');
+  var inp = document.getElementById('gatePw');
+  var btn = document.getElementById('gateBtn');
+  var err = document.getElementById('gateErr');
+  function unlock(){
+    try{ sessionStorage.setItem('hucai_unlocked','1'); }catch(e){}
+    document.body.classList.add('unlocked');
+    gate.style.display = 'none';
+  }
+  function tryOpen(){
+    if(inp.value === PW){ unlock(); }
+    else { err.textContent = '口令错误，请向站长（L.大王）获取'; inp.value=''; inp.focus(); }
+  }
+  if(sessionStorage.getItem('hucai_unlocked') === '1'){ unlock(); }
+  btn.addEventListener('click', tryOpen);
+  inp.addEventListener('keydown', function(e){ if(e.key==='Enter') tryOpen(); });
+  inp.focus();
+})();
+</script>
+</body>
+</html>

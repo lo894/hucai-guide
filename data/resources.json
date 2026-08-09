@@ -1,0 +1,76 @@
+{
+  "updated": "2026-08-06",
+  "school": "湖南财政经济学院",
+  "note": "学习资源按「校内平台—课程—证书—工具—竞赛—求职」组织。校内系统以学校实际入口为准；校外链接均含真实可访问主站，具体课程/账号以官方通知为准。",
+  "groups": [
+    {
+      "name": "校内平台",
+      "icon": "🏫",
+      "items": [
+        { "title": "教务系统", "url": "http://jiaowu2.hufe.edu.cn/jsxsd", "desc": "选课、查课表、看成绩、报名考试都在这，最常登录。", "tag": "必备" },
+        { "title": "图书馆（官网入口）", "url": "https://www.hufe.edu.cn/", "desc": "通过学校官网进入馆藏检索、电子资源与借阅服务。", "tag": "常用" },
+        { "title": "校园一卡通", "url": "", "desc": "就餐、洗浴、借书、门禁通用，挂失补卡到卡务中心。", "tag": "必备" },
+        { "title": "智校乐 APP", "url": "", "desc": "校内移动门户，查通知、课表、消费等，应用商店搜索下载。", "tag": "常用" },
+        { "title": "校园网", "url": "", "desc": "宿舍与教学楼无线覆盖，账号随入学开通，留意计费规则。", "tag": "常用" },
+        { "title": "校园邮箱", "url": "", "desc": "用于接收学校通知、找回密码，重要事项认准本校域名邮箱。", "tag": "常用" },
+        { "title": "到梦空间 APP", "url": "https://www.hufe.edu.cn/xtw/info/1024/11803.htm", "desc": "第二课堂活动报名与学分认定，创新实践学分靠它记录。", "tag": "学分" }
+      ]
+    },
+    {
+      "name": "大一课程学习资源",
+      "icon": "📖",
+      "items": [
+        { "title": "高等数学（宋浩老师）", "url": "https://space.bilibili.com/415531453", "desc": "B站宋浩高数讲解清晰，适合预习和补基础，搜「宋浩高数」。", "tag": "高数" },
+        { "title": "中国大学MOOC", "url": "https://www.icourse163.org", "desc": "国家精品课平台，高数、线代、英语等同步公开课免费学。", "tag": "综合" },
+        { "title": "学堂在线", "url": "https://www.xuetangx.com", "desc": "清华等名校课程，经济学、计算机基础、通识课资源丰富。", "tag": "经济学" },
+        { "title": "英语听说（可可英语）", "url": "https://www.kekenet.com", "desc": "四六级听力、口语素材多，配合每日英语听力APP使用。", "tag": "英语" },
+        { "title": "学习强国", "url": "https://www.xuexi.cn", "desc": "思政类学习与时政要闻，思政课拓展与理论学习好帮手。", "tag": "思政" },
+        { "title": "计算机基础（菜鸟教程）", "url": "https://www.runoob.com", "desc": "Office、Python、数据库入门教程，计算机课与二级备考可用。", "tag": "计算机" }
+      ]
+    },
+    {
+      "name": "证书考试",
+      "icon": "🎓",
+      "items": [
+        { "title": "大学英语四六级（CET）", "url": "http://cet.neea.edu.cn", "desc": "教育部考试中心官网，报名、准考证、成绩查询均在此。", "tag": "必考" },
+        { "title": "全国计算机等级考试", "url": "http://ncre.neea.edu.cn", "desc": "二级（Office/Python/C）在校可多次报考，提升办公与编程力。", "tag": "推荐" },
+        { "title": "中小学教师资格考试", "url": "http://ntce.neea.edu.cn", "desc": "想当老师的同学大三起可报，笔试面试加认定三步走。", "tag": "教资" },
+        { "title": "初级会计专业技术资格", "url": "http://kzp.mof.gov.cn", "desc": "财经类对口门槛证，大二大三可考，财政部会计资格官网报名。", "tag": "财经" },
+        { "title": "普通话水平测试", "url": "https://www.cltt.org", "desc": "教资认定必备，校内或语委站点报考，提前练发音。", "tag": "通用" }
+      ]
+    },
+    {
+      "name": "财经类工具",
+      "icon": "📊",
+      "items": [
+        { "title": "Wind 金融终端", "url": "https://www.wind.com.cn", "desc": "金融数据与研究终端，校内机房/图书馆常配，研报与行情齐全。", "tag": "数据" },
+        { "title": "同花顺", "url": "https://www.10jqka.com.cn", "desc": "行情、资讯与模拟交易，入门看盘与投教内容实用。", "tag": "行情" },
+        { "title": "CSMAR 国泰安数据", "url": "https://www.cnrar.com", "desc": "经济金融研究数据库，写论文、做实证分析常用数据源。", "tag": "数据库" },
+        { "title": "Excel 学习", "url": "https://support.microsoft.com/zh-cn/excel", "desc": "财务建模与数据处理基本功，函数透视表必练。", "tag": "办公" },
+        { "title": "Python 官网", "url": "https://www.python.org", "desc": "数据分析与爬虫入门语言，配合B站教程动手练。", "tag": "编程" }
+      ]
+    },
+    {
+      "name": "竞赛",
+      "icon": "🏅",
+      "items": [
+        { "title": "挑战杯（大挑/小挑）", "url": "http://www.tiaozhanbei.net", "desc": "全国大学生课外学术科技作品与创业计划竞赛，含金量高。", "tag": "综合" },
+        { "title": "正大杯（市调大赛）", "url": "http://www.china-cssc.org", "desc": "市场调查与分析大赛，财经类对口，获奖可认创新学分。", "tag": "财经" },
+        { "title": "全国大学生数学建模", "url": "http://www.mcm.edu.cn", "desc": "高教社杯国赛，三人组队三天建模，锻炼 python/写作。", "tag": "数学" },
+        { "title": "ACM/ICPC 程序设计", "url": "https://icpc.global", "desc": "程序设计竞赛，计算机基础好的同学可加入校队训练。", "tag": "编程" },
+        { "title": "中国国际大学生创新大赛", "url": "https://cy.ncss.cn", "desc": "原「互联网+」大赛，创业项目孵化与展示的主舞台。", "tag": "双创" }
+      ]
+    },
+    {
+      "name": "求职实习",
+      "icon": "💼",
+      "items": [
+        { "title": "国家大学生就业服务平台", "url": "https://www.ncss.cn", "desc": "官方就业网，政策、职位与去向登记一站式。", "tag": "官方" },
+        { "title": "学校就业指导中心", "url": "https://www.hufe.edu.cn/", "desc": "校招信息、双选会、宣讲会与就业指导由中心发布。", "tag": "校内" },
+        { "title": "实习僧", "url": "https://www.shixiseng.com", "desc": "专注实习岗位，大一暑假起可投简历积累经验。", "tag": "实习" },
+        { "title": "应届生求职网", "url": "https://www.yingjiesheng.com", "desc": "校园招聘汇总，银行、事务所、国企校招信息集中。", "tag": "校招" },
+        { "title": "BOSS直聘", "url": "https://www.zhipin.com", "desc": "直接与HR沟通，日常实习与社招岗位丰富。", "tag": "综合" }
+      ]
+    }
+  ]
+}
