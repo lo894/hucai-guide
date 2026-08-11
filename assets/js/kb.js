@@ -299,6 +299,12 @@ const KB = (() => {
         text: CP.intro + ' ' + (CP.groups || []).flatMap(g => (g.items || []).map(i => `${i.name}（${i.url}）：${i.fit} 时间${i.time}`)).join('；') });
       (CP.groups || []).forEach(g => (g.items || []).forEach(it => addDoc({ title: it.name, page: 'compete', module: '竞赛·' + g.name, w: 1.35,
         text: `${it.name}：${it.fit} 报名时间${it.time} 级别${it.level || ''} 网址 ${it.url || ''}` })));
+      const SC = CP.scoring;
+      if (SC) {
+        addDoc({ title: '学科竞赛计分办法', page: 'compete', module: '竞赛·计分', w: 1.4,
+          text: SC.lead + ' ' + (SC.categories || []).map(c => `${c.code}类：${c.desc}`).join('；') + ' ' + (SC.notes || []).join('；') + ' ' + (SC.incentives || []).map(i => `${i.t}：${i.d}`).join('；') + ' ' + (SC.aList || []).map(a => a.name).join(' ') });
+        (SC.aList || []).forEach(a => addDoc({ title: a.name, page: 'compete', module: '竞赛·A类清单', w: 1.2, text: `${a.name}：${a.org}${a.hot ? ' 大数据相关' : ''}` }));
+      }
     }
 
     /* 技能成长 */

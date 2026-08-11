@@ -1278,9 +1278,44 @@
         </div>`).join("");
       return `<div class="sec">${secH(g.name, g.sub || "")}<div class="grid g2">${items}</div></div>`;
     }).join("");
+
+    const SC = C.scoring || null;
+    let scoring = "";
+    if (SC) {
+      const cats = (SC.categories || []).map(c => `<div class="res"><div class="rt"><span class="tag navy">${esc(c.code)}</span> ${esc(c.desc)}</div></div>`).join("");
+      const th = (head) => `<thead><tr>${head.map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead>`;
+      const tb = (rows) => `<tbody>${rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+      const notes = (SC.notes || []).map(n => `<li>${esc(n)}</li>`).join("");
+      const incs = (SC.incentives || []).map(i => `<div class="res"><div class="rt">${esc(i.t)}</div><div class="rd">${esc(i.d)}</div></div>`).join("");
+      const aplus = (SC.aplus || []).map(a => `<li><b>${esc(a.name)}</b> <span style="color:var(--tx3);font-size:12px">｜ ${esc(a.org)}${a.remark ? (' ｜ ' + esc(a.remark)) : ''}</span></li>`).join("");
+      const aList = (SC.aList || []).map(a => `<li>${esc(a.name)} <span style="color:var(--tx3);font-size:12px">｜ ${esc(a.org)}</span>${a.hot ? ' <span class="tag red">大数据相关</span>' : ''}</li>`).join("");
+      scoring = `
+      <div class="sec">${secH("学校官方 · 竞赛计分办法", "综测 · 保研 · 学分都认")}
+        <div class="note tip" style="margin-bottom:12px"><span class="ni">ℹ️</span><div>${esc(SC.lead)}</div></div>
+        ${SC.pdf ? `<a class="btn" href="${esc(SC.pdf)}" target="_blank" rel="noopener" style="margin-bottom:12px">📄 下载官方原文件（PDF）</a>` : ""}
+        <div class="l" style="font-weight:700;margin:12px 0 6px">竞赛分类（A+ / A / B / C）</div>
+        <div class="grid g2">${cats}</div>
+        <div class="l" style="font-weight:700;margin:12px 0 6px">${esc(SC.table1.cap)}</div>
+        <div style="overflow-x:auto"><table class="tb">${th(SC.table1.head)}${tb(SC.table1.rows)}</table></div>
+        <div class="l" style="font-weight:700;margin:12px 0 6px">计分说明</div>
+        <ul class="lst">${notes}</ul>
+        <div class="l" style="font-weight:700;margin:12px 0 6px">${esc(SC.table2.cap)}</div>
+        <div style="overflow-x:auto"><table class="tb">${th(SC.table2.head)}${tb(SC.table2.rows)}</table></div>
+        <div class="l" style="font-weight:700;margin:12px 0 6px">激励机制（对你有什么用）</div>
+        <div class="grid g2">${incs}</div>
+        <div class="l" style="font-weight:700;margin:12px 0 6px">A+ 类竞赛清单（4 项）</div>
+        <ul class="lst">${aplus}</ul>
+        <div class="l" style="font-weight:700;margin:12px 0 6px">A 类竞赛清单（41 项）</div>
+        <div class="grid g2"><ul class="lst">${aList}</ul></div>
+        ${SC.org ? `<div class="note ok" style="margin-top:10px"><span class="ni">🏛️</span><div>${esc(SC.org)}</div></div>` : ""}
+        <div style="font-size:12px;color:var(--tx3);margin-top:8px">来源：${esc(SC.source)}</div>
+      </div>`;
+    }
+
     return `
     <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(C.intro)}</div></div>
     ${groups}
+    ${scoring}
     <div class="note ok" style="margin-top:8px"><span class="ni">✅</span><div>💡 工程软件想转大数据，优先冲 <b>数学建模 + 大数据挑战赛 + 蓝桥杯 / 软件杯</b> 这三类，简历和转专业面试都加分。</div></div>`;
   }
 
