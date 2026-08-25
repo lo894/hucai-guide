@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-11 10:42",
+ "updated": "2026-08-25 16:48",
  "total": 83,
  "freshmanCount": 47,
  "sources": [
@@ -61,6 +61,36 @@
   }
  ],
  "items": [
+  {
+   "title": "校地合作：湖财与十八洞村签乡村振兴全面战略合作协议",
+   "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_2286a8562bf17652",
+   "date": "2026-07",
+   "source": "学校新闻/官微",
+   "category": "湖财新闻",
+   "tags": ["校地合作", "乡村振兴"],
+   "freshman": false,
+   "noise": false
+  },
+  {
+   "title": "湖财2支志愿服务队入选2026年国家级专项宣讲团",
+   "url": "https://www.hufe.edu.cn/xtw/info/1112/14433.htm",
+   "date": "2026-07",
+   "source": "校团委",
+   "category": "湖财新闻",
+   "tags": ["志愿服务", "国家级专项"],
+   "freshman": false,
+   "noise": false
+  },
+  {
+   "title": "湖财2026年军训教官暑期集训启动，共90名学生教官",
+   "url": "https://news.hufe.edu.cn/info/1022/63801.htm",
+   "date": "2026-07-20",
+   "source": "学校新闻网",
+   "category": "湖财新闻",
+   "tags": ["军训", "教官集训"],
+   "freshman": false,
+   "noise": false
+  },
   {
    "title": "湖南省政府采购网：湖南财政经济学院2026年度离退休教职工节日福利发放项目项目中标（成交）公告",
    "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=ih+xFm0IOwB/i6g+z1mmdg==",
