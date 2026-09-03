@@ -19,7 +19,7 @@
       { "system": "智慧财务", "defaultPassword": "Czj@ + 身份证后六位", "login": "学号登录，绑定湖南银行卡用于退费", "use": "学费 / 住宿费缴纳、退费" },
       { "system": "官方新生 QQ 群", "defaultPassword": "群号 1055580259", "login": "入群验证：身份证号 + 姓名", "use": "官方通知、答疑（认准辅导员 / 助班公布群号，谨防仿冒群）" },
       { "system": "易班", "defaultPassword": "校方认证搜索「湖南财政经济学院」，填学号 / 录取通知书编号", "login": "—", "use": "新生入学教育考试、校园通知" },
-      { "system": "教务管理系统（查课表）", "defaultPassword": "hufe@2026 + 身份证后六位（X 大写）", "login": "学号登录", "use": "查课表、查成绩、选课、考试报名 → jiaowu.hufe.edu.cn" }
+      { "system": "教务管理系统（查课表）", "defaultPassword": "hufe@2026 + 身份证后六位（X 大写）", "login": "学号或身份证号登录", "use": "查课表、查成绩、选课、考试报名 → jiaowu.hufe.edu.cn" }
     ]
   },
   "levels": [
