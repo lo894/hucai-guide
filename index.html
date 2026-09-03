@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>湖南财政经济学院 · 新生入学指南 2026</title>
 <meta name="description" content="湖南财政经济学院新生入学指南：51个专业培养计划、校园环境、宿舍条件、入学准备清单、军训指南、政策文件、校园地图与智能问答助手。">
-<link rel="stylesheet" href="assets/css/style.css?v=20260903">
+<link rel="stylesheet" href="assets/css/style.css?v=20260903c">
 <style>
   .gate{position:fixed;inset:0;z-index:9999;background:linear-gradient(160deg,#134e4a 0%,#1d6b63 55%,#0f3d3a 100%);display:flex;align-items:center;justify-content:center;}
   .gate-box{width:min(92vw,360px);background:rgba(255,255,255,.96);border-radius:18px;padding:30px 26px 22px;box-shadow:0 18px 50px rgba(0,0,0,.28);text-align:center;font-family:inherit}
@@ -106,6 +106,10 @@
 <div class="modal" id="modal">
   <div class="mbox" id="mbox"></div>
 </div>
+
+<!-- 右下角快速入口（镜像顶部导航） -->
+<div class="qk-panel" id="qkPanel"></div>
+<div class="qk-fab" id="qkFab" title="快速入口">☰</div>
 
 <!-- AI 助手提示 -->
 <div class="ai-hint" id="aiHint" onclick="if(window.AI)AI.open()">🎓 有问题？问问 AI 学长</div>
@@ -238,6 +242,52 @@
   btn.addEventListener('click', tryOpen);
   inp.addEventListener('keydown', function(e){ if(e.key==='Enter') tryOpen(); });
   inp.focus();
+})();
+</script>
+<script>
+/* 右下角快速入口：从顶部导航克隆，点按直达 */
+(function () {
+  function buildQk() {
+    var nav = document.getElementById('nav');
+    var panel = document.getElementById('qkPanel');
+    if (!nav || !panel) return;
+    var items = Array.prototype.slice.call(nav.querySelectorAll('.nav-i')).map(function (n) {
+      var id = n.getAttribute('data-id');
+      var html = (n.innerHTML || '').replace(/<span class="bd"[\s\S]*?<\/span>/, '');
+      return '<div class="qk-i" data-id="' + id + '">' + html + '</div>';
+    }).join('');
+    panel.innerHTML = '<div class="qk-h">快速入口 · 点按直达</div><div class="qk-grid">' + items + '</div>';
+    Array.prototype.slice.call(panel.querySelectorAll('.qk-i')).forEach(function (el) {
+      el.addEventListener('click', function () {
+        var id = el.getAttribute('data-id');
+        if (window.go) window.go(id);
+        closeQk();
+      });
+    });
+  }
+  function closeQk() {
+    var p = document.getElementById('qkPanel'); if (p) p.classList.remove('on');
+    var f = document.getElementById('qkFab'); if (f) f.classList.remove('on');
+  }
+  function openQk() {
+    var p = document.getElementById('qkPanel'); if (p) p.classList.add('on');
+    var f = document.getElementById('qkFab'); if (f) f.classList.add('on');
+  }
+  function init() {
+    buildQk();
+    var fab = document.getElementById('qkFab');
+    if (fab) fab.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var p = document.getElementById('qkPanel');
+      if (p && p.classList.contains('on')) closeQk(); else openQk();
+    });
+    document.addEventListener('click', function (e) {
+      var p = document.getElementById('qkPanel'), f = document.getElementById('qkFab');
+      if (p && f && !p.contains(e.target) && !f.contains(e.target)) closeQk();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
 </script>
 </body>
