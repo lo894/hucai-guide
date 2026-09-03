@@ -93,14 +93,14 @@
     </div>
 
     <div class="sec">
-      <div class="sec-h"><h2>新生速查</h2><span class="d">报到前先看这一屏</span></div>
-      <div class="grid g6">${qf}</div>
-    </div>
-
-    <div class="sec">
       <div class="sec-h"><h2>联系我</h2><span class="d">有问题可以加微信 · 备注「湖财新生」</span></div>
       ${contactCard(s)}
       <div class="note tip" style="margin-top:12px"><span class="ni">📞</span><div>各部门 / 各学院办公电话（含你所在学院）已整理在 <a href="javascript:void(0)" onclick="go('about')">「学校概况」页</a> 底部，可随时查看。</div></div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><h2>新生速查</h2><span class="d">报到前先看这一屏</span></div>
+      <div class="grid g6">${qf}</div>
     </div>
 
     <div class="sec">
