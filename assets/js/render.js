@@ -100,7 +100,7 @@
 
     <div class="sec">
       <div class="sec-h"><h2>数说湖财</h2><span class="d">${esc(s.type)}</span></div>
-      <div class="grid g4">${stats}</div>
+      <div class="grid g-stats">${stats}</div>
     </div>
 
     <div class="sec">
@@ -493,15 +493,8 @@
     <div class="sec">${secH("两种卡对比", c.intro)}
       <div class="grid g2">${cards}</div>
     </div>
-    <div class="sec">${secH("怎么选 · 看需求", "办什么卡看自己具体情况")}
-      <div class="card"><ul class="lst">${choose}</ul></div>
-    </div>
-    <div class="sec">${secH("办卡提醒 · 避坑", "以辅导员 / 学校通知为准")}
-      ${tips}
-      <div class="note ok" style="margin-top:10px"><span class="ni">📞</span><div>${esc(c.consult)}</div></div>
-    </div>
     ${(c.contact && c.contact.wechat) ? `
-    <div class="sec" style="margin-top:20px">${secH("校园卡咨询 · 找学姐", "拿不准办哪种就直接问")}
+    <div class="sec">${secH("校园卡咨询 · 找学姐", "拿不准办哪种就直接问")}
       <div class="card sim-contact">
         <div class="sim-c-info">
           <div class="sim-c-top"><span class="sim-c-name">${esc(c.contact.name)}</span><span class="tag green">${esc(c.contact.title || "校园卡办理")}</span></div>
@@ -511,6 +504,13 @@
         ${c.contact.img ? `<div class="sim-c-qr"><img src="${esc(c.contact.img)}" alt="小玲学姐微信二维码" onerror="this.parentElement.style.display='none'"></div>` : ""}
       </div>
     </div>` : ""}
+    <div class="sec">${secH("怎么选 · 看需求", "办什么卡看自己具体情况")}
+      <div class="card"><ul class="lst">${choose}</ul></div>
+    </div>
+    <div class="sec">${secH("办卡提醒 · 避坑", "以辅导员 / 学校通知为准")}
+      ${tips}
+      <div class="note ok" style="margin-top:10px"><span class="ni">📞</span><div>${esc(c.consult)}</div></div>
+    </div>
     <div class="sec" style="margin-top:20px">${secH("常见问题", "")}<div class="grid g2">${faq}</div></div>`;
   }
 
