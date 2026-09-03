@@ -48,12 +48,14 @@
     const panoramaSec = (c.id === "main") ? `
     <div class="sec">${secH("🌍 主校区 720° 全景航拍", "身临其境逛校园")}
       <div class="vr-wrap" style="position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden">
-        <iframe src="https://www.720yun.com/t/54ejzztn7" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="lazy" allowfullscreen allow="fullscreen;accelerometer;gyroscope"></iframe>
+        <iframe src="https://www.720yun.com/t/54ejzztktn7" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="lazy" allowfullscreen allow="fullscreen;accelerometer;gyroscope"></iframe>
       </div>
-      <div class="note tip" style="margin-top:10px"><span class="ni">🧭</span><div>这是<b>主校区</b>的 720° 航拍全景，可拖动旋转、点击地面箭头行走；如上方未加载，<a href="https://www.720yun.com/t/54ejzztn7" target="_blank" rel="noopener">点这里在新窗口打开 ↗</a>。雷锋校区暂无全景。</div></div>
+      <div class="note tip" style="margin-top:10px"><span class="ni">🧭</span><div>这是<b>主校区</b>的 720° 航拍全景，可拖动旋转、点击地面箭头行走；如上方未加载，<a href="https://www.720yun.com/t/54ejzztktn7" target="_blank" rel="noopener">点这里在新窗口打开 ↗</a>。雷锋校区暂无全景。</div></div>
     </div>` : "";
 
     box.innerHTML = `
+    ${panoramaSec}
+
     <div class="sec">${secH("校园地图导览", "示意图，非精确测绘")}
       <div class="flt" style="margin-bottom:14px"><div class="flt-r"><span class="flt-l">校区</span>${chips}</div></div>
       <div class="grid g2">
@@ -68,9 +70,7 @@
       </div>
       <div class="map-legend">${legend}</div>
       <div class="note tip" style="margin-top:12px"><span class="ni">📍</span><div>${esc(c.desc || "")}<br>交通：${(c.transport || []).map(esc).join("；")}<br><span style="color:var(--tx3)">${esc(M.note || "")}</span></div></div>
-    </div>
-
-    ${panoramaSec}`;
+    </div>`;
   }
 
   function secH(t, d) {
