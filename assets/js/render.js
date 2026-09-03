@@ -1602,28 +1602,29 @@
     if (!e) return "";
     const svcs = (e.services || []).map(s => `
       <div class="card sim-card navy">
-        <div class="sim-h"><span class="sim-name">${esc(s.icon)} ${esc(s.name)}</span><span class="tag ${esc(s.tag === '热门' ? 'red' : 'navy')}">${esc(s.tag)}</span></div>
+        <div class="sim-h"><span class="sim-name">${esc(s.icon)} ${esc(s.name)}</span><span class="tag ${esc(s.tag === '热门' ? 'red' : 'green')}">${esc(s.tag)}</span></div>
         <div class="sim-rows" style="margin-top:8px">
           <div class="sim-row"><div class="sim-k">服务介绍</div><div class="sim-v">${esc(s.desc)}</div></div>
           <div class="sim-row"><div class="sim-k">可做项目</div><div class="sim-v">${(s.items || []).map(esc).join("、")}</div></div>
         </div>
       </div>`).join("");
-    const c = e.contact || {};
-    return `
-    <div class="note tip" style="margin-bottom:16px"><span class="ni">📢</span><div>${esc(e.intro)}</div></div>
-    <div class="sec">${secH("校园代办服务", "靠谱省心")}
-      <div class="grid g2">${svcs}</div>
-    </div>
-    ${(c && c.wechat) ? `
-    <div class="sec">${secH("📋 代办咨询 · 找小玲学姐", "有需求直接问")}
-      <div class="card sim-contact">
+    const contacts = (e.contacts || []).map(c => `
+      <div class="card sim-contact" style="margin-bottom:12px">
         <div class="sim-c-info">
           <div class="sim-c-top"><span class="sim-c-name">${esc(c.name)}</span><span class="tag green">${esc(c.title || "代办咨询")}</span></div>
           <div class="sim-c-wx">微信号：<b>${esc(c.wechat)}</b>${c.img ? `<button class="btn sm" style="margin-left:8px" onclick="copyText('${esc(c.wechat)}')">复制</button>` : ""}</div>
           <div class="sim-c-note">${esc(c.note || "")}</div>
         </div>
         ${c.img ? `<div class="sim-c-qr"><img src="${esc(c.img)}" alt="${esc(c.name)}微信二维码"></div>` : ""}
-      </div>
+      </div>`).join("");
+    return `
+    <div class="note tip" style="margin-bottom:16px"><span class="ni">📢</span><div>${esc(e.intro)}</div></div>
+    <div class="sec">${secH("校园代办服务", "靠谱省心")}
+      <div class="grid g2">${svcs}</div>
+    </div>
+    ${contacts ? `
+    <div class="sec">${secH("📋 代办咨询", "有需求直接问")}
+      ${contacts}
     </div>` : ""}
     <div class="note warn" style="margin-top:16px"><span class="ni">⚠️</span><div>${esc(e.note || "")}</div></div>`;
   }

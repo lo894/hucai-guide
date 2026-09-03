@@ -13,6 +13,7 @@
     { id: "about", name: "学校概况", icon: "🏫", sub: "校史·校区·学费" },
     { id: "dorm", name: "宿舍攻略", icon: "🛏️", sub: "床品·好物·整理" },
     { id: "cards", name: "办卡指南", icon: "📱", sub: "校园卡·流量卡" },
+    { id: "errands", name: "代办", icon: "📋", sub: "PPT代做·校园服务" },
     { id: "checklist", name: "入学清单", icon: "📋", sub: "勾选准备" },
     { id: "majors", name: "专业培养", icon: "🎓", sub: "56 个专业" },
     { id: "campus", name: "校园生活", icon: "🌳", sub: "宿舍·食堂·设施" },
@@ -36,7 +37,6 @@
     { id: "job", name: "实习求职", icon: "💼", sub: "校招·简历·面试" },
     { id: "feed", name: "最新动态", icon: "📰", sub: "自主收集" },
     { id: "faq", name: "常见问题", icon: "💡", sub: "FAQ" },
-    { id: "errands", name: "代办", icon: "📋", sub: "PPT代做·校园服务" },
   ];
   window.PAGES = PAGES; // 供 render.js 生成首页快速入口（自动同步，新增板块无需再改两处）
   const rendered = new Set();
