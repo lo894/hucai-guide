@@ -1361,10 +1361,40 @@
     <div class="sec">${secH("大学四年每年该盯什么", "全年级都能用")}${grades}</div>`;
   }
 
+  /* ============================ 竞选班干部 ============================ */
+  function classCampaign() {
+    const CC = D()['class-campaign'];
+    if (!CC) return '';
+    const intro = CC.intro;
+    const tl = (CC.timeline || []).map(t =>
+      `<div class="phase"><div class="ph">${esc(t.when)}</div><div class="pt">${esc(t.event)}</div><div class="note warn" style="margin-top:8px"><span class="ni">💡</span><div>${esc(t.detail)}</div></div></div>`
+    ).join("");
+    const roles = (CC.roles || []).map(r =>
+      `<div class="gr"><div class="gr-h"><span class="gt">${esc(r.name)}</span></div><div class="gr-b"><div class="gi-i"><div class="w">${esc(r.duty)}</div><div class="w" style="color:var(--gold);margin-top:4px">为什么值得试：${esc(r.why)}</div></div></div></div>`
+    ).join("");
+    const steps = (CC.steps || []).map(s =>
+      `<div class="acc"><div class="acc-h" onclick="this.parentElement.classList.toggle('on')"><span class="ai">📌</span><span class="at">${esc(s.step)}</span><span class="ax">▾</span></div><div class="acc-b"><div class="pol"><div class="ps">${esc(s.detail)}</div></div></div></div>`
+    ).join("");
+    const sp = CC.speech || {};
+    const spPoints = (sp.points || []).map(p => `<li>${esc(p)}</li>`).join("");
+    const faq = (CC.faq || []).map(f =>
+      `<div class="acc"><div class="acc-h" onclick="this.parentElement.classList.toggle('on')"><span class="ai">❓</span><span class="at">${esc(f.q)}</span><span class="ax">▾</span></div><div class="acc-b"><div class="pol"><div class="ps">${esc(f.a)}</div></div></div></div>`
+    ).join("");
+    const tips = (CC.tips || []).map(t => `<div class="surv">${esc(t)}</div>`).join("");
+    return `
+    <div class="note tip" style="margin-bottom:16px"><span class="ni">ℹ️</span><div>${esc(intro)}</div></div>
+    <div class="sec">${secH("时间节奏", "什么时候竞")}<div class="grid g2">${tl}</div></div>
+    <div class="sec">${secH("班委岗位清单", "能竞哪些")}<div class="grid g2">${roles}</div></div>
+    <div class="sec">${secH("竞选五步", "从准备到投票")}<div class="grid g2">${steps}</div></div>
+    <div class="sec">${secH(esc(sp.title || "演讲稿参考"), "")}<div class="grid g2"><ul class="lst">${spPoints}</ul>${sp.tips ? `<div class="note warn" style="margin-top:8px"><span class="ni">💡</span><div>${esc(sp.tips)}</div></div>` : ''}</div></div>
+    <div class="sec">${secH("常见问题", "")}<div class="grid g2">${faq}</div></div>
+    <div class="sec">${secH("实用 Tips", "")}<div class="grid g2">${tips}</div></div>`;
+  }
+
   // 暴露给 map / ai / app 使用
   window.Render = {
     home, about, majors, engsoft, campus, dorm, checklist, training, laptop, policies, resources, courseSelection, faq,
-    timeline, cert, channels, postgrad, job, transfer, compete, skills, plan,
+    timeline, cert, channels, postgrad, job, transfer, compete, skills, plan, classCampaign,
     majorHTML, findMajor,
     _mjF, _mjK,
     mjGrid, // 供首次渲染后调用

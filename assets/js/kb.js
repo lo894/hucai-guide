@@ -10,7 +10,7 @@ window.esc = function (s) {
 };
 
 const KB = (() => {
-  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job','transfer','competitions','skills','plan'];
+  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job','transfer','competitions','skills','plan','class-campaign'];
   const D = {};                 // 原始数据
   let docs = [];                // 知识片段
   let idx = new Map();          // 倒排索引 term -> [{d,tf}]
@@ -327,6 +327,16 @@ const KB = (() => {
         addDoc({ title: g.year + '学业重点', page: 'plan', module: '规划', w: 1.2, text: `${g.year}（${g.theme || ''}）：${(g.focus || []).join('；')} 建议去做：${(g.todo || []).join('；')}` });
         (g.todo || []).forEach(t => addDoc({ title: g.year + '·' + t, page: 'plan', module: '规划', text: t }));
       });
+    }
+
+    /* 竞选班干部 */
+    const CC = D['class-campaign'];
+    if (CC) {
+      addDoc({ title: '竞选班干部总览', page: 'classCampaign', module: '班委', w: 1.3,
+        text: CC.intro + ' ' + (CC.roles || []).map(r => `${r.name}：${r.duty} ${r.why}`).join('；') });
+      (CC.roles || []).forEach(r => addDoc({ title: '班委·' + r.name, page: 'classCampaign', module: '班委', w: 1.2, text: `${r.name}：${r.duty} ${r.why}` }));
+      (CC.steps || []).forEach(s => addDoc({ title: '竞选步骤·' + s.step, page: 'classCampaign', module: '班委', text: s.detail }));
+      (CC.faq || []).forEach(f => addDoc({ title: f.q, page: 'classCampaign', module: '班委问答', w: 1.2, text: f.q + ' ' + f.a }));
     }
 
     /* 建索引 */
