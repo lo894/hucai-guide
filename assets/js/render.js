@@ -1596,10 +1596,16 @@
     <div class="sec">${secH("⚠️ 缴费注意事项", "")}<div class="card"><ul class="lst">${nItems}</ul></div></div>`;
   }
 
-  /* ============================ 代办服务 ============================ */
+  /* ============================ 校园代办 ============================ */
   function errands() {
     const e = D().errands;
     if (!e) return "";
+    const why = (e.whyUs || []).map(w => `
+      <div class="card" style="margin-bottom:0;text-align:left">
+        <div style="font-size:22px;margin-bottom:6px">${esc(w.icon)}</div>
+        <div style="font-weight:800;color:var(--navy);font-size:14.5px;margin-bottom:3px">${esc(w.title)}</div>
+        <div style="color:var(--tx2);font-size:12.5px;line-height:1.7">${esc(w.desc)}</div>
+      </div>`).join("");
     const svcs = (e.services || []).map(s => `
       <div class="card sim-card navy">
         <div class="sim-h"><span class="sim-name">${esc(s.icon)} ${esc(s.name)}</span><span class="tag ${esc(s.tag === '热门' ? 'red' : 'green')}">${esc(s.tag)}</span></div>
@@ -1611,22 +1617,26 @@
     const contacts = (e.contacts || []).map(c => `
       <div class="card sim-contact" style="margin-bottom:12px">
         <div class="sim-c-info">
-          <div class="sim-c-top"><span class="sim-c-name">${esc(c.name)}</span><span class="tag green">${esc(c.title || "代办咨询")}</span></div>
+          <div class="sim-c-top"><span class="sim-c-name">${esc(c.name)}</span><span class="tag green">${esc(c.title || "校园代办咨询")}</span></div>
           <div class="sim-c-wx">微信号：<b>${esc(c.wechat)}</b>${c.img ? `<button class="btn sm" style="margin-left:8px" onclick="copyText('${esc(c.wechat)}')">复制</button>` : ""}</div>
           <div class="sim-c-note">${esc(c.note || "")}</div>
         </div>
         ${c.img ? `<div class="sim-c-qr"><img src="${esc(c.img)}" alt="${esc(c.name)}微信二维码"></div>` : ""}
       </div>`).join("");
     return `
-    <div class="note tip" style="margin-bottom:16px"><span class="ni">📢</span><div>${esc(e.intro)}</div></div>
-    <div class="sec">${secH("校园代办服务", "靠谱省心")}
+    <div class="sec">${secH("📋 校园代办", "学长学姐亲自做 · 靠谱省心")}
+      <div class="note tip" style="margin:0 0 16px"><span class="ni">💬</span><div>${esc(e.intro)}</div></div>
+    </div>
+    <div class="sec">${secH("为什么找我们", "每一单都当自己的事做")}
+      <div class="grid g2" style="gap:12px">${why}</div>
+    </div>
+    <div class="sec">${secH("校园代办服务", "想做啥直接说")}
       <div class="grid g2">${svcs}</div>
     </div>
-    ${contacts ? `
-    <div class="sec">${secH("📋 代办咨询", "有需求直接问")}
+    <div class="sec">${secH("怎么找我", "加微信聊需求 · 先问不收费")}
       ${contacts}
-    </div>` : ""}
-    <div class="note warn" style="margin-top:16px"><span class="ni">⚠️</span><div>${esc(e.note || "")}</div></div>`;
+      ${e.cta ? `<div class="note ok" style="margin-top:4px"><span class="ni">👍</span><div>${esc(e.cta)}</div></div>` : ""}
+    </div>`;
   }
 
   // 暴露给 map / ai / app 使用

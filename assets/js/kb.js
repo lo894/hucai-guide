@@ -374,10 +374,10 @@ const KB = (() => {
       (SC2.faq || []).forEach(f => addDoc({ title: f.q, page: 'cards', module: '办卡问答', w: 1.2, text: f.q + ' ' + f.a }));
     }
 
-    /* 代办服务 */
+    /* 校园代办 */
     const ER = D.errands;
     if (ER) {
-      addDoc({ title: '代办服务 · PPT代做', page: 'errands', module: '代办', w: 1.3, text: ER.intro + ' ' + (ER.services || []).map(s => `${s.name}（${s.tag}）：${s.desc} 可做：${(s.items || []).join('、')}`).join('；') + ' 联系：' + (ER.contact ? ER.contact.name + ' ' + ER.contact.wechat : '') });
+      addDoc({ title: '校园代办 · PPT代做 / 校园卡办理', page: 'errands', module: '校园代办', w: 1.3, text: ER.intro + ' ' + (ER.whyUs || []).map(w => `${w.title}：${w.desc}`).join('；') + ' ' + (ER.services || []).map(s => `${s.name}（${s.tag}）：${s.desc} 可做：${(s.items || []).join('、')}`).join('；') + ' ' + (ER.cta || '') + ' 联系：' + (ER.contacts || []).map(c => `${c.name} ${c.wechat}`).join('；') });
     }
 
     /* 宿舍硬核须知 / 快递 / 交通（补充 dorm 检索） */
