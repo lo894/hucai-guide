@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-25 16:48",
- "total": 83,
+ "updated": "2026-09-03 17:45",
+ "total": 89,
  "freshmanCount": 47,
  "sources": [
   {
@@ -61,6 +61,36 @@
   }
  ],
  "items": [
+  {
+   "title": "2026级军训时间确定：9月10日–9月23日（14天，国庆前完成）",
+   "url": "https://www.hufe.edu.cn/xsgznew/info/1621/1641.htm",
+   "date": "2026-09-03",
+   "source": "学生工作部·武装部",
+   "category": "入学须知",
+   "tags": ["军训", "时间安排"],
+   "freshman": true,
+   "noise": false
+  },
+  {
+   "title": "《2026级新生入学须知》发布：网上报到9月1日–9月8日，现场报到9月8日–9月9日",
+   "url": "https://www.hufe.edu.cn/xsgznew/",
+   "date": "2026-09-03",
+   "source": "学生工作部·武装部",
+   "category": "入学须知",
+   "tags": ["报到", "网上报到", "现场报到"],
+   "freshman": true,
+   "noise": false
+  },
+  {
+   "title": "易班新生入学教育须于9月1日前完成（课群邀请码 ACVNSFNB）",
+   "url": "https://www.yooc.me/",
+   "date": "2026-09-03",
+   "source": "易班工作站·学工在线",
+   "category": "入学须知",
+   "tags": ["易班", "入学教育"],
+   "freshman": true,
+   "noise": false
+  },
   {
    "title": "校地合作：湖财与十八洞村签乡村振兴全面战略合作协议",
    "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_2286a8562bf17652",
