@@ -83,7 +83,7 @@
       { id: "feed", ic: "📰", t: "最新动态", d: "网站自动抓取更新" },
       { id: "faq", ic: "💡", t: "常见问题", d: "新生最关心的问答" },
     ].map(e =>
-      `<div class="entry" onclick="go('${e.id}')"><div class="ei">${e.ic}</div><div class="et">${e.t}</div><div class="ed">${esc(e.d)}</div></div>`
+      `<div class="entry" title="${esc(e.t + " · " + e.d)}" onclick="go('${e.id}')"><div class="ei">${e.ic}</div><div class="et">${e.t}</div></div>`
     ).join("");
 
     return `
@@ -119,7 +119,7 @@
 
     <div class="sec">
       <div class="sec-h"><h2>快速入口</h2><span class="d">点一下直达</span></div>
-      <div class="grid g3">${entries}</div>
+      <div class="grid g-entry">${entries}</div>
     </div>
 
     <div class="note tip"><span class="ni">ℹ️</span>
