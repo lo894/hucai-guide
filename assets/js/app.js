@@ -36,6 +36,7 @@
     { id: "job", name: "实习求职", icon: "💼", sub: "校招·简历·面试" },
     { id: "feed", name: "最新动态", icon: "📰", sub: "自主收集" },
     { id: "faq", name: "常见问题", icon: "💡", sub: "FAQ" },
+    { id: "errands", name: "代办", icon: "📋", sub: "PPT代做·校园服务" },
   ];
   window.PAGES = PAGES; // 供 render.js 生成首页快速入口（自动同步，新增板块无需再改两处）
   const rendered = new Set();
@@ -66,7 +67,7 @@
   function renderPage(id) {
     if (id === "map") return MapView.render();
     if (id === "feed") return Collector.render();
-    const fns = { home: Render.home, about: Render.about, majors: Render.majors, engsoft: Render.engsoft, campus: Render.campus, dorm: Render.dorm, checklist: Render.checklist, training: Render.training, laptop: Render.laptop, policies: Render.policies, transfer: Render.transfer, resources: Render.resources, course: Render.courseSelection, faq: Render.faq, timeline: Render.timeline, cert: Render.cert, channels: Render.channels, postgrad: Render.postgrad, job: Render.job, compete: Render.compete, skills: Render.skills, plan: Render.plan, classCampaign: Render.classCampaign, antiScam: Render.antiScam, fees: Render.fees, cards: Render.simCards };
+    const fns = { home: Render.home, about: Render.about, majors: Render.majors, engsoft: Render.engsoft, campus: Render.campus, dorm: Render.dorm, checklist: Render.checklist, training: Render.training, laptop: Render.laptop, policies: Render.policies, transfer: Render.transfer, resources: Render.resources, course: Render.courseSelection, faq: Render.faq, timeline: Render.timeline, cert: Render.cert, channels: Render.channels, postgrad: Render.postgrad, job: Render.job, compete: Render.compete, skills: Render.skills, plan: Render.plan, classCampaign: Render.classCampaign, antiScam: Render.antiScam, fees: Render.fees, cards: Render.simCards, errands: Render.errands };
     const el = pg(id);
     if (el && fns[id]) el.innerHTML = fns[id]();
     if (id === "majors" && Render.mjGrid) Render.mjGrid();
