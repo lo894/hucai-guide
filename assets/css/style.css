@@ -80,6 +80,8 @@ img{max-width:100%;display:block}
 .contact-role{font-size:13px;color:var(--tx2);margin-bottom:10px}
 .contact-wx{font-size:14px;color:var(--tx2);margin-bottom:6px}
 .contact-wx b{color:var(--navy)}
+.contact-qq{font-size:14px;color:var(--tx2);margin-bottom:6px;display:flex;align-items:center;gap:4px}
+.contact-qq b{color:var(--navy)}
 .contact-note{font-size:13px;color:var(--tx3);line-height:1.6}
 .share-pw{display:inline-flex;align-items:center;gap:8px;margin:8px 0 4px;background:#fff0e9;border:1px dashed #e8643e;border-radius:10px;padding:6px 12px}
 .share-pw .k{font-size:12px;color:#c0623c}
