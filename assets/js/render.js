@@ -1600,6 +1600,7 @@
   function errands() {
     const e = D().errands;
     if (!e) return "";
+    const tagColor = t => t === "热门" ? "red" : t === "推荐" ? "green" : "navy";
     const why = (e.whyUs || []).map(w => `
       <div class="card" style="margin-bottom:0;text-align:left">
         <div style="font-size:22px;margin-bottom:6px">${esc(w.icon)}</div>
@@ -1608,7 +1609,7 @@
       </div>`).join("");
     const svcs = (e.services || []).map(s => `
       <div class="card sim-card navy">
-        <div class="sim-h"><span class="sim-name">${esc(s.icon)} ${esc(s.name)}</span><span class="tag ${esc(s.tag === '热门' ? 'red' : 'green')}">${esc(s.tag)}</span></div>
+        <div class="sim-h"><span class="sim-name">${esc(s.icon)} ${esc(s.name)}</span><span class="tag ${tagColor(s.tag)}">${esc(s.tag)}</span></div>
         <div class="sim-rows" style="margin-top:8px">
           <div class="sim-row"><div class="sim-k">服务介绍</div><div class="sim-v">${esc(s.desc)}</div></div>
           <div class="sim-row"><div class="sim-k">可做项目</div><div class="sim-v">${(s.items || []).map(esc).join("、")}</div></div>
@@ -1627,15 +1628,15 @@
     <div class="sec">${secH("📋 校园代办", "学长学姐亲自做 · 靠谱省心")}
       <div class="note tip" style="margin:0 0 16px"><span class="ni">💬</span><div>${esc(e.intro)}</div></div>
     </div>
-    <div class="sec">${secH("为什么找我们", "每一单都当自己的事做")}
-      <div class="grid g2" style="gap:12px">${why}</div>
-    </div>
     <div class="sec">${secH("校园代办服务", "想做啥直接说")}
       <div class="grid g2">${svcs}</div>
     </div>
     <div class="sec">${secH("怎么找我", "加微信聊需求 · 先问不收费")}
       ${contacts}
       ${e.cta ? `<div class="note ok" style="margin-top:4px"><span class="ni">👍</span><div>${esc(e.cta)}</div></div>` : ""}
+    </div>
+    <div class="sec">${secH("为什么找我们", "每一单都当自己的事做")}
+      <div class="grid g2" style="gap:12px">${why}</div>
     </div>`;
   }
 
