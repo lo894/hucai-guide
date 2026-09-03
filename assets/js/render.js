@@ -1436,8 +1436,24 @@
     const tl = (CC.timeline || []).map(t =>
       `<div class="phase"><div class="ph">${esc(t.when)}</div><div class="pt">${esc(t.event)}</div><div class="note warn" style="margin-top:8px"><span class="ni">💡</span><div>${esc(t.detail)}</div></div></div>`
     ).join("");
+    const OF = CC.official;
+    const officialSec = OF ? `
+    <div class="sec">${secH("📋 " + esc(OF.title), "以辅导员发的为准")}
+      <div class="grid g2">
+        <div class="card" style="margin-bottom:0">
+          <img src="${esc(OF.img)}" alt="班干部岗位设置" loading="lazy" style="width:100%;border-radius:10px;border:1px solid var(--line2);display:block">
+          <div style="font-size:11.5px;color:var(--tx3);margin-top:6px">▲ 辅导员发布的《班干部岗位设置》原图（12 类岗位及要求）</div>
+        </div>
+        <div class="card" style="margin-bottom:0">
+          <div class="note warn" style="margin:0 0 10px"><span class="ni">📌</span><div>${esc(OF.note)}</div></div>
+          <a class="lk" href="${esc(OF.file)}" download>⬇️ 下载《班干部竞聘申请表》（Word 原表）</a>
+          <div style="font-size:12px;color:var(--tx3);margin-top:8px">整理自辅导员材料 · ${esc(OF.updated)}</div>
+        </div>
+      </div>
+    </div>` : "";
+
     const roles = (CC.roles || []).map(r =>
-      `<div class="gr"><div class="gr-h"><span class="gt">${esc(r.name)}</span></div><div class="gr-b"><div class="gi-i"><div class="w">${esc(r.duty)}</div><div class="w" style="color:var(--gold);margin-top:4px">为什么值得试：${esc(r.why)}</div></div></div></div>`
+      `<div class="gr"><div class="gr-h"><span class="gt">${esc(r.name)}</span><span class="tag navy" style="margin-left:6px;white-space:nowrap">${esc(r.quota || "1名")}</span>${r.req ? `<span class="tag red" style="margin-left:4px;white-space:nowrap">要求${esc(r.req)}</span>` : ""}</div><div class="gr-b"><div class="gi-i"><div class="w">${esc(r.duty)}</div><div class="w" style="color:var(--gold);margin-top:4px">为什么值得试：${esc(r.why)}</div></div></div></div>`
     ).join("");
     const steps = (CC.steps || []).map(s =>
       `<div class="acc"><div class="acc-h" onclick="this.parentElement.classList.toggle('on')"><span class="ai">📌</span><span class="at">${esc(s.step)}</span><span class="ax">▾</span></div><div class="acc-b"><div class="pol"><div class="ps">${esc(s.detail)}</div></div></div></div>`
@@ -1448,11 +1464,24 @@
       `<div class="acc"><div class="acc-h" onclick="this.parentElement.classList.toggle('on')"><span class="ai">❓</span><span class="at">${esc(f.q)}</span><span class="ax">▾</span></div><div class="acc-b"><div class="pol"><div class="ps">${esc(f.a)}</div></div></div></div>`
     ).join("");
     const tips = (CC.tips || []).map(t => `<div class="surv">${esc(t)}</div>`).join("");
+    const FM = CC.form;
+    const formSec = FM ? `
+    <div class="sec">${secH("📝 " + FM.title, "逐栏教你填")}
+      <div class="note tip" style="margin-bottom:12px"><span class="ni">ℹ️</span><div>${esc(FM.source)}</div></div>
+      <div class="grid g2">${(FM.fields || []).map(f => `
+        <div class="card" style="margin-bottom:0">
+          <div class="sec-h" style="border:none;padding:0;margin-bottom:6px"><h2 style="font-size:14.5px">${esc(f.name)}</h2></div>
+          <div style="font-size:13px;color:var(--tx2);line-height:1.7">${esc(f.detail)}</div>
+        </div>`).join("")}</div>
+      <div class="note ok" style="margin-top:12px"><span class="ni">✅</span><div>${esc(FM.tips)}</div></div>
+    </div>` : "";
     return `
     <div class="note tip" style="margin-bottom:16px"><span class="ni">ℹ️</span><div>${esc(intro)}</div></div>
+    ${officialSec}
     <div class="sec">${secH("时间节奏", "什么时候竞")}<div class="grid g2">${tl}</div></div>
     <div class="sec">${secH("班委岗位清单", "能竞哪些")}<div class="grid g2">${roles}</div></div>
     <div class="sec">${secH("竞选五步", "从准备到投票")}<div class="grid g2">${steps}</div></div>
+    ${formSec}
     <div class="sec">${secH(esc(sp.title || "演讲稿参考"), "")}<div class="grid g2"><ul class="lst">${spPoints}</ul>${sp.tips ? `<div class="note warn" style="margin-top:8px"><span class="ni">💡</span><div>${esc(sp.tips)}</div></div>` : ''}</div></div>
     <div class="sec">${secH("常见问题", "")}<div class="grid g2">${faq}</div></div>
     <div class="sec">${secH("实用 Tips", "")}<div class="grid g2">${tips}</div></div>`;

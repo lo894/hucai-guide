@@ -332,11 +332,16 @@ const KB = (() => {
     /* 竞选班干部 */
     const CC = D['class-campaign'];
     if (CC) {
+      const roleTxt = r => `${r.name}（${r.quota || '1名'}${r.req ? '，要求' + r.req : ''}）：${r.duty} ${r.why}`;
       addDoc({ title: '竞选班干部总览', page: 'classCampaign', module: '班委', w: 1.3,
-        text: CC.intro + ' ' + (CC.roles || []).map(r => `${r.name}：${r.duty} ${r.why}`).join('；') });
-      (CC.roles || []).forEach(r => addDoc({ title: '班委·' + r.name, page: 'classCampaign', module: '班委', w: 1.2, text: `${r.name}：${r.duty} ${r.why}` }));
+        text: CC.intro + ' ' + (CC.roles || []).map(roleTxt).join('；') });
+      (CC.roles || []).forEach(r => addDoc({ title: '班委·' + r.name, page: 'classCampaign', module: '班委', w: 1.2, text: roleTxt(r) }));
       (CC.steps || []).forEach(s => addDoc({ title: '竞选步骤·' + s.step, page: 'classCampaign', module: '班委', text: s.detail }));
       (CC.faq || []).forEach(f => addDoc({ title: f.q, page: 'classCampaign', module: '班委问答', w: 1.2, text: f.q + ' ' + f.a }));
+      const OF2 = CC.official;
+      if (OF2) addDoc({ title: '班干部岗位设置（官方）', page: 'classCampaign', module: '班委', w: 1.3, text: OF2.note + ' ' + (CC.roles || []).map(r => r.name + (r.quota || '')).join('、') });
+      const FM2 = CC.form;
+      if (FM2) addDoc({ title: FM2.title, page: 'classCampaign', module: '班委·申请表', w: 1.3, text: FM2.source + ' ' + (FM2.fields || []).map(f => `${f.name}：${f.detail}`).join('；') + ' ' + FM2.tips });
     }
 
     /* 防骗指南 */
