@@ -275,7 +275,7 @@
   },
   "platforms": [
     { "name": "学校官网", "url": "https://www.hufe.edu.cn", "use": "学校新闻、通知公告、机构查询" },
-    { "name": "教务系统", "url": "http://jiaowu2.hufe.edu.cn/jsxsd", "use": "选课、成绩查询、课表、学分认定" },
+    { "name": "教务系统", "url": "http://jiaowu.hufe.edu.cn/jsxsd/", "use": "选课、成绩查询、课表、学分认定" },
     { "name": "招生网", "url": "https://zs.hufe.edu.cn", "use": "招生章程、录取查询、专业介绍" },
     { "name": "图书馆", "url": "https://www.hufe.edu.cn/tsg/", "use": "图书检索、电子资源、座位预约" },
     { "name": "智校乐 APP", "url": "", "use": "宿舍洗衣机、热水、电费充值" }
