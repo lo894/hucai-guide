@@ -293,6 +293,18 @@ table.tb td b{color:var(--tx);font-weight:600}
 .ck-ct .cd{font-size:12px;color:var(--tx3);line-height:1.6;margin-top:1px}
 .lvt{font-size:10px;padding:1px 7px;border-radius:20px;color:#fff;font-weight:700;flex-shrink:0}
 
+/* 入学清单 男/女/全部 切换 */
+.ck-sex{display:flex;gap:8px;margin:2px 0 12px;background:#f3f6fb;border:1px solid var(--line2);border-radius:12px;padding:5px}
+.ck-sex-i{flex:1;border:none;background:transparent;color:var(--tx3);font-size:14px;font-weight:700;padding:11px 6px;border-radius:9px;cursor:pointer;transition:.15s;font-family:inherit}
+.ck-sex-i.on{background:#fff;color:var(--navy);box-shadow:0 1px 4px rgba(30,52,92,.12)}
+.ck-sex-i[data-sex="boy"].on{color:#1f6fd6}
+.ck-sex-i[data-sex="girl"].on{color:#d6459a}
+.ck-sex-t{font-size:11px;padding:1px 6px;border-radius:20px;font-weight:800;flex-shrink:0}
+.ck-sex-t.boy{background:#e6f0ff;color:#1f6fd6}
+.ck-sex-t.girl{background:#ffe9f4;color:#d6459a}
+#ckGroups[data-sex="boy"] .ck-i[data-sex="girl"]{display:none}
+#ckGroups[data-sex="girl"] .ck-i[data-sex="boy"]{display:none}
+
 /* 时间线 */
 .tl{position:relative;padding-left:26px}
 .tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--gold),var(--line))}

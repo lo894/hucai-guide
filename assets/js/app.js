@@ -70,7 +70,11 @@
     const el = pg(id);
     if (el && fns[id]) el.innerHTML = fns[id]();
     if (id === "majors" && Render.mjGrid) Render.mjGrid();
-    if (id === "checklist" && App.updateCk) App.updateCk();
+    if (id === "checklist" && App.updateCk) {
+      let s = "all";
+      try { s = localStorage.getItem("hucai_checklist_sex") || "all"; } catch (e) {}
+      App.setCkSex(s);
+    }
   }
 
   function navigate(id) {
@@ -160,16 +164,31 @@
     },
     updateCk() {
       const store = ckLoad();
+      const sex = App.ckSex || "all";
+      const vis = el => !el.dataset.sex || el.dataset.sex === "all" || el.dataset.sex === sex;
       let total = 0, done = 0;
-      document.querySelectorAll("#ckGroups .ck-i").forEach(el => {
-        const k = el.getAttribute("data-k"); total++;
-        const on = !!store[k];
-        if (on) done++;
-        el.classList.toggle("done", on);
+      document.querySelectorAll("#ckGroups .ck-g").forEach(g => {
+        let gt = 0, gd = 0;
+        g.querySelectorAll(".ck-i").forEach(el => {
+          const on = !!store[el.getAttribute("data-k")];
+          el.classList.toggle("done", on);
+          if (vis(el)) { gt++; if (on) gd++; }
+        });
+        const gc = g.querySelector(".gc");
+        if (gc) gc.textContent = gt + " 项";
+        total += gt; done += gd;
       });
       const num = $("ckNum"), bar = $("ckBar");
       if (num) num.textContent = done + " / " + total;
       if (bar) bar.style.width = (total ? (done / total * 100) : 0) + "%";
+    },
+    setCkSex(sex) {
+      App.ckSex = sex || "all";
+      const root = document.getElementById("ckGroups");
+      if (root) root.setAttribute("data-sex", App.ckSex);
+      document.querySelectorAll("#ckSex .ck-sex-i").forEach(b => b.classList.toggle("on", b.getAttribute("data-sex") === App.ckSex));
+      try { localStorage.setItem("hucai_checklist_sex", App.ckSex); } catch (e) {}
+      App.updateCk();
     },
     resetCk() {
       if (!confirm("确定要清空所有勾选记录吗？")) return;

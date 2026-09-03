@@ -438,9 +438,10 @@
     const groups = ck.groups.map((g, gi) => {
       const items = g.items.map((it, ii) => {
         const lv = LV[it.level] || "#7b7b8b";
-        return `<div class="ck-i" data-k="${esc(g.name + "/" + it.name)}" onclick="App.toggleCk(this)">
+        const sexT = it.gender ? `<span class="ck-sex-t ${esc(it.gender)}">${it.gender === "boy" ? "♂" : "♀"}</span>` : "";
+        return `<div class="ck-i" data-k="${esc(g.name + "/" + it.name)}"${it.gender ? ` data-sex="${esc(it.gender)}"` : ""} onclick="App.toggleCk(this)">
           <div class="ck-box">✓</div>
-          <div class="ck-ct"><div class="cn">${esc(it.name)} <span class="lvt" style="background:${lv}">${LVN[it.level] || ""}</span></div><div class="cd">${esc(it.desc)}</div></div>
+          <div class="ck-ct"><div class="cn">${esc(it.name)} ${sexT}<span class="lvt" style="background:${lv}">${LVN[it.level] || ""}</span></div><div class="cd">${esc(it.desc)}</div></div>
         </div>`;
       }).join("");
       return `<div class="ck-g"><div class="ck-gh"><span class="gi">${esc(g.icon || "•")}</span><span class="gn">${esc(g.name)}</span><span class="gc">${g.items.length} 项</span></div>
@@ -452,6 +453,11 @@
 
     return `
     <div class="sec" style="margin-bottom:14px">${secH("入学准备清单", ck.intro)}
+      <div class="ck-sex" id="ckSex">
+        <button class="ck-sex-i on" data-sex="all" onclick="App.setCkSex('all')">全部</button>
+        <button class="ck-sex-i" data-sex="boy" onclick="App.setCkSex('boy')">♂ 男生版</button>
+        <button class="ck-sex-i" data-sex="girl" onclick="App.setCkSex('girl')">♀ 女生版</button>
+      </div>
       <div class="ck-bar">
         <div class="ck-pg"><div class="lb"><span>已准备</span><b id="ckNum">0 / 0</b></div><div class="ck-bg"><div class="ck-fl" id="ckBar"></div></div></div>
         <button class="btn sm gh" onclick="App.resetCk()">重置勾选</button>
