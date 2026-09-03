@@ -471,6 +471,38 @@
     </div>`;
   }
 
+  /* ============================ 校园卡 / 流量卡 ============================ */
+  function simCards() {
+    const c = D().cards;
+    const cards = c.cards.map(x => {
+      const rows = x.rows.map(r => `<div class="sim-row"><div class="sim-k">${esc(r[0])}</div><div class="sim-v">${esc(r[1])}</div></div>`).join("");
+      return `<div class="card sim-card ${esc(x.color)}">
+        <div class="sim-h"><span class="sim-name">${esc(x.name)}</span><span class="tag ${esc(x.color)}">${esc(x.tag)}</span></div>
+        <div class="sim-month">${esc(x.monthly)}</div>
+        <div class="sim-rows">${rows}</div>
+      </div>`;
+    }).join("");
+    const choose = (c.choose || []).map(t => `<li>${esc(t)}</li>`).join("");
+    const tips = (c.tips || []).map(t => `<div class="note tip"><span class="ni">💡</span><div>${esc(t)}</div></div>`).join("");
+    const faq = (c.faq || []).map(f =>
+      `<div class="acc"><div class="acc-h" onclick="this.parentElement.classList.toggle('on')"><span class="ai">❓</span><span class="at">${esc(f.q)}</span><span class="ax">▾</span></div><div class="acc-b"><div class="pol"><div class="ps">${esc(f.a)}</div></div></div></div>`
+    ).join("");
+
+    return `
+    <div class="note warn" style="margin-bottom:16px"><span class="ni">⚠️</span><div>${esc(c.clarify)}</div></div>
+    <div class="sec">${secH("两种卡对比", c.intro)}
+      <div class="grid g2">${cards}</div>
+    </div>
+    <div class="sec">${secH("怎么选 · 看需求", "办什么卡看自己具体情况")}
+      <div class="card"><ul class="lst">${choose}</ul></div>
+    </div>
+    <div class="sec">${secH("办卡提醒 · 避坑", "以辅导员 / 学校通知为准")}
+      ${tips}
+      <div class="note ok" style="margin-top:10px"><span class="ni">📞</span><div>${esc(c.consult)}</div></div>
+    </div>
+    <div class="sec" style="margin-top:20px">${secH("常见问题", "")}<div class="grid g2">${faq}</div></div>`;
+  }
+
   /* ============================ 军训指南 ============================ */
   function training() {
     const tr = D().training;
@@ -1539,7 +1571,7 @@
   // 暴露给 map / ai / app 使用
   window.Render = {
     home, about, majors, engsoft, campus, dorm, checklist, training, laptop, policies, resources, courseSelection, faq,
-    timeline, cert, channels, postgrad, job, transfer, compete, skills, plan, classCampaign, antiScam, fees,
+    timeline, cert, channels, postgrad, job, transfer, compete, skills, plan, classCampaign, antiScam, fees, simCards,
     majorHTML, findMajor,
     _mjF, _mjK,
     mjGrid, // 供首次渲染后调用

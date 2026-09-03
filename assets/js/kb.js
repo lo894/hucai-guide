@@ -10,7 +10,7 @@ window.esc = function (s) {
 };
 
 const KB = (() => {
-  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job','transfer','competitions','skills','plan','class-campaign','antiscam','fees','dorm-extra','channels-extra','policies-aid'];
+  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job','transfer','competitions','skills','plan','class-campaign','antiscam','fees','cards','dorm-extra','channels-extra','policies-aid'];
   const D = {};                 // 原始数据
   let docs = [];                // 知识片段
   let idx = new Map();          // 倒排索引 term -> [{d,tf}]
@@ -359,6 +359,13 @@ const KB = (() => {
       (FE.tuition || []).forEach(r => addDoc({ title: '学费·' + r.cat, page: 'fees', module: '缴费·学费', w: 1.2, text: `${r.cat}：一般专业 ${r.normal} 元/年，中外合作 ${r.intl} 元/年` }));
       (FE.accom || []).forEach(r => addDoc({ title: '住宿费·' + r.type, page: 'fees', module: '缴费·住宿', text: `${r.type}：${r.fee} 元/年` }));
       addDoc({ title: '缴费方式与智慧财务', page: 'fees', module: '缴费', text: (FE.pay.ways || []).join('；') + ' ' + FE.pay.smartFinance + ' ' + FE.bank.name + ' ' + FE.bank.card + ' ' + FE.bank.online });
+    }
+
+    /* 校园卡 / 流量卡（新专栏，可检索） */
+    const SC2 = D.cards;
+    if (SC2) {
+      addDoc({ title: '校园卡与流量卡对比', page: 'cards', module: '办卡', w: 1.4, text: SC2.intro + ' ' + (SC2.cards || []).map(c => `${c.name}（${c.tag}）${c.monthly}：` + (c.rows || []).map(r => `${r[0]}${r[1]}`).join('；')).join(' ') + ' ' + (SC2.choose || []).join('；') + ' ' + SC2.consult + ' ' + (SC2.tips || []).join('；') });
+      (SC2.faq || []).forEach(f => addDoc({ title: f.q, page: 'cards', module: '办卡问答', w: 1.2, text: f.q + ' ' + f.a }));
     }
 
     /* 宿舍硬核须知 / 快递 / 交通（补充 dorm 检索） */

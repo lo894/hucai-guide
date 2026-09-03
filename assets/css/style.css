@@ -305,6 +305,20 @@ table.tb td b{color:var(--tx);font-weight:600}
 #ckGroups[data-sex="boy"] .ck-i[data-sex="girl"]{display:none}
 #ckGroups[data-sex="girl"] .ck-i[data-sex="boy"]{display:none}
 
+/* 校园卡 / 流量卡 对比 */
+.sim-card{padding:16px 17px}
+.sim-card.navy{border-top:3px solid var(--navy)}
+.sim-card.green{border-top:3px solid var(--green)}
+.sim-h{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.sim-name{font-size:16px;font-weight:800;color:var(--navy)}
+.sim-month{font-size:20px;font-weight:800;color:var(--gold);margin:2px 0 12px}
+.sim-card.green .sim-month{color:var(--green)}
+.sim-rows{display:flex;flex-direction:column;gap:0}
+.sim-row{display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--line2)}
+.sim-row:first-child{border-top:none}
+.sim-k{flex:0 0 76px;font-size:13px;font-weight:700;color:var(--tx2);padding-top:1px}
+.sim-v{flex:1;font-size:13px;color:var(--tx);line-height:1.62}
+
 /* 时间线 */
 .tl{position:relative;padding-left:26px}
 .tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--gold),var(--line))}
