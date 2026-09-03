@@ -10,7 +10,7 @@ window.esc = function (s) {
 };
 
 const KB = (() => {
-  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job','transfer','competitions','skills','plan','class-campaign'];
+  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job','transfer','competitions','skills','plan','class-campaign','antiscam','fees','dorm-extra','channels-extra','policies-aid'];
   const D = {};                 // 原始数据
   let docs = [];                // 知识片段
   let idx = new Map();          // 倒排索引 term -> [{d,tf}]
@@ -337,6 +337,41 @@ const KB = (() => {
       (CC.roles || []).forEach(r => addDoc({ title: '班委·' + r.name, page: 'classCampaign', module: '班委', w: 1.2, text: `${r.name}：${r.duty} ${r.why}` }));
       (CC.steps || []).forEach(s => addDoc({ title: '竞选步骤·' + s.step, page: 'classCampaign', module: '班委', text: s.detail }));
       (CC.faq || []).forEach(f => addDoc({ title: f.q, page: 'classCampaign', module: '班委问答', w: 1.2, text: f.q + ' ' + f.a }));
+    }
+
+    /* 防骗指南 */
+    const AS = D['antiscam'];
+    if (AS) {
+      addDoc({ title: '防骗指南总览', page: 'antiScam', module: '防诈骗', w: 1.3, text: AS.intro + ' ' + (AS.types || []).map(t => `${t.name}：${t.desc} ${t.rules}`).join('；') + ' ' + AS.motto });
+      (AS.types || []).forEach(t => addDoc({ title: '防骗·' + t.name, page: 'antiScam', module: '防诈骗', w: 1.25, text: `${t.name}：${t.desc} 案例：${t.cases} 铁律：${t.rules}` }));
+      addDoc({ title: '反诈口诀与热线', page: 'antiScam', module: '防诈骗', text: AS.motto + ' ' + AS.hotline });
+    }
+
+    /* 缴费指南 */
+    const FE = D.fees;
+    if (FE) {
+      addDoc({ title: '缴费指南总览', page: 'fees', module: '缴费', w: 1.3, text: FE.intro + ' ' + (FE.tuition || []).map(r => `${r.cat}学费${r.normal}`).join('；') + ' ' + (FE.accom || []).map(r => `${r.type}${r.fee}`).join('；') + ' ' + (FE.notes || []).join('；') });
+      (FE.tuition || []).forEach(r => addDoc({ title: '学费·' + r.cat, page: 'fees', module: '缴费·学费', w: 1.2, text: `${r.cat}：一般专业 ${r.normal} 元/年，中外合作 ${r.intl} 元/年` }));
+      (FE.accom || []).forEach(r => addDoc({ title: '住宿费·' + r.type, page: 'fees', module: '缴费·住宿', text: `${r.type}：${r.fee} 元/年` }));
+      addDoc({ title: '缴费方式与智慧财务', page: 'fees', module: '缴费', text: (FE.pay.ways || []).join('；') + ' ' + FE.pay.smartFinance + ' ' + FE.bank.name + ' ' + FE.bank.card + ' ' + FE.bank.online });
+    }
+
+    /* 宿舍硬核须知 / 快递 / 交通（补充 dorm 检索） */
+    const DE2 = D['dorm-extra'];
+    if (DE2) {
+      addDoc({ title: '宿舍硬核须知', page: 'dorm', module: '宿舍', w: 1.2, text: DE2.hard.bed + ' ' + DE2.hard.door + ' ' + DE2.hard.power + ' ' + DE2.hard.alloc + ' ' + (DE2.hard.forbidden || []).join('；') });
+      addDoc({ title: '快递地址与网点', page: 'dorm', module: '宿舍·快递', w: 1.2, text: DE2.express.leifengAddr + ' ' + DE2.express.leifeng + ' ' + DE2.express.zhucampus });
+      addDoc({ title: '到校交通', page: 'dorm', module: '宿舍·交通', w: 1.2, text: (DE2.transport.leifeng || []).join('；') + ' ' + (DE2.transport.zhucampus || []).join('；') });
+    }
+
+    /* 官方渠道 / 资助（补充 channels·policies 检索） */
+    const CE2 = D['channels-extra'];
+    if (CE2) {
+      addDoc({ title: '官方渠道与入学必办', page: 'channels', module: '信息渠道', w: 1.3, text: (CE2.official || []).map(o => `${o.name}：${o.desc} ${o.key}`).join('；') + ' ' + CE2.warn });
+    }
+    const PE2 = D['policies-aid'];
+    if (PE2) {
+      addDoc({ title: '资助与绿色通道', page: 'policies', module: '政策·资助', w: 1.3, text: PE2.aid.intro + ' ' + PE2.aid.poor.title + ' ' + (PE2.aid.poor.items || []).join('；') + ' ' + PE2.aid.loan.title + ' ' + PE2.aid.loan.desc + ' ' + PE2.aid.green.title + ' ' + PE2.aid.green.desc });
     }
 
     /* 建索引 */

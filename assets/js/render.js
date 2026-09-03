@@ -571,10 +571,26 @@
       `<span class="chip" onclick="document.getElementById('pol-${esc(c.id)}').scrollIntoView({behavior:'smooth'})">${esc(c.icon || "")} ${esc(c.name)}</span>`
     ).join("");
 
+    const PE = D()['policies-aid'];
+    const aidSec = PE ? `
+    <div class="sec">${secH("🤝 资助与绿色通道（2026）", "家境困难也不用慌，按流程办")}
+      <div class="note tip" style="margin-bottom:12px"><span class="ni">ℹ️</span><div>${esc(PE.aid.intro)}</div></div>
+      <div class="card" style="margin-bottom:12px"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">📋 ${esc(PE.aid.poor.title)}</div>
+        <ul class="lst">${(PE.aid.poor.items || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+        <div class="note ok" style="margin-top:8px"><span class="ni">✅</span><div>${esc(PE.aid.poor.use)}</div></div>
+      </div>
+      <div class="grid g2">
+        <div class="card" style="margin-bottom:0"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">🏦 ${esc(PE.aid.loan.title)}</div><div style="font-size:13px;color:var(--tx2);line-height:1.7">${esc(PE.aid.loan.desc)}</div></div>
+        <div class="card" style="margin-bottom:0"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">🟢 ${esc(PE.aid.green.title)}</div><div style="font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:8px">${esc(PE.aid.green.desc)}</div><div class="note warn" style="margin:0"><span class="ni">💡</span><div>${esc(PE.aid.green.tip)}</div></div></div>
+      </div>
+      <div class="note tip" style="margin-top:12px"><span class="ni">📞</span><div>资助咨询：${esc(PE.aid.phones["资助咨询"])} ｜ 财务处：${esc(PE.aid.phones["财务处"])}</div></div>
+    </div>` : "";
+
     return `
     <div class="note warn" style="margin-bottom:14px"><span class="ni">⚠️</span><div>${esc(P.note || "要点为新生可读版摘要，金额比例以学校最新通知与官方文件为准。")}</div></div>
     <div class="flt" style="margin-bottom:16px"><div class="flt-r"><span class="flt-l">分类</span>${nav}</div></div>
-    ${cats}`;
+    ${cats}
+    ${aidSec}`;
   }
 
   /* ============================ 学习资源 ============================ */
@@ -1020,6 +1036,43 @@
       <div class="card"><ul class="lst">${d.tips.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
     </div>`;
 
+    const DE = D()['dorm-extra'];
+    const hardSec = DE ? `
+    <div class="sec">${secH("🛏️ 宿舍硬核须知", "报到前先记牢（2026 实测）")}
+      <div class="grid g2">
+        <div class="card"><div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:15px">📐 床 & 入住</h2></div>
+          <ul class="lst">
+            <li><b>床尺寸</b>：约 1.9 × 0.9 m，上床下桌（标准尺寸）</li>
+            <li>学校只提供床板、桌椅、衣柜；床垫、被褥、枕头、床帘、收纳用品需自行采购。</li>
+            <li><b>门禁</b>：${esc(DE.hard.door)}</li>
+            <li><b>电费 / 热水</b>：${esc(DE.hard.power)}</li>
+            <li><b>冷水</b>：${esc(DE.hard.water)}</li>
+          </ul>
+        </div>
+        <div class="card"><div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:15px">🚫 违禁 & 分配</h2></div>
+          <ul class="lst">${(DE.hard.forbidden || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+          <div class="note tip" style="margin-top:8px"><span class="ni">💡</span><div>${esc(DE.hard.alloc)}</div></div>
+        </div>
+      </div>
+    </div>` : "";
+
+    const expressSec = DE ? `
+    <div class="sec">${secH("📦 快递 & 到校交通", "寄件地址先存好")}
+      <div class="note ok" style="margin-bottom:12px"><span class="ni">🏷️</span><div><b>雷锋校区收货地址：</b>${esc(DE.express.leifengAddr)}</div></div>
+      <div class="grid g2">
+        <div class="card"><div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:15px">📮 快递点</h2></div>
+          <p style="margin:0 0 8px;color:var(--tx2);font-size:13px">${esc(DE.express.leifeng)}</p>
+          <p style="margin:0;color:var(--tx2);font-size:13px">${esc(DE.express.zhucampus)}</p>
+        </div>
+        <div class="card"><div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:15px">🚉 怎么到学校</h2></div>
+          <div style="font-weight:700;color:var(--navy);font-size:13px;margin-bottom:4px">雷锋校区</div>
+          <ul class="lst">${(DE.transport.leifeng || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+          <div style="font-weight:700;color:var(--navy);font-size:13px;margin:10px 0 4px">主校区</div>
+          <ul class="lst">${(DE.transport.zhucampus || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+        </div>
+      </div>
+    </div>` : "";
+
     return `
     <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(d.intro)}</div></div>
     ${campusSec}
@@ -1029,6 +1082,8 @@
     ${avoidSec}
     ${settleSec}
     ${sizeSec}
+    ${hardSec}
+    ${expressSec}
     ${tipsSec}`;
   }
 
@@ -1095,9 +1150,21 @@
       return `<div class="sec">${secH(g.icon + " " + g.name, "")}<div class="grid g2">${items}</div></div>`;
     }).join("");
     const tips = (R.tips || []).map(t => `<li>${esc(t)}</li>`).join("");
+    const CE = D()['channels-extra'];
+    const officialSec = CE ? `
+    <div class="sec">${secH("📡 官方渠道 & 入学必办", "认准这些，别被山寨群骗")}
+      <div class="grid g2">${(CE.official || []).map(o => `
+        <div class="card" style="margin-bottom:0">
+          <div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:15px">${esc(o.icon)} ${esc(o.name)}</h2></div>
+          <div style="font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:8px">${esc(o.desc)}</div>
+          <div class="tag navy" style="font-size:11px">${esc(o.key || "")}</div>
+        </div>`).join("")}</div>
+      <div class="note warn" style="margin-top:12px"><span class="ni">⚠️</span><div>${esc(CE.warn)}</div></div>
+    </div>` : "";
     return `
     <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(R.intro)}</div></div>
     ${groups}
+    ${officialSec}
     <div class="sec">${secH("信息获取小贴士", "")}<div class="card"><ul class="lst">${tips}</ul></div></div>`;
   }
 
@@ -1391,10 +1458,67 @@
     <div class="sec">${secH("实用 Tips", "")}<div class="grid g2">${tips}</div></div>`;
   }
 
+  /* ============================ 防骗指南 ============================ */
+  function antiScam() {
+    const A = D()['antiscam'];
+    if (!A) return "";
+    const types = (A.types || []).map(t =>
+      `<div class="card" style="margin-bottom:12px">
+        <div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:16px">${esc(t.icon)} ${esc(t.name)}</h2></div>
+        <div style="font-size:13px;color:var(--tx2);line-height:1.75;margin-bottom:8px">${esc(t.desc)}</div>
+        <div class="note warn" style="margin-bottom:8px"><span class="ni">🚨</span><div style="font-size:12.5px">真实案例：${esc(t.cases)}</div></div>
+        <div class="note ok" style="margin:0"><span class="ni">✅</span><div style="font-size:12.5px"><b>防骗铁律：</b>${esc(t.rules)}</div></div>
+      </div>`).join("");
+    return `
+    <div class="note warn" style="margin-bottom:14px"><span class="ni">⚠️</span><div>${esc(A.intro)}</div></div>
+    <div class="sec">${secH("开学季高发骗局", "看清套路，守住钱包")}<div class="grid g2">${types}</div></div>
+    <div class="sec">${secH("新生反诈四字口诀", "")}<div class="card" style="border-left:4px solid var(--red)"><div style="font-size:17px;font-weight:800;color:var(--red);line-height:1.8">${esc(A.motto)}</div></div></div>
+    <div class="note tip" style="margin-top:4px"><span class="ni">📞</span><div>${esc(A.hotline)}</div></div>`;
+  }
+
+  /* ============================ 缴费指南 ============================ */
+  function fees() {
+    const F = D().fees;
+    if (!F) return "";
+    const tRows = (F.tuition || []).map(r =>
+      `<tr><td style="white-space:nowrap"><b>${esc(r.cat)}</b></td><td>${esc(r.normal)}</td><td>${esc(r.intl)}</td></tr>`).join("");
+    const aRows = (F.accom || []).map(r =>
+      `<tr><td style="white-space:nowrap"><b>${esc(r.type)}</b></td><td>${esc(r.fee)}</td></tr>`).join("");
+    const wItems = (F.pay.ways || []).map(x => `<li>${esc(x)}</li>`).join("");
+    const nItems = (F.notes || []).map(x => `<li>${esc(x)}</li>`).join("");
+    return `
+    <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(F.intro)}</div></div>
+
+    <div class="sec">${secH("💰 学费标准（2026 公示牌）", "单位：元 / 生·年")}
+      <div class="tw"><table class="tb"><thead><tr><th>专业类别</th><th>一般专业</th><th>中外合作办学</th></tr></thead><tbody>${tRows}</tbody></table></div>
+      <div class="note tip" style="margin-top:8px"><span class="ni">📌</span><div>${esc(F.tuitionNote)}</div></div>
+    </div>
+
+    <div class="sec">${secH("🏠 住宿费 & 空调费", "")}
+      <div class="tw"><table class="tb"><thead><tr><th>宿舍类型</th><th>标准（元 / 年）</th></tr></thead><tbody>${aRows}</tbody></table></div>
+    </div>
+
+    <div class="sec">${secH("📲 怎么缴费", "只走官方渠道")}
+      <div class="grid g2">
+        <div class="card"><div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:15px">缴费方式</h2></div><ul class="lst">${wItems}</ul></div>
+        <div class="card"><div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:15px">智慧财务小程序</h2></div><div style="font-size:13px;color:var(--tx2);line-height:1.7">${esc(F.pay.smartFinance)}</div></div>
+      </div>
+    </div>
+
+    <div class="sec">${secH("🏦 湖南银行卡（唯一合作银行）", "退费只认这张卡")}
+      <div class="card"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:6px">${esc(F.bank.name)}</div>
+        <div style="font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:8px">${esc(F.bank.card)}</div>
+        <div class="note tip" style="margin:0"><span class="ni">📝</span><div>${esc(F.bank.online)}</div></div>
+      </div>
+    </div>
+
+    <div class="sec">${secH("⚠️ 缴费注意事项", "")}<div class="card"><ul class="lst">${nItems}</ul></div></div>`;
+  }
+
   // 暴露给 map / ai / app 使用
   window.Render = {
     home, about, majors, engsoft, campus, dorm, checklist, training, laptop, policies, resources, courseSelection, faq,
-    timeline, cert, channels, postgrad, job, transfer, compete, skills, plan, classCampaign,
+    timeline, cert, channels, postgrad, job, transfer, compete, skills, plan, classCampaign, antiScam, fees,
     majorHTML, findMajor,
     _mjF, _mjK,
     mjGrid, // 供首次渲染后调用
