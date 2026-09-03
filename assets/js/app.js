@@ -37,6 +37,7 @@
     { id: "feed", name: "最新动态", icon: "📰", sub: "自主收集" },
     { id: "faq", name: "常见问题", icon: "💡", sub: "FAQ" },
   ];
+  window.PAGES = PAGES; // 供 render.js 生成首页快速入口（自动同步，新增板块无需再改两处）
   const rendered = new Set();
 
   /* ---------------- 导航 ---------------- */

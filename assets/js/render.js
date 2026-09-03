@@ -66,24 +66,10 @@
       `<div class="stat"><div class="n">${esc(st.num)}<span>${esc(st.unit)}</span></div><div class="l">${esc(st.label)}</div></div>`
     ).join("");
 
-    const entries = [
-      { id: "about", ic: "🏫", t: "学校概况", d: "校史 · 校区 · 学费 · 校历" },
-      { id: "majors", ic: "🎓", t: "专业培养", d: "51 个本科专业培养方案" },
-      { id: "campus", ic: "🌳", t: "校园生活", d: "宿舍 · 食堂 · 设施 · 周边" },
-      { id: "map", ic: "🗺️", t: "校园地图", d: "两校区建筑点位导览" },
-      { id: "checklist", ic: "📋", t: "入学清单", d: "勾选式行李准备表" },
-      { id: "training", ic: "🎖️", t: "军训指南", d: "安排 · 装备 · 生存法则" },
-      { id: "laptop", ic: "💻", t: "电脑选购", d: "按专业给你配配置" },
-      { id: "policies", ic: "📑", t: "政策文件", d: "学籍 · 奖助 · 考试" },
-      { id: "transfer", ic: "🔁", t: "转专业", d: "工程软件 → 大数据" },
-      { id: "resources", ic: "📚", t: "学习资源", d: "平台 · 证书 · 竞赛" },
-      { id: "compete", ic: "🏅", t: "竞赛地图", d: "数据·计算机·双创" },
-      { id: "skills", ic: "🚀", t: "技能成长", d: "Python·SQL·机器学习" },
-      { id: "plan", ic: "🧭", t: "学业规划", d: "大一到大四路线" },
-      { id: "feed", ic: "📰", t: "最新动态", d: "网站自动抓取更新" },
-      { id: "faq", ic: "💡", t: "常见问题", d: "新生最关心的问答" },
-    ].map(e =>
-      `<div class="entry" title="${esc(e.t + " · " + e.d)}" onclick="go('${e.id}')"><div class="ei">${e.ic}</div><div class="et">${e.t}</div></div>`
+    // 快速入口：由 app.js 的 PAGES 自动生成（排除首页本身），新增板块会自动出现
+    const allPages = (window.PAGES || []).filter(p => p.id !== "home");
+    const entries = allPages.map(p =>
+      `<div class="entry" title="${esc(p.name + (p.sub ? " · " + p.sub : ""))}" onclick="go('${p.id}')"><div class="ei">${p.icon}</div><div class="et">${esc(p.name)}</div></div>`
     ).join("");
 
     return `
@@ -118,7 +104,7 @@
     </div>
 
     <div class="sec">
-      <div class="sec-h"><h2>快速入口</h2><span class="d">点一下直达</span></div>
+      <div class="sec-h"><h2>快速入口</h2><span class="d">全部 ${allPages.length} 个专栏，点一下直达</span></div>
       <div class="grid g-entry">${entries}</div>
     </div>
 
