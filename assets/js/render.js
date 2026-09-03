@@ -1609,19 +1609,24 @@
         <div style="font-weight:800;color:var(--navy);font-size:14.5px;margin-bottom:3px">${esc(w.title)}</div>
         <div style="color:var(--tx2);font-size:12.5px;line-height:1.7">${esc(w.desc)}</div>
       </div>`).join("");
-    const svcs = (e.services || []).map(s => {
+    const svcCard = s => {
       const who = (s.who && s.who.length) ? (e.contacts || []).filter(c => s.who.indexOf(c.name) >= 0) : (e.contacts || []);
       const cardWx = who.map(wxLine).join("");
+      const feat = s.featured;
       return `
-      <div class="card sim-card navy">
-        <div class="sim-h"><span class="sim-name">${esc(s.icon)} ${esc(s.name)}</span><span class="tag ${tagColor(s.tag)}">${esc(s.tag)}</span></div>
+      <div class="card sim-card${feat ? " svc-feat" : ""}">
+        ${feat ? `<span class="feat-badge">🔥 招募中 · 校园合伙人</span>` : ""}
+        <div class="sim-h"><span class="sim-name"${feat ? ` style="font-size:18px"` : ""}>${esc(s.icon)} ${esc(s.name)}</span><span class="tag ${tagColor(s.tag)}">${esc(s.tag)}</span></div>
         <div class="sim-rows" style="margin-top:8px">
           <div class="sim-row"><div class="sim-k">服务介绍</div><div class="sim-v">${esc(s.desc)}</div></div>
           <div class="sim-row"><div class="sim-k">可做项目</div><div class="sim-v">${(s.items || []).map(esc).join("、")}</div></div>
         </div>
         <div class="svc-wx">${cardWx}</div>
       </div>`;
-    }).join("");
+    };
+    const svcArr = e.services || [];
+    const featCards = svcArr.filter(s => s.featured).map(svcCard).join("");
+    const regCards = svcArr.filter(s => !s.featured).map(svcCard).join("");
     const contacts = (e.contacts || []).map(c => `
       <div class="card sim-contact" style="margin-bottom:12px">
         <div class="sim-c-info">
@@ -1636,7 +1641,8 @@
       <div class="note tip" style="margin:0 0 16px"><span class="ni">💬</span><div>${esc(e.intro)}</div></div>
     </div>
     <div class="sec">${secH("校园代办服务", "想做啥直接说")}
-      <div class="grid g2">${svcs}</div>
+      ${featCards}
+      ${regCards ? `<div class="grid g2" style="margin-top:14px">${regCards}</div>` : ""}
     </div>
     <div class="sec">${secH("怎么找我", "加微信聊需求 · 先问不收费")}
       ${contacts}

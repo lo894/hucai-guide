@@ -116,6 +116,10 @@ img{max-width:100%;display:block}
 .nav-i.hot>span:nth-child(2){color:#c98a2e;font-weight:800}
 .qk-i.hot{outline:2px solid var(--gold);outline-offset:-1px;background:#fffdf5;color:var(--navy);font-weight:700}
 .svc-wx{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line2);display:flex;flex-direction:column;gap:7px}
+/* 兼职招募 · 置顶金色大卡 */
+.svc-feat{background:linear-gradient(135deg,#fffdf3,#fff6e0);border:2px solid var(--gold)!important;box-shadow:0 12px 28px rgba(232,150,60,.22);margin-bottom:0;width:100%}
+.svc-feat .feat-badge{display:inline-block;background:linear-gradient(135deg,#f0a04a,#e07a3a);color:#fff;font-weight:800;font-size:12.5px;padding:4px 14px;border-radius:20px;margin-bottom:10px;box-shadow:0 4px 12px rgba(224,122,58,.35)}
+.svc-feat .sim-rows{background:rgba(255,255,255,.6);border-radius:10px;padding:2px 10px}
 .svc-w{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--tx2);flex-wrap:wrap}
 .svc-w .svc-who{font-weight:700;color:var(--navy);white-space:nowrap}
 .svc-w code{font-family:var(--ff);font-size:13px;font-weight:800;color:var(--green);word-break:break-all}
