@@ -1553,6 +1553,11 @@
     return `
     <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(F.intro)}</div></div>
 
+    ${F.payUrl ? `<div class="card fee-entry">
+      <div class="fee-entry-tx"><div class="fee-entry-t">🎯 官方缴费入口</div><div class="fee-entry-d">学费 / 住宿费缴费、查缴费记录、下载电子票据都走这里，账号为学号登录。认准官方链接，别信私发的收款码。</div></div>
+      <a class="btn" href="${esc(F.payUrl)}" target="_blank" rel="noopener">去缴费 →</a>
+    </div>` : ""}
+
     <div class="sec">${secH("💰 学费标准（2026 公示牌）", "单位：元 / 生·年")}
       <div class="tw"><table class="tb"><thead><tr><th>专业类别</th><th>一般专业</th><th>中外合作办学</th></tr></thead><tbody>${tRows}</tbody></table></div>
       <div class="note tip" style="margin-top:8px"><span class="ni">📌</span><div>${esc(F.tuitionNote)}</div></div>
