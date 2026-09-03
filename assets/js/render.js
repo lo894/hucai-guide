@@ -1600,7 +1600,7 @@
   function errands() {
     const e = D().errands;
     if (!e) return "";
-    const tagColor = t => t === "热门" ? "red" : t === "推荐" ? "green" : "navy";
+    const tagColor = t => ({ 热门: "red", 推荐: "green", 精选: "navy", 宿舍: "navy", 招募: "gold" })[t] || "navy";
     const wxLines = (e.contacts || []).map(c => `
       <div class="svc-w"><span class="svc-who">${esc(c.name)}</span><code>${esc(c.wechat)}</code><button class="btn sm" onclick="copyText('${esc(c.wechat)}')">复制</button></div>`).join("");
     const why = (e.whyUs || []).map(w => `
