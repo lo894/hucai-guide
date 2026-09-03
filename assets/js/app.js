@@ -80,6 +80,11 @@
   function navigate(id) {
     const p = PAGES.find(x => x.id === id) || PAGES[0];
     id = p.id;
+    // 离开校园地图页时，主动清空 iframe 容器，断开 720yun 全景的音视频线程
+    if (id !== "map") {
+      const mp = pg("map");
+      if (mp && mp.innerHTML) { mp.innerHTML = ""; rendered.delete("map"); }
+    }
     document.querySelectorAll(".page").forEach(s => s.classList.remove("on"));
     const el = pg(id);
     if (el) el.classList.add("on");
