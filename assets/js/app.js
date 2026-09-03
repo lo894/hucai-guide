@@ -11,7 +11,7 @@
   const PAGES = [
     { id: "home", name: "首页", icon: "🏠", sub: "入学速览" },
     { id: "about", name: "学校概况", icon: "🏫", sub: "校史·校区·学费" },
-    { id: "majors", name: "专业培养", icon: "🎓", sub: "51 个专业" },
+    { id: "majors", name: "专业培养", icon: "🎓", sub: "56 个专业" },
     { id: "campus", name: "校园生活", icon: "🌳", sub: "宿舍·食堂·设施" },
     { id: "dorm", name: "宿舍攻略", icon: "🛏️", sub: "床品·好物·整理" },
     { id: "map", name: "校园地图", icon: "🗺️", sub: "两校区导览" },

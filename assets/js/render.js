@@ -78,7 +78,7 @@
         <span class="yr">2026 迎新季</span>
         <div class="sl">${esc(s.tagline || "岳麓山下 · 湘江之滨")}</div>
         <h1>湖南财政经济学院<br>新生入学指南</h1>
-        <div class="ds">${esc(s.overview.intro.slice(0, 70))}……这里整理了 51 个专业培养计划、校园环境、宿舍、军训、政策与入学清单，还有一个随时能问的 AI 学长。</div>
+        <div class="ds">${esc(s.overview.intro.slice(0, 70))}……这里整理了 56 个专业培养计划、校园环境、宿舍、军训、政策与入学清单，还有一个随时能问的 AI 学长。</div>
         <div class="hero-btns">
           <div class="btn" onclick="go('majors')">查看专业培养 →</div>
           <div class="btn o" onclick="go('checklist')">入学准备清单</div>
@@ -117,7 +117,7 @@
         <div class="maker-em">🌙☕️</div>
         <div class="maker-bd">
           <div class="maker-tt">🌟 作者碎碎念：这份指南，来得不容易</div>
-          <p class="maker-tx">为了让你报到前少踩坑，站长 <b>L.大王</b> 熬了<b>一整个通宵</b> 🌙：把 51 个专业、宿舍、军训、政策、交通、证件清单……一条条翻出来、核对、排版。屏幕亮到天亮，咖啡凉了又热 ☕️。</p>
+          <p class="maker-tx">为了让你报到前少踩坑，站长 <b>L.大王</b> 熬了<b>一整个通宵</b> 🌙：把 56 个专业、宿舍、军训、政策、交通、证件清单……一条条翻出来、核对、排版。屏幕亮到天亮，咖啡凉了又热 ☕️。</p>
           <p class="maker-tx">它不是学校官方发布，却是一份「把自己踩过的坑，提前替你填平」的私心。制作不易，请你<b>好好珍惜、按需取用</b>，也欢迎顺手转给同校的新生朋友 🤝。</p>
           <div class="maker-acts">
             <button class="maker-btn" id="blessBtn">💛 为作者加油</button>

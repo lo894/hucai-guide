@@ -92,8 +92,10 @@
       "items": [
         { "title": "学校官网", "url": "https://www.hufe.edu.cn/", "desc": "学校通知、校历、机构设置总入口，所有院系入口都从这儿进。", "tag": "必备" },
         { "title": "招生网", "url": "https://www.hufe.edu.cn/zsw/", "desc": "招生政策、录取查询、各学院专业介绍，了解目标专业第一站。", "tag": "常用" },
-        { "title": "大数据与统计学院", "url": "https://www.hufe.edu.cn/sxtjxy/xygk/xyjj.htm", "desc": "想转大数据的目标学院，看专业、培养方案与师资。", "tag": "目标" },
-        { "title": "信息技术与管理学院", "url": "https://www.hufe.edu.cn/xxjsygl/", "desc": "含数据科学与大数据技术、人工智能、计算机等 IT 类专业。", "tag": "相关" },
+        { "title": "大数据与统计学院", "url": "https://www.hufe.edu.cn/sxtjxy/xygk/xyjj.htm", "desc": "数据科学与大数据技术、大数据管理与应用等专业的所在学院，看培养方案与师资。", "tag": "目标" },
+        { "title": "信息技术与管理学院", "url": "https://www.hufe.edu.cn/xxjsygl/", "desc": "信息管理与信息系统、电子商务等管理与信息类专业的所在学院。", "tag": "相关" },
+        { "title": "计算机与人工智能学院", "url": "https://www.hufe.edu.cn/xxjsygl/", "desc": "计算机科学与技术、人工智能、电子信息工程、机器人工程等 IT 类专业的所在学院。", "tag": "相关" },
+        { "title": "低空经济与地理学院", "url": "https://www.hufe.edu.cn/gcglxy/", "desc": "工程软件、低空技术与工程、工程造价、人文地理与城乡规划等专业的所在学院，2026 年新组建。", "tag": "新" },
         { "title": "图书馆", "url": "https://www.hufe.edu.cn/tsg/", "desc": "馆藏检索、电子资源、借阅与续借服务入口。", "tag": "常用" },
         { "title": "网络信息中心（VPN/统一认证）", "url": "https://www.hufe.edu.cn/wlxxzx/", "desc": "校外访问、VPN、统一身份认证使用指南。", "tag": "网络" }
       ]
