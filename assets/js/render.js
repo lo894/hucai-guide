@@ -1601,23 +1601,27 @@
     const e = D().errands;
     if (!e) return "";
     const tagColor = t => ({ 热门: "red", 推荐: "green", 精选: "navy", 宿舍: "navy", 招募: "gold" })[t] || "navy";
-    const wxLines = (e.contacts || []).map(c => `
-      <div class="svc-w"><span class="svc-who">${esc(c.name)}</span><code>${esc(c.wechat)}</code><button class="btn sm" onclick="copyText('${esc(c.wechat)}')">复制</button></div>`).join("");
+    const wxLine = c => `
+      <div class="svc-w"><span class="svc-who">${esc(c.name)}</span><code>${esc(c.wechat)}</code><button class="btn sm" onclick="copyText('${esc(c.wechat)}')">复制</button></div>`;
     const why = (e.whyUs || []).map(w => `
       <div class="card" style="margin-bottom:0;text-align:left">
         <div style="font-size:22px;margin-bottom:6px">${esc(w.icon)}</div>
         <div style="font-weight:800;color:var(--navy);font-size:14.5px;margin-bottom:3px">${esc(w.title)}</div>
         <div style="color:var(--tx2);font-size:12.5px;line-height:1.7">${esc(w.desc)}</div>
       </div>`).join("");
-    const svcs = (e.services || []).map(s => `
+    const svcs = (e.services || []).map(s => {
+      const who = (s.who && s.who.length) ? (e.contacts || []).filter(c => s.who.indexOf(c.name) >= 0) : (e.contacts || []);
+      const cardWx = who.map(wxLine).join("");
+      return `
       <div class="card sim-card navy">
         <div class="sim-h"><span class="sim-name">${esc(s.icon)} ${esc(s.name)}</span><span class="tag ${tagColor(s.tag)}">${esc(s.tag)}</span></div>
         <div class="sim-rows" style="margin-top:8px">
           <div class="sim-row"><div class="sim-k">服务介绍</div><div class="sim-v">${esc(s.desc)}</div></div>
           <div class="sim-row"><div class="sim-k">可做项目</div><div class="sim-v">${(s.items || []).map(esc).join("、")}</div></div>
         </div>
-        <div class="svc-wx">${wxLines}</div>
-      </div>`).join("");
+        <div class="svc-wx">${cardWx}</div>
+      </div>`;
+    }).join("");
     const contacts = (e.contacts || []).map(c => `
       <div class="card sim-contact" style="margin-bottom:12px">
         <div class="sim-c-info">
