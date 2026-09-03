@@ -864,7 +864,7 @@
 
     const mt = C.majorTip;
     const mtSec = mt ? `
-    <div class="sec">${secH("工程软件专业选课贴士", "你的专业，多留点心")}
+    <div class="sec">${secH("计算机 / 技术类选课贴士", "理工科专业，多留点心")}
       <div class="note tip"><span class="ni">🎯</span><div>${esc(mt.intro)}</div></div>
       <div class="card"><ul class="lst">${(mt.tips || []).map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>
       <div class="mt-grid">
@@ -1220,13 +1220,13 @@
     <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(P.intro)}</div></div>
     <div class="sec">${secH("两条路怎么选", "考研 vs 保研")}<div class="grid g2">${paths}</div></div>
     <div class="sec">${secH("全流程时间轴", "从大一到大四上")}<div class="tl">${tl}</div></div>
-    ${P.forEngSoft ? `<div class="note ok" style="margin-bottom:14px"><span class="ni">🛠️</span><div><b>工程软件方向：</b>${esc(P.forEngSoft)}</div></div>` : ""}
-    ${P.bigdata ? `<div class="sec">${secH(P.bigdata.title || "大数据方向考研专题", "工程软件 → 数据科学的深造路")}
+    ${P.forEngSoft ? `<div class="note ok" style="margin-bottom:14px"><span class="ni">🛠️</span><div><b>计算机 / 软件类方向：</b>${esc(P.forEngSoft)}</div></div>` : ""}
+    ${P.bigdata ? `<div class="sec">${secH(P.bigdata.title || "大数据方向考研专题", "数据科学的深造路")}
       <div class="note ok" style="margin-bottom:12px"><span class="ni">🛠️</span><div>${esc(P.bigdata.desc || "")}</div></div>
       <div class="card" style="margin-bottom:12px"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">🧭 可报考方向</div><div>${(P.bigdata.dirs || []).map(d => `<span class="tag navy">${esc(d)}</span>`).join(" ")}</div></div>
       <div class="card" style="margin-bottom:12px"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">📚 核心考试科目</div><div>${(P.bigdata.subjects || []).map(s => `<span class="tag gold">${esc(s)}</span>`).join(" ")}</div></div>
       <div class="card" style="margin-bottom:12px"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">🏫 院校梯度参考</div><ul class="lst">${(P.bigdata.schools || []).map(s => `<li>${esc(s)}</li>`).join("")}</ul></div>
-      <div class="card"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">💡 给工程软件同学的建议</div><ul class="lst">${(P.bigdata.advice || []).map(a => `<li>${esc(a)}</li>`).join("")}</ul></div>
+      <div class="card"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">💡 给计算机 / 软件类同学的建议</div><ul class="lst">${(P.bigdata.advice || []).map(a => `<li>${esc(a)}</li>`).join("")}</ul></div>
     </div>` : ""}
     <div class="sec">${secH("考研保研避坑", "")}<div class="card"><ul class="lst">${tips}</ul></div></div>`;
   }
@@ -1257,11 +1257,11 @@
         <div class="card"><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:8px">🎓 升学 / 深造方向</div><ul class="lst">${(J.outcomes.further || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
       </div>
     </div>` : ""}
-    ${J.forEngSoft ? `<div class="note ok" style="margin-bottom:14px"><span class="ni">🛠️</span><div><b>工程软件方向：</b>${esc(J.forEngSoft)}</div></div>` : ""}
+    ${J.forEngSoft ? `<div class="note ok" style="margin-bottom:14px"><span class="ni">🛠️</span><div><b>计算机 / 软件类方向：</b>${esc(J.forEngSoft)}</div></div>` : ""}
     <div class="sec">${secH("求职避坑", "")}<div class="card"><ul class="lst">${tips}</ul></div></div>`;
   }
 
-  /* ============================ 转专业（工程软件→大数据 重点） ============================ */
+  /* ============================ 转专业（路线示例：计算机 / 软件类 → 大数据） ============================ */
   function transfer() {
     const T = D().transfer;
     if (!T) return "<div class='note warn'><span class='ni'>⚠️</span><div>转专业数据加载失败，请刷新重试。</div></div>";
@@ -1336,12 +1336,12 @@
       <div class="grid g2">${timeline}</div>
     </div>
 
-    <div class="sec">${secH("大数据相关专业（想转入的方向）", "与工程软件同属 IT 大类，跨度友好")}
+    <div class="sec">${secH("大数据相关专业（想转入的方向）", "与计算机 / 软件类同属 IT 大类，跨度友好")}
       <div class="note tip" style="margin-bottom:12px"><span class="ni">ℹ️</span><div>${esc(big.intro || "")}</div></div>
       <div class="grid g2">${colleges}</div>
     </div>
 
-    <div class="sec">${secH(route.title || "转专业路线", "工程软件 → 大数据")}
+    <div class="sec">${secH(route.title || "转专业路线", "以计算机 / 软件类 → 大数据为例")}
       <div class="note ok" style="margin-bottom:12px"><span class="ni">🛠️</span><div>${esc(route.why || "")}</div></div>
       <div class="grid g2">${steps}</div>
       <div class="card" style="margin-top:12px">
@@ -1418,7 +1418,7 @@
     <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(C.intro)}</div></div>
     ${groups}
     ${scoring}
-    <div class="note ok" style="margin-top:8px"><span class="ni">✅</span><div>💡 工程软件想转大数据，优先冲 <b>数学建模 + 大数据挑战赛 + 蓝桥杯 / 软件杯</b> 这三类，简历和转专业面试都加分。</div></div>`;
+    <div class="note ok" style="margin-top:8px"><span class="ni">✅</span><div>💡 想转入大数据方向的同学，优先冲 <b>数学建模 + 大数据挑战赛 + 蓝桥杯 / 软件杯</b> 这三类，简历和转专业面试都加分。</div></div>`;
   }
 
   /* ============================ 技能成长 ============================ */

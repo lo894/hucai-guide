@@ -263,7 +263,7 @@ const KB = (() => {
       addDoc({ title: '考研保研总览', page: 'postgrad', module: '升学', w: 1.3,
         text: PG.intro + ' ' + (PG.paths || []).map(p => `${p.name}：${p.desc}`).join(' ') });
       (PG.timeline || []).forEach(t => addDoc({ title: t.t, page: 'postgrad', module: '考研时间轴', w: 1.1, text: t.when + ' ' + t.d }));
-      if (PG.forEngSoft) addDoc({ title: '工程软件方向考研保研', page: 'postgrad', module: '升学·工程软件', text: PG.forEngSoft });
+      if (PG.forEngSoft) addDoc({ title: '计算机 / 软件类方向考研保研', page: 'postgrad', module: '升学·计算机软件', text: PG.forEngSoft });
     }
 
     /* 实习求职 */
@@ -272,8 +272,14 @@ const KB = (() => {
       addDoc({ title: '实习求职总览', page: 'job', module: '就业', w: 1.3,
         text: JB.intro + ' ' + (JB.timeline || []).map(t => `${t.t}：${t.d}`).join(' ') });
       (JB.channels || []).forEach(c => addDoc({ title: c.name, page: 'job', module: '求职渠道', text: c.use + (c.url ? (' 网址 ' + c.url) : '') }));
-      if (JB.forEngSoft) addDoc({ title: '工程软件方向就业', page: 'job', module: '就业·工程软件', text: JB.forEngSoft });
+      if (JB.forEngSoft) addDoc({ title: '计算机 / 软件类方向就业', page: 'job', module: '就业·计算机软件', text: JB.forEngSoft });
     }
+
+    /* 工程软件（搜索可达的隐藏资源，不放入主导航） */
+    addDoc({ title: '工程软件专业资料', page: 'engsoft', module: '专业资料·工程软件', w: 1.2,
+      text: '工程软件是工程+软件的交叉方向：编程开发、工程建模、仿真分析、软件工程。大学四年路线：大一打底子（高数线代程序设计），大二进专业（数据结构数据库图形学），大三做项目（数值方法有限元BIM），大四出成果。常用工具：VS Code、AutoCAD、SolidWorks、Revit、ANSYS、MATLAB。就业方向：工业软件研发、BIM工程师、仿真分析、游戏图形开发、互联网后端。' });
+    addDoc({ title: '工程软件工具与考证', page: 'engsoft', module: '专业资料·工程软件',
+      text: '工程软件常用工具：VS Code、JetBrains、Git、AutoCAD、SolidWorks、Revit、MATLAB、ANSYS、Abaqus、COMSOL。考证：计算机等级考试、软件设计师（软考中级）、BIM证书、CAD/SolidWorks认证、蓝桥杯、数学建模竞赛。' });
 
     /* 转专业（工程软件 → 大数据 重点） */
     const TR = D.transfer;
@@ -286,7 +292,7 @@ const KB = (() => {
       (bd.colleges || []).forEach(c => addDoc({ title: '大数据相关专业·' + c.name, page: 'transfer', module: '大数据', w: 1.3,
         text: c.intro + ' 专业：' + (c.majors || []).map(m => m.name + '—' + m.note).join('；') }));
       const r = TR.route || {};
-      addDoc({ title: '工程软件转大数据路线', page: 'transfer', module: '转专业·工程软件', w: 1.4,
+      addDoc({ title: '计算机 / 软件类转大数据路线', page: 'transfer', module: '转专业·路线示例', w: 1.4,
         text: (r.why || '') + ' 建议课程：' + (r.courses || []).join('、') + ' 目标专业：' + (r.targets || []).join('、') + ' 准备：' + (r.prepare || []).join('；') });
       (TR.checklist || []).forEach(g => addDoc({ title: '转专业准备·' + g.group, page: 'transfer', module: '转专业', text: (g.items || []).map(i => i.name + '—' + i.why).join('；') }));
       (TR.faq || []).forEach(f => addDoc({ title: f.q, page: 'transfer', module: '转专业问答', w: 1.3, text: f.q + ' ' + f.a }));
