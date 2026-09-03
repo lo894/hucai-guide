@@ -11,9 +11,9 @@
   const PAGES = [
     { id: "home", name: "首页", icon: "🏠", sub: "入学速览" },
     { id: "about", name: "学校概况", icon: "🏫", sub: "校史·校区·学费" },
-    { id: "dorm", name: "宿舍攻略", icon: "🛏️", sub: "床品·好物·整理" },
-    { id: "cards", name: "办卡指南", icon: "📱", sub: "校园卡·流量卡" },
-    { id: "errands", name: "校园代办", icon: "📋", sub: "PPT·校园卡·学生互助" },
+    { id: "dorm", name: "宿舍攻略", icon: "🛏️", sub: "床品·好物·整理", hot: 1 },
+    { id: "cards", name: "办卡指南", icon: "📱", sub: "校园卡·流量卡", hot: 1 },
+    { id: "errands", name: "校园代办", icon: "📋", sub: "PPT·校园卡·学生互助", hot: 1 },
     { id: "checklist", name: "入学清单", icon: "📋", sub: "勾选准备" },
     { id: "majors", name: "专业培养", icon: "🎓", sub: "56 个专业" },
     { id: "campus", name: "校园生活", icon: "🌳", sub: "宿舍·食堂·设施" },
@@ -46,7 +46,7 @@
     const nav = $("nav");
     if (!nav) return;
     nav.innerHTML = PAGES.map(p =>
-      `<div class="nav-i" data-id="${p.id}" onclick="go('${p.id}')"><span class="ic">${p.icon}</span><span>${esc(p.name)}</span><span class="bd" id="bd-${p.id}" style="display:none"></span></div>`
+      `<div class="nav-i${p.hot ? " hot" : ""}" data-id="${p.id}" onclick="go('${p.id}')"><span class="ic">${p.icon}</span><span>${p.hot ? "🔥 " : ""}${esc(p.name)}</span><span class="bd" id="bd-${p.id}" style="display:none"></span></div>`
     ).join("");
   }
 

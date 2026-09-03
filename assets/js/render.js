@@ -69,7 +69,7 @@
     // 快速入口：由 app.js 的 PAGES 自动生成（排除首页本身），新增板块会自动出现
     const allPages = (window.PAGES || []).filter(p => p.id !== "home");
     const entries = allPages.map(p =>
-      `<div class="entry" title="${esc(p.name + (p.sub ? " · " + p.sub : ""))}" onclick="go('${p.id}')"><div class="ei">${p.icon}</div><div class="et">${esc(p.name)}</div></div>`
+      `<div class="entry${p.hot ? " hot" : ""}" title="${esc((p.hot ? "🔥 重点 · " : "") + p.name + (p.sub ? " · " + p.sub : ""))}" onclick="go('${p.id}')"><div class="ei">${p.icon}</div><div class="et">${p.hot ? "🔥 " : ""}${esc(p.name)}</div></div>`
     ).join("");
 
     return `
@@ -1601,6 +1601,8 @@
     const e = D().errands;
     if (!e) return "";
     const tagColor = t => t === "热门" ? "red" : t === "推荐" ? "green" : "navy";
+    const wxLines = (e.contacts || []).map(c => `
+      <div class="svc-w"><span class="svc-who">${esc(c.name)}</span><code>${esc(c.wechat)}</code><button class="btn sm" onclick="copyText('${esc(c.wechat)}')">复制</button></div>`).join("");
     const why = (e.whyUs || []).map(w => `
       <div class="card" style="margin-bottom:0;text-align:left">
         <div style="font-size:22px;margin-bottom:6px">${esc(w.icon)}</div>
@@ -1614,6 +1616,7 @@
           <div class="sim-row"><div class="sim-k">服务介绍</div><div class="sim-v">${esc(s.desc)}</div></div>
           <div class="sim-row"><div class="sim-k">可做项目</div><div class="sim-v">${(s.items || []).map(esc).join("、")}</div></div>
         </div>
+        <div class="svc-wx">${wxLines}</div>
       </div>`).join("");
     const contacts = (e.contacts || []).map(c => `
       <div class="card sim-contact" style="margin-bottom:12px">

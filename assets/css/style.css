@@ -110,6 +110,16 @@ img{max-width:100%;display:block}
 .g-stats{grid-template-columns:repeat(2,1fr)}
 /* 首页快速入口：正方形小方块宫格，自适应紧密排列 */
 .g-entry{grid-template-columns:repeat(auto-fill,minmax(94px,1fr));gap:9px}
+/* 重点入口高亮：宿舍攻略 / 办卡指南 / 校园代办 */
+.entry.hot{outline:2px solid var(--gold);outline-offset:-1px;background:linear-gradient(180deg,#fffdf5,#fff)}
+.entry.hot .et{color:#c98a2e}
+.nav-i.hot>span:nth-child(2){color:#c98a2e;font-weight:800}
+.qk-i.hot{outline:2px solid var(--gold);outline-offset:-1px;background:#fffdf5;color:var(--navy);font-weight:700}
+.svc-wx{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line2);display:flex;flex-direction:column;gap:7px}
+.svc-w{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--tx2);flex-wrap:wrap}
+.svc-w .svc-who{font-weight:700;color:var(--navy);white-space:nowrap}
+.svc-w code{font-family:var(--ff);font-size:13px;font-weight:800;color:var(--green);word-break:break-all}
+.svc-w .btn{padding:3px 10px;font-size:11.5px;border-radius:7px}
 .tag{display:inline-block;padding:1.5px 8px;border-radius:20px;font-size:11px;font-weight:600;background:var(--bg2);color:var(--tx2);white-space:nowrap}
 .tag.gold{background:var(--gold-bg);color:#b8472a}
 .tag.navy{background:#e8effa;color:var(--navy)}
