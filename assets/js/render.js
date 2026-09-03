@@ -500,6 +500,17 @@
       ${tips}
       <div class="note ok" style="margin-top:10px"><span class="ni">📞</span><div>${esc(c.consult)}</div></div>
     </div>
+    ${(c.contact && c.contact.wechat) ? `
+    <div class="sec" style="margin-top:20px">${secH("校园卡咨询 · 找学姐", "拿不准办哪种就直接问")}
+      <div class="card sim-contact">
+        <div class="sim-c-info">
+          <div class="sim-c-top"><span class="sim-c-name">${esc(c.contact.name)}</span><span class="tag green">${esc(c.contact.title || "校园卡办理")}</span></div>
+          <div class="sim-c-wx">微信号：<b>${esc(c.contact.wechat)}</b>${c.contact.img ? `<button class="btn sm" style="margin-left:8px" onclick="copyText('${esc(c.contact.wechat)}')">复制</button>` : ""}</div>
+          <div class="sim-c-note">${esc(c.contact.note || "")}</div>
+        </div>
+        ${c.contact.img ? `<div class="sim-c-qr"><img src="${esc(c.contact.img)}" alt="小玲学姐微信二维码" onerror="this.parentElement.style.display='none'"></div>` : ""}
+      </div>
+    </div>` : ""}
     <div class="sec" style="margin-top:20px">${secH("常见问题", "")}<div class="grid g2">${faq}</div></div>`;
   }
 

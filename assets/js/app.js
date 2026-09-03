@@ -221,6 +221,15 @@
   };
   window.App = App;
 
+  /* 复制文本小工具（办卡页微信号复制等） */
+  window.copyText = function(t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(() => alert("已复制：" + t), () => prompt("复制下面的内容：", t));
+    } else {
+      prompt("复制下面的内容：", t);
+    }
+  };
+
   /* ---------------- 初始化 ---------------- */
   function updateBadges() {
     const M = KB.data.majors;
