@@ -99,20 +99,6 @@
       <div class="note tip" style="margin-top:12px"><span class="ni">📞</span><div>各部门 / 各学院办公电话（含你所在学院）已整理在 <a href="javascript:void(0)" onclick="go('about')">「学校概况」页</a> 底部，可随时查看。</div></div>
     </div>
 
-    <div class="sec">
-      <div class="sec-h"><h2>新生速查</h2><span class="d">报到前先看这一屏</span></div>
-      <div class="grid g6">${qf}</div>
-    </div>
-
-    <div class="sec">
-      <div class="sec-h"><h2>数说湖财</h2><span class="d">${esc(s.type)}</span></div>
-      <div class="grid g-stats">${stats}</div>
-    </div>
-
-    <div class="note tip"><span class="ni">ℹ️</span>
-      <div>本站为<b>非官方</b>新生互助指南，由 <b>L.大王</b> 用 <b>vibe coding</b> 方式独立搭建；内容均为<b>人工整理</b>（综合学校官网、招生网、公开攻略及个人查找等来源），<b>非 AI 生成</b>；另附自动同步自官方渠道的最新动态（见「最新动态」）。涉及缴费、录取、转专业等重大事项，<b>一律以学校官方通知为准</b>。如有错漏欢迎指正。</div>
-    </div>
-
     <div class="sec maker-note">
       <div class="maker-card">
         <div class="maker-em">🌙☕️</div>
@@ -130,7 +116,23 @@
           <div class="maker-tip">🔄 若无特殊情况，本网站会<b>持续更新</b>，开学前后的重要信息和政策都会及时补上，记得常回来看看～</div>
         </div>
       </div>
-    </div>`;
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><h2>新生速查</h2><span class="d">报到前先看这一屏</span></div>
+      <div class="grid g6">${qf}</div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-h"><h2>数说湖财</h2><span class="d">${esc(s.type)}</span></div>
+      <div class="grid g-stats">${stats}</div>
+    </div>
+
+    <div class="note tip"><span class="ni">ℹ️</span>
+      <div>本站为<b>非官方</b>新生互助指南，由 <b>L.大王</b> 用 <b>vibe coding</b> 方式独立搭建；内容均为<b>人工整理</b>（综合学校官网、招生网、公开攻略及个人查找等来源），<b>非 AI 生成</b>；另附自动同步自官方渠道的最新动态（见「最新动态」）。涉及缴费、录取、转专业等重大事项，<b>一律以学校官方通知为准</b>。如有错漏欢迎指正。</div>
+    </div>
+
+`;
   }
 
   /* ============================ 学校概况 ============================ */
