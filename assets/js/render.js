@@ -88,6 +88,11 @@
     </div>
 
     <div class="sec">
+      <div class="sec-h"><h2>快速入口</h2><span class="d">全部 ${allPages.length} 个专栏，点一下直达</span></div>
+      <div class="grid g-entry">${entries}</div>
+    </div>
+
+    <div class="sec">
       <div class="sec-h"><h2>新生速查</h2><span class="d">报到前先看这一屏</span></div>
       <div class="grid g6">${qf}</div>
     </div>
@@ -101,11 +106,6 @@
     <div class="sec">
       <div class="sec-h"><h2>数说湖财</h2><span class="d">${esc(s.type)}</span></div>
       <div class="grid g-stats">${stats}</div>
-    </div>
-
-    <div class="sec">
-      <div class="sec-h"><h2>快速入口</h2><span class="d">全部 ${allPages.length} 个专栏，点一下直达</span></div>
-      <div class="grid g-entry">${entries}</div>
     </div>
 
     <div class="note tip"><span class="ni">ℹ️</span>

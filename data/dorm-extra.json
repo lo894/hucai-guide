@@ -31,7 +31,7 @@
   "groups": {
     "note": "各楼栋新生群人数都已满 200+，加群需先加对应楼栋的管理微信，由管理员拉你进群。每栋群各对应一个微信（微信号稍后补充，发我后即可上站）。",
     "list": [
-      { "name": "三栋群", "wechat": "Rat_millet5015" },
+      { "name": "三栋群", "wechat": "Rat_millet5015", "qr": "assets/img/contact_qr.jpg" },
       { "name": "四栋群", "wechat": "LLL00100800", "qr": "assets/img/cards-wechat.jpg" },
       { "name": "五栋群", "wechat": "zn541880520", "qr": "assets/img/group-5.jpg" },
       { "name": "四合院群", "wechat": "Y6H777NSHA", "qr": "assets/img/group-4hy.jpg" }
