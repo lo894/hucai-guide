@@ -35,7 +35,7 @@
         <div class="contact-name">${esc(c.name || "同学")}</div>
         <div class="contact-role">${esc(c.role || "本站建立者与维护者")}</div>
         <div class="contact-wx">微信号 / 昵称：<b>${esc(c.wechat || "")}</b>${c.wechat ? ` <button class="btn sm" style="margin-left:8px" onclick="copyText('${esc(c.wechat)}')">复制</button>` : ""}</div>
-        ${c.qq ? `<div class="contact-qq">QQ：<b>${esc(c.qq)}</b> <button class="btn sm" style="margin-left:4px" onclick="copyText('${esc(c.qq)}')">复制</button></div>` : ""}
+        ${c.qq ? `<div class="contact-qq">QQ：<b>${esc(c.qq)}</b>${c.qqName ? `<span style="color:var(--tx3)">（${esc(c.qqName)}）</span>` : ""} <button class="btn sm" style="margin-left:4px" onclick="copyText('${esc(c.qq)}')">复制</button></div>` : ""}
         <div class="contact-note">${esc(c.note || "扫码加微信咨询")}</div>
         <div class="contact-busy">⏱ 本人较忙，消息不一定及时回复，见谅～</div>
       </div>
