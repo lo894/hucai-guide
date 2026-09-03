@@ -1121,6 +1121,7 @@
     return `
     <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(d.intro)}</div></div>
     ${campusSec}
+    ${groupSec}
     ${bedSec}
     ${beddingSec}
     ${goodSec}
@@ -1129,7 +1130,6 @@
     ${sizeSec}
     ${hardSec}
     ${expressSec}
-    ${groupSec}
     ${tipsSec}`;
   }
 
