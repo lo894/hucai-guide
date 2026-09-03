@@ -322,6 +322,9 @@ table.tb td b{color:var(--tx);font-weight:600}
 
 /* 校园卡咨询 · 学姐微信 */
 .sim-contact{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.group-card{display:flex;flex-direction:column}
+.group-qr{width:120px;margin-top:10px;border:1px solid var(--line2);border-radius:8px;padding:4px;background:#fff;align-self:flex-start}
+.group-qr img{width:100%;display:block;border-radius:5px}
 .sim-c-info{flex:1;min-width:220px}
 .sim-c-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
 .sim-c-name{font-size:17px;font-weight:800;color:var(--navy)}
@@ -538,6 +541,7 @@ table.tb td b{color:var(--tx);font-weight:600}
   .sim-c-qr{flex:0 0 auto;width:140px;margin:0 auto}
   .sim-c-wx{font-size:14px}
   .sim-c-wx b{font-size:16px;word-break:break-all}
+  .group-qr{width:140px;margin:10px auto 0}
   .grid{gap:12px}
   .g-entry{grid-template-columns:repeat(3,1fr);gap:9px}
   .entry{padding:9px 5px 7px;gap:5px}

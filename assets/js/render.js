@@ -1112,9 +1112,10 @@
     <div class="sec">${secH("🏠 楼栋新生群", "加群先加管理微信")}
       <div class="note tip" style="margin-bottom:12px"><span class="ni">💬</span><div>${esc(DE.groups.note || "")}</div></div>
       <div class="grid g2">${DE.groups.list.map(g => `
-        <div class="card" style="margin-bottom:0">
+        <div class="card group-card">
           <div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:15px">${esc(g.name)}</h2></div>
           <div class="contact-wx">管理微信：<b>${g.wechat ? esc(g.wechat) : "（微信待补充）"}</b>${g.wechat ? ` <button class="btn sm" style="margin-left:8px" onclick="copyText('${esc(g.wechat)}')">复制</button>` : ""}</div>
+          ${g.qr ? `<div class="group-qr"><img src="${esc(g.qr)}" alt="${esc(g.name)}二维码" loading="lazy" onerror="this.parentElement.style.display='none'"></div>` : ""}
         </div>`).join("")}</div>
     </div>` : "";
 
