@@ -56,6 +56,8 @@
     box.innerHTML = `
     ${panoramaSec}
 
+    <div class="sec" id="lfHost"></div>
+
     <div class="sec">${secH("校园地图导览", "示意图，非精确测绘")}
       <div class="flt" style="margin-bottom:14px"><div class="flt-r"><span class="flt-l">校区</span>${chips}</div></div>
       <div class="grid g2">
@@ -71,6 +73,8 @@
       <div class="map-legend">${legend}</div>
       <div class="note tip" style="margin-top:12px"><span class="ni">📍</span><div>${esc(c.desc || "")}<br>交通：${(c.transport || []).map(esc).join("；")}<br><span style="color:var(--tx3)">${esc(M.note || "")}</span></div></div>
     </div>`;
+
+    if (window.LeifengMap) window.LeifengMap.mount(document.getElementById("lfHost"));
   }
 
   function secH(t, d) {

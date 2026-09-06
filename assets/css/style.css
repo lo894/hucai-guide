@@ -689,3 +689,46 @@ body{background:
 .gi{padding:8px 0;border-top:1px solid var(--line2)}
 .gi:first-of-type{border-top:none}
 
+
+/* ===== 雷锋校区精细电子地图（leifengmap.js） ===== */
+.lf-chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.lf-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--line2,#e2e6ea);border-radius:999px;font-size:13px;cursor:pointer;background:#fff;user-select:none}
+.lf-chip .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.lf-chip.on{border-color:var(--navy-l,#2c6ecb);color:var(--navy,#2c6ecb);background:#eef4fb;font-weight:600}
+.lf-topbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:4px}
+.lf-btn{display:inline-flex;align-items:center;gap:6px;background:#0f6e56;color:#fff;padding:9px 16px;border-radius:10px;font-size:14px;text-decoration:none}
+.lf-btn:hover{background:#0c5a47}
+.lf-btn2{display:inline-flex;align-items:center;padding:9px 14px;border:1px solid #cbd5d0;border-radius:10px;font-size:13px;color:#0f6e56;text-decoration:none;background:#fff}
+.lf-mapwrap{border-radius:14px;overflow:hidden;border:1px solid var(--line2,#e2e6ea);background:#eef1ea;margin-top:10px}
+.lf-map{height:560px;background:#eef1ea}
+.lf-mk-wrap{background:none;border:none}
+.lf-mk{display:flex;align-items:center;gap:5px;white-space:nowrap;transform:translate(0,0)}
+.lf-dot{width:14px;height:14px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.35);flex:none;margin-left:-7px;margin-top:-7px}
+.lf-tx{font-size:12px;font-weight:600;color:#333;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 4px #fff,0 0 6px #fff}
+.lf-pop{font-size:13px;line-height:1.65;min-width:200px}
+.lf-pop-h{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.lf-pop-h b{font-size:15px}
+.lf-tag{color:#fff;font-size:11px;padding:2px 8px;border-radius:999px}
+.lf-pop-d{color:#444}
+.lf-pop-t{margin-top:6px;padding:6px 9px;background:#fdf6e3;border-radius:8px;color:#7a5b00;font-size:12px}
+.lf-pop-nav{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.lf-pop-nav .lf-btn{padding:7px 12px;font-size:13px}
+.lf-pop-nav .lf-btn2{padding:7px 10px;font-size:12px}
+.lf-pop-n{margin-top:6px;font-size:11px;color:#98a0a6}
+.lf-list{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.lf-grp-h{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--tx2,#667);margin-bottom:7px}
+.lf-grp-h .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.lf-grp-b{display:flex;flex-wrap:wrap;gap:8px}
+.lf-li{border:1px solid var(--line2,#e2e6ea);background:#fff;border-radius:999px;padding:6px 13px;font-size:13px;cursor:pointer;color:inherit}
+.lf-li:hover{border-color:#9db8d2}
+.lf-li.on{border-color:var(--navy,#2c6ecb);color:var(--navy,#2c6ecb);background:#eef4fb;font-weight:600}
+.leaflet-popup-content-wrapper{border-radius:12px}
+.leaflet-popup-content{margin:12px 14px}
+@media(max-width:900px){
+  .lf-map{height:62vh;min-height:380px}
+  .lf-tx{font-size:11px}
+  .lf-btn{padding:10px 16px;font-size:14px}
+  .lf-btn2{padding:10px 12px}
+  .lf-chip{padding:7px 13px}
+  .lf-li{padding:8px 14px}
+}
