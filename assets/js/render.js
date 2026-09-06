@@ -1652,7 +1652,7 @@
   /* 邀请有礼板块（数据在 errands.json 的 invite 字段，改数据即可调整规则） */
   function inviteSec(e) {
     const iv = e && e.invite;
-    if (!iv) return "";
+    if (!iv || iv.active === false) return "";   /* 关闭时整块不渲染，改 active:true 即可重新上线 */
     const wx = iv.contact || "";
     const steps = (iv.steps || []).map(s => `
       <div class="inv-step">
