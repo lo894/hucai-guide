@@ -336,6 +336,30 @@
     });
   }
 
+  /* 地图页顶部广告位（校园代办），数据在 errands.json，改数据即可 */
+  function adSec() {
+    try {
+      const er = (typeof KB !== "undefined" && KB.data && KB.data["errands"]) || null;
+      if (!er) return "";
+      const c = (er.contacts || []).find(x => x.name === "L.大王");
+      return `
+      <div class="ad-card" onclick="go('errands')" style="margin:10px 0 4px">
+        <div class="ad-l">
+          <div class="ad-tag">📣 校园代办 · 新生专属</div>
+          <div class="ad-h">找楼、办事、买电脑，学长学姐帮你搞定</div>
+          <div class="ad-s">${(er.services || []).map(v => esc(v.name)).join(" · ")}</div>
+          <div class="ad-cta">先聊需求 · 价格透明 · 咨询不收费 →</div>
+        </div>
+        <div class="ad-r">
+          ${c && c.img ? `<img class="ad-qr" src="${esc(c.img)}" alt="站长微信二维码">` : ""}
+          <div class="ad-wx">微信 <code>${esc(c ? c.wechat : "")}</code>
+            <button type="button" onclick="event.stopPropagation();copyText('${esc(c ? c.wechat : "")}')">复制</button></div>
+          <div class="ad-wx2">PPT / 被子找小玲学姐 <code>LLL00100800</code></div>
+        </div>
+      </div>`;
+    } catch (e) { return ""; }
+  }
+
   function mount(host) {
     const D = data();
     if (!host || !D || typeof L === "undefined") {
@@ -349,10 +373,10 @@
     const chips = `<div class="lf-chips" id="lfChips"></div>`;
     host.innerHTML = `
       <div class="sec-h"><h2>雷锋书院 · 精细电子地图</h2><span class="d">官方平面图 · 双指缩放 · 点图钉看详情导航</span></div>
+      ${adSec()}
       <div class="lf-topbar">
         <a class="lf-btn" href="${navUrl("tx", D, "雷锋校区")}" target="_blank" rel="noopener">🧭 导航到雷锋校区</a>
-        <a class="lf-btn2" href="${navUrl("gd", D, "雷锋校区")}" target="_blank" rel="noopener">高德导航</a>
-        <a class="lf-btn2" href="tel:${esc(D.geo.phone)}">📞 ${esc(D.geo.phone)}</a>
+        <a class="lf-btn2" href="${navUrl("gd", D, "雷锋校区")}" target="_blank" rel="noopener">用高德导航</a>
       </div>
       <div class="lf-hint">📱 单指上下滑动翻页面 · 双指缩放 / 拖动地图</div>
       ${chips}
