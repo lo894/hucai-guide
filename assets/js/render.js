@@ -97,6 +97,25 @@
       </div>
     </div>` : "";
 
+    // 首页顶部两个重点入口：校园地图 / 校园代办（图标与副标取自 PAGES，自动同步）
+    const PG = id => (window.PAGES || []).find(p => p.id === id) || {};
+    const pm = PG("map"), pe = PG("errands");
+    const top2 = `
+    <div class="sec">
+      <div class="top2">
+        <div class="t2 t2-map" onclick="go('map')">
+          <div class="t2-ic">${pm.icon || "🗺️"}</div>
+          <div class="t2-tx"><b>${esc(pm.name || "校园地图")}</b><span>${esc(pm.sub || "")}</span></div>
+          <div class="t2-go">进去看看 →</div>
+        </div>
+        <div class="t2 t2-err" onclick="go('errands')">
+          <div class="t2-ic">${pe.icon || "📋"}</div>
+          <div class="t2-tx"><b>${esc(pe.name || "校园代办")}</b><span>${esc(pe.sub || "")}</span></div>
+          <div class="t2-go">找学长学姐 →</div>
+        </div>
+      </div>
+    </div>`;
+
     return `
     <div class="hero">
       <div class="hero-in">
@@ -111,6 +130,8 @@
         </div>
       </div>
     </div>
+
+    ${top2}
 
     <div class="sec">
       <div class="sec-h"><h2>快速入口</h2><span class="d">全部 ${allPages.length} 个专栏，点一下直达</span></div>

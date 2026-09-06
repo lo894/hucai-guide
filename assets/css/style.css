@@ -806,3 +806,26 @@ body{background:
   .ad-qr{width:132px;height:132px}
   .ar-list{grid-template-columns:1fr}
 }
+
+/* ===== 首页顶部两个重点入口 ===== */
+.top2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.t2{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;cursor:pointer;border:2px solid transparent;background:#fff}
+.t2-map{border-color:#9dbfe8;background:linear-gradient(0deg,#f4f9ff,#f4f9ff)}
+.t2-err{border-color:#e6bd54;background:linear-gradient(0deg,#fffdf6,#fffdf6)}
+.t2-ic{font-size:30px;flex:none}
+.t2-tx{flex:1;min-width:0}
+.t2-tx b{display:block;font-size:16px;font-weight:600;color:#1f2a24}
+.t2-tx span{display:block;font-size:12px;color:#6b7c70;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.t2-go{font-size:12px;color:#0f6e56;flex:none}
+.t2-err .t2-go{color:#8a6410}
+@media(max-width:560px){
+  .top2{grid-template-columns:1fr}
+  .t2-ic{font-size:26px}
+}
+
+/* ===== 地图移动端滚动修复 ===== */
+.lf-hint{display:none;font-size:12px;color:#8a9199;margin:8px 0 2px}
+.leaflet-container{touch-action:pan-y !important}
+@media(max-width:900px){
+  .lf-hint{display:block}
+}

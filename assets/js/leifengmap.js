@@ -354,9 +354,11 @@
         <a class="lf-btn2" href="${navUrl("gd", D, "雷锋校区")}" target="_blank" rel="noopener">高德导航</a>
         <a class="lf-btn2" href="tel:${esc(D.geo.phone)}">📞 ${esc(D.geo.phone)}</a>
       </div>
+      <div class="lf-hint">📱 单指上下滑动翻页面 · 双指缩放 / 拖动地图</div>
       ${chips}
       <div class="lf-mapwrap"><div id="lfmap" class="lf-map"></div></div>
       <div class="lf-nav" id="lfNav"></div>
+      <div class="ar-host" id="arHost"></div>
       <div class="lf-list" id="lfList"></div>
       <div class="note tip" style="margin-top:12px"><span class="ni">🚖</span><div><b>怎么到校：</b>${(D.arrival || []).map(esc).join("<br>· ")}</div></div>
       <div class="note tip" style="margin-top:8px"><span class="ni">📝</span><div><b>报到安排：</b>${esc(D.report || "")}</div></div>
@@ -370,9 +372,22 @@
       zoomSnap: 0.25,
       zoomControl: true,
       attributionControl: false,
+      dragging: !L.Browser.mobile,      /* 手机默认不劫持单指滑动，页面可正常上下翻 */
+      scrollWheelZoom: false,           /* 桌面滚轮留给页面滚动 */
       maxBounds: L.latLngBounds(bounds).pad(0.3),
       maxBoundsViscosity: 0.8
     });
+
+    /* 手机：单指滚页面，双指才拖动/缩放地图 */
+    if (L.Browser.mobile) {
+      const el = map.getContainer();
+      el.addEventListener("touchstart", e => {
+        if (e.touches && e.touches.length >= 2) map.dragging.enable();
+      }, { passive: true });
+      el.addEventListener("touchend", e => {
+        if (!e.touches || e.touches.length < 2) setTimeout(() => { try { map && map.dragging.disable(); } catch (x) {} }, 80);
+      }, { passive: true });
+    }
     L.imageOverlay("assets/img/leifeng-map.jpg", bounds).addTo(map);
     map.fitBounds(bounds, { padding: [4, 4] });
 
@@ -380,6 +395,7 @@
     renderList(D);
     addMarkers(D);
     renderNavPanel(D);
+    if (window.Around) window.Around.mount();
 
     /* 容器尺寸变化后重算（手机旋转/切页） */
     setTimeout(() => { if (map) map.invalidateSize(); }, 60);
