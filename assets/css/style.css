@@ -893,3 +893,5 @@ body{background:
   .cd-card{flex-direction:column}
   .cd-r{width:auto;max-width:none;border-left:none;border-top:1px dashed #c8dcef;padding-left:0;padding-top:10px;margin-top:4px}
 }
+.t2-ck{border-color:#7fc4a3;background:linear-gradient(0deg,#f4fbf7,#f4fbf7)}
+.t2-ck .t2-go{color:#0f6e56}
