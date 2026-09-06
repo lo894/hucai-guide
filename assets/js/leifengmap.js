@@ -336,25 +336,32 @@
     });
   }
 
-  /* 地图页顶部广告位（校园代办），数据在 errands.json，改数据即可 */
+  /* 地图页顶部广告位：数据在 ads.json，slots 里填内容即投放；未投放显示招商占位 */
   function adSec() {
     try {
-      const er = (typeof KB !== "undefined" && KB.data && KB.data["errands"]) || null;
-      if (!er) return "";
-      const c = (er.contacts || []).find(x => x.name === "L.大王");
+      const A = (typeof KB !== "undefined" && KB.data && KB.data["ads"]) || null;
+      if (!A) return "";
+      const slot = (A.slots || []).find(s => s.id === "map-top");
+      const wx = A.contact || "Rat_millet5015";
+      if (slot && slot.active && (slot.title || slot.img)) {
+        const inner = `
+          ${slot.img ? `<img class="ad-slot-img" src="${esc(slot.img)}" alt="${esc(slot.title || "广告")}">` : ""}
+          <div class="ad-slot-tx">
+            <b>${esc(slot.title || "")}</b>
+            ${slot.desc ? `<span>${esc(slot.desc)}</span>` : ""}
+          </div>
+          ${slot.btn ? `<span class="ad-slot-btn">${esc(slot.btn)}</span>` : ""}`;
+        return slot.url
+          ? `<a class="ad-slot on" href="${esc(slot.url)}" target="_blank" rel="noopener">${inner}</a>`
+          : `<div class="ad-slot on">${inner}</div>`;
+      }
       return `
-      <div class="ad-card" onclick="go('errands')" style="margin:10px 0 4px">
-        <div class="ad-l">
-          <div class="ad-tag">📣 校园代办 · 新生专属</div>
-          <div class="ad-h">找楼、办事、买电脑，学长学姐帮你搞定</div>
-          <div class="ad-s">${(er.services || []).map(v => esc(v.name)).join(" · ")}</div>
-          <div class="ad-cta">先聊需求 · 价格透明 · 咨询不收费 →</div>
-        </div>
-        <div class="ad-r">
-          ${c && c.img ? `<img class="ad-qr" src="${esc(c.img)}" alt="站长微信二维码">` : ""}
-          <div class="ad-wx">微信 <code>${esc(c ? c.wechat : "")}</code>
-            <button type="button" onclick="event.stopPropagation();copyText('${esc(c ? c.wechat : "")}')">复制</button></div>
-          <div class="ad-wx2">PPT / 被子找小玲学姐 <code>LLL00100800</code></div>
+      <div class="ad-slot" title="${esc((slot && slot.name) || "广告位")}">
+        <div class="ad-slot-in">
+          <div class="ad-slot-i">📢</div>
+          <div class="ad-slot-h">广告位 · 虚位以待</div>
+          <div class="ad-slot-d">${esc((slot && slot.size) || "通栏横幅")} ｜ ${esc(A.note || "")}</div>
+          <button type="button" class="ad-slot-b" onclick="event.stopPropagation();copyText('${esc(wx)}')">投放咨询 · 复制微信 ${esc(wx)}</button>
         </div>
       </div>`;
     } catch (e) { return ""; }

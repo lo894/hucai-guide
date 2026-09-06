@@ -829,3 +829,43 @@ body{background:
 @media(max-width:900px){
   .lf-hint{display:block}
 }
+
+/* ===== 通用广告位（ads.json 驱动，未投放显示招商占位） ===== */
+.ad-slot{display:block;margin:12px 0 6px;border:2px dashed #e6bd54;background:#fffdf6;border-radius:14px;min-height:150px;text-decoration:none;color:inherit;overflow:hidden}
+.ad-slot-in{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:22px 16px;text-align:center;min-height:150px}
+.ad-slot-i{font-size:26px}
+.ad-slot-h{font-size:15px;font-weight:600;color:#8a6410}
+.ad-slot-d{font-size:12px;color:#9aa08f;line-height:1.6;max-width:520px}
+.ad-slot-b{margin-top:6px;border:1px solid #e6bd54;background:#fff;color:#8a6410;border-radius:8px;padding:7px 14px;font-size:13px;cursor:pointer}
+.ad-slot.on{display:flex;align-items:center;gap:14px;border-style:solid;background:#fff;min-height:0;padding:12px 14px}
+.ad-slot-img{width:220px;height:104px;object-fit:cover;border-radius:10px;flex:none;background:#f4f4f0}
+.ad-slot-tx{flex:1;min-width:0}
+.ad-slot-tx b{display:block;font-size:15px;color:#1f2a24}
+.ad-slot-tx span{display:block;font-size:12.5px;color:#6b7c70;margin-top:3px}
+.ad-slot-btn{flex:none;background:#0f6e56;color:#fff;padding:8px 14px;border-radius:9px;font-size:13px}
+
+/* ===== 邀请有礼 ===== */
+.inv-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.inv-step{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line2,#e2e6ea);border-radius:12px;padding:12px 14px}
+.inv-si{font-size:20px;flex:none}
+.inv-st b{display:block;font-size:13.5px;color:#1f2a24}
+.inv-st span{display:block;font-size:12.5px;color:#6b7c70;margin-top:4px;line-height:1.6}
+.inv-rws{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.inv-rw{border:1px solid #e6bd54;background:#fffdf6;border-radius:12px;padding:12px 14px;text-align:center}
+.inv-rw-n{font-size:12.5px;color:#8a6410}
+.inv-rw-v{font-size:15px;font-weight:600;color:#1f2a24;margin:5px 0}
+.inv-rw-d{font-size:12px;color:#6b7c70;line-height:1.6}
+.inv-script{margin-top:12px;background:#f7f9fb;border:1px solid #dde6ee;border-radius:12px;padding:12px 14px}
+.inv-sc-h{font-size:13px;font-weight:600;color:#33475b}
+.inv-sc-t{font-size:12.5px;color:#4a5b50;line-height:1.7;margin:6px 0 10px;word-break:break-all}
+.inv-sc-wx{margin-left:10px;font-size:12.5px;color:#6b7c70}
+.inv-sc-wx code{background:#fff;border:1px solid #dde6ee;border-radius:6px;padding:2px 6px}
+@media(max-width:900px){
+  .inv-steps,.inv-rws{grid-template-columns:1fr}
+  .ad-slot{min-height:120px}
+  .ad-slot-in{min-height:120px;padding:16px}
+  .ad-slot.on{flex-direction:column;align-items:flex-start}
+  .ad-slot-img{width:100%;height:130px}
+  .ad-slot-btn{width:100%;text-align:center}
+  .inv-sc-wx{display:block;margin:8px 0 0}
+}

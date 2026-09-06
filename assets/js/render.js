@@ -1649,6 +1649,38 @@
   }
 
   /* ============================ 校园代办 ============================ */
+  /* 邀请有礼板块（数据在 errands.json 的 invite 字段，改数据即可调整规则） */
+  function inviteSec(e) {
+    const iv = e && e.invite;
+    if (!iv) return "";
+    const wx = iv.contact || "";
+    const steps = (iv.steps || []).map(s => `
+      <div class="inv-step">
+        <div class="inv-si">${esc(s.icon || "•")}</div>
+        <div class="inv-st"><b>${esc(s.t)}</b><span>${esc(s.d)}</span></div>
+      </div>`).join("");
+    const rewards = (iv.rewards || []).map(r => `
+      <div class="inv-rw">
+        <div class="inv-rw-n">${esc(r.n)}</div>
+        <div class="inv-rw-v">${esc(r.v)}</div>
+        <div class="inv-rw-d">${esc(r.d || "")}</div>
+      </div>`).join("");
+    return `
+    <div class="sec">
+      <div class="sec-h"><h2>🎁 邀请有礼</h2><span class="d">推荐同学 · 双方都得福利</span></div>
+      <div class="note tip" style="margin:0 0 14px"><span class="ni">🎁</span><div>${esc(iv.intro || "")}</div></div>
+      <div class="inv-steps">${steps}</div>
+      ${rewards ? `<div class="inv-rws">${rewards}</div>` : ""}
+      ${iv.pending ? `<div class="note" style="margin-top:10px"><span class="ni">📌</span><div>${esc(iv.pending)}</div></div>` : ""}
+      ${iv.script ? `<div class="inv-script">
+        <div class="inv-sc-h">📋 一键复制邀请话术（发给同学 / 发群里）</div>
+        <div class="inv-sc-t">${esc(iv.script)}</div>
+        <button class="btn" onclick="copyText(${JSON.stringify(iv.script).replace(/"/g, "&quot;")})">复制邀请话术</button>
+        ${wx ? `<span class="inv-sc-wx">参加 / 报单人：微信 <code>${esc(wx)}</code></span>` : ""}
+      </div>` : ""}
+    </div>`;
+  }
+
   function errands() {
     const e = D().errands;
     if (!e) return "";
@@ -1700,6 +1732,7 @@
       ${contacts}
       ${e.cta ? `<div class="note ok" style="margin-top:4px"><span class="ni">👍</span><div>${esc(e.cta)}</div></div>` : ""}
     </div>
+    ${inviteSec(e)}
     <div class="sec">${secH("为什么找我们", "每一单都当自己的事做")}
       <div class="grid g2" style="gap:12px">${why}</div>
     </div>`;
