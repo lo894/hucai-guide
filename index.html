@@ -28,18 +28,7 @@
 </head>
 <body>
 
-<!-- 访问口令门（前端基础防护，非加密） -->
-<div id="gate" class="gate">
-  <div class="gate-box">
-    <img src="assets/img/hufe_badge.png" class="gate-badge" alt="湖财校徽">
-    <div class="gate-tt">湖财新生指南 · 2026</div>
-    <div class="gate-st">本指南面向湖南财政经济学院新生，请输入访问口令</div>
-    <input id="gatePw" class="gate-in" type="password" placeholder="访问口令" autocomplete="off">
-    <button id="gateBtn" class="gate-btn">进入指南</button>
-    <div id="gateErr" class="gate-err"></div>
-    <div class="gate-foot">© L.大王 原创作品 · 禁止转载与商用</div>
-  </div>
-</div>
+
 
 <div class="ovl" id="ovl"></div>
 
@@ -230,26 +219,10 @@
 })();
 </script>
 <script>
-/* 访问口令门：前端基础防护（口令在源码中，仅作轻量门禁，非加密） */
+/* 访问口令门已移除（2026-09-06）：站点对新生公开访问 */
 (function(){
-  var PW = "hucai2026";
-  var gate = document.getElementById('gate');
-  var inp = document.getElementById('gatePw');
-  var btn = document.getElementById('gateBtn');
-  var err = document.getElementById('gateErr');
-  function unlock(){
-    try{ sessionStorage.setItem('hucai_unlocked','1'); }catch(e){}
-    document.body.classList.add('unlocked');
-    gate.style.display = 'none';
-  }
-  function tryOpen(){
-    if(inp.value === PW){ unlock(); }
-    else { err.textContent = '口令错误，请向站长（L.大王）获取'; inp.value=''; inp.focus(); }
-  }
-  if(sessionStorage.getItem('hucai_unlocked') === '1'){ unlock(); }
-  btn.addEventListener('click', tryOpen);
-  inp.addEventListener('keydown', function(e){ if(e.key==='Enter') tryOpen(); });
-  inp.focus();
+  var gate = document.getElementById("gate");
+  if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
 })();
 </script>
 <script>
