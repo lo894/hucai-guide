@@ -83,7 +83,7 @@
       { ic: "📱", t: "我要办卡", id: "cards" },
       { ic: "💻", t: "我要买电脑", id: "laptop" },
       { ic: "🗺️", t: "我要找路", id: "map" },
-      { ic: "🛡️", t: "我要防骗", id: "antiScam" },
+      { ic: "🗓️", t: "我要查课表", id: "course" },
     ];
     const scnHtml = `
     <div class="sec">
