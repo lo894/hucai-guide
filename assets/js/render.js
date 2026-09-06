@@ -73,6 +73,30 @@
       `<div class="entry${p.hot ? " hot" : ""}" title="${esc((p.hot ? "🔥 重点 · " : "") + p.name + (p.sub ? " · " + p.sub : ""))}" onclick="go('${p.id}')"><div class="ei">${p.icon}</div><div class="et">${p.hot ? "🔥 " : ""}${esc(p.name)}</div></div>`
     ).join("");
 
+    // 首页广告位：校园代办（数据来自 errands.json，改数据即可更新）
+    const er = D().errands || null;
+    const adWx = er && (er.contacts || []).find(c => c.name === "L.大王");
+    const adCard = er ? `
+    <div class="sec">
+      <div class="ad-card" onclick="go('errands')">
+        <div class="ad-l">
+          <div class="ad-tag">📣 校园代办 · 新生专属</div>
+          <div class="ad-h">开学这些事，交给学长学姐</div>
+          <div class="ad-s">${(er.services || []).map(v => esc(v.name)).join(" · ")}</div>
+          <div class="ad-why">${(er.whyUs || []).slice(0, 4).map(w =>
+            `<span class="ad-w"><i>${esc(w.icon || "✓")}</i>${esc(w.title)}</span>`).join("")}</div>
+          <div class="ad-cta">先聊需求 · 价格透明 · 咨询不收费 →</div>
+        </div>
+        <div class="ad-r">
+          ${adWx && adWx.img ? `<img class="ad-qr" src="${esc(adWx.img)}" alt="站长微信二维码">` : ""}
+          <div class="ad-wx">微信 <code>${esc(adWx ? adWx.wechat : "")}</code>
+            <button type="button" onclick="event.stopPropagation();copyText('${esc(adWx ? adWx.wechat : "")}')">复制</button></div>
+          <div class="ad-wx2">PPT / 被子找小玲学姐 <code>LLL00100800</code></div>
+          <div class="ad-invite">🎁 邀请有礼 · 规则制定中</div>
+        </div>
+      </div>
+    </div>` : "";
+
     return `
     <div class="hero">
       <div class="hero-in">
@@ -92,6 +116,8 @@
       <div class="sec-h"><h2>快速入口</h2><span class="d">全部 ${allPages.length} 个专栏，点一下直达</span></div>
       <div class="grid g-entry">${entries}</div>
     </div>
+
+    ${adCard}
 
     <div class="sec">
       <div class="sec-h"><h2>联系我</h2><span class="d">有问题可以加微信 · 备注「湖财新生」</span></div>

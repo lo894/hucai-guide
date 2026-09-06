@@ -762,3 +762,47 @@ body{background:
 .lf-pass.ref{background:#f7f7f4;color:#6b6f63}
 .lf-pass.ref b{color:#6b6f63}
 .lf-step-i.end{background:#e3f3ea;color:#0f6e56}
+
+/* ===== 首页广告位：校园代办 ===== */
+.ad-card{display:flex;gap:18px;align-items:center;border:2px solid #e6bd54;background:#fffdf6;border-radius:16px;padding:16px 18px;cursor:pointer;transition:box-shadow .15s}
+.ad-card:hover{box-shadow:0 4px 14px rgba(214,171,60,.18)}
+.ad-l{flex:1;min-width:0}
+.ad-tag{display:inline-block;background:#fdf3d8;color:#8a6410;font-size:12px;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.ad-h{font-size:18px;font-weight:600;color:#1f2a24;line-height:1.35}
+.ad-s{font-size:13px;color:#6b6f63;margin-top:5px}
+.ad-why{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.ad-w{display:inline-flex;align-items:center;gap:4px;background:#fff;border:1px solid #eee2c2;border-radius:999px;padding:4px 10px;font-size:12px;color:#4a5b50}
+.ad-w i{font-style:normal}
+.ad-cta{margin-top:11px;display:inline-block;background:#0f6e56;color:#fff;padding:8px 15px;border-radius:10px;font-size:13px}
+.ad-r{flex:none;text-align:center;min-width:132px}
+.ad-qr{width:112px;height:112px;border-radius:10px;border:1px solid #eee2c2;background:#fff}
+.ad-wx{margin-top:7px;font-size:12px;color:#4a5b50}
+.ad-wx code{background:#fff;border:1px solid #eee2c2;border-radius:6px;padding:2px 6px;font-size:12px}
+.ad-wx button{margin-left:4px;border:1px solid #e6bd54;background:#fff;color:#8a6410;border-radius:6px;padding:2px 8px;font-size:12px;cursor:pointer}
+.ad-wx2{margin-top:5px;font-size:11px;color:#8a8f83}
+.ad-wx2 code{background:#fff;border:1px solid #eee2c2;border-radius:6px;padding:1px 5px}
+.ad-invite{margin-top:7px;font-size:11px;color:#a07b1c;border:1px dashed #e6bd54;border-radius:6px;padding:3px 6px;display:inline-block}
+
+/* ===== 校园周边生活栏位（around.js） ===== */
+.ar-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.ar-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid var(--line2,#e2e6ea);border-radius:999px;font-size:13px;cursor:pointer;background:#fff;user-select:none}
+.ar-ci{font-size:14px}
+.ar-chip.on{border-color:#1565c0;color:#1565c0;background:#eef4fb;font-weight:600}
+.ar-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.ar-item{border:1px solid var(--line2,#e2e6ea);border-radius:12px;padding:12px 14px;background:#fff}
+.ar-it-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;color:#1f2a24}
+.ar-tag{background:#eef4fb;color:#1565c0;font-size:11px;padding:2px 8px;border-radius:999px}
+.ar-it-d{font-size:13px;color:#4a5b50;margin-top:6px;line-height:1.6}
+.ar-it-m{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:12px;color:#6b7c70}
+.ar-it-t{margin-top:7px;font-size:12px;background:#f7f6f0;border-radius:8px;padding:6px 9px;color:#6b6f63}
+.ar-empty{border:1px dashed #cfd6cf;border-radius:12px;padding:18px 16px;text-align:center;background:#fbfbf8;grid-column:1/-1}
+.ar-em-i{font-size:26px}
+.ar-em-t{font-size:14px;font-weight:600;margin-top:6px;color:#3b443d}
+.ar-em-d{font-size:12.5px;color:#7b8278;margin-top:6px;line-height:1.6}
+.ar-em-b{margin-top:10px;border:1px solid #e6bd54;background:#fff;color:#8a6410;border-radius:8px;padding:7px 14px;font-size:13px;cursor:pointer}
+@media(max-width:900px){
+  .ad-card{flex-direction:column;align-items:stretch;text-align:left}
+  .ad-r{text-align:center}
+  .ad-qr{width:132px;height:132px}
+  .ar-list{grid-template-columns:1fr}
+}

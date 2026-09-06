@@ -72,7 +72,9 @@
       </div>
       <div class="map-legend">${legend}</div>
       <div class="note tip" style="margin-top:12px"><span class="ni">📍</span><div>${esc(c.desc || "")}<br>交通：${(c.transport || []).map(esc).join("；")}<br><span style="color:var(--tx3)">${esc(M.note || "")}</span></div></div>
-    </div>`;
+    </div>
+
+    <div class="sec" id="arHost"></div>`;
 
     /* 精细电子地图只在「雷锋校区」下展示，切到主校区则卸载 */
     if (window.LeifengMap) {
@@ -80,6 +82,8 @@
       if (cur === "leifeng" && host) window.LeifengMap.mount(host);
       else if (window.LeifengMap.unmount) window.LeifengMap.unmount();
     }
+
+    if (window.Around) window.Around.mount(document.getElementById("arHost"));
   }
 
   function secH(t, d) {
