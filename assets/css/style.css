@@ -732,3 +732,27 @@ body{background:
   .lf-chip{padding:7px 13px}
   .lf-li{padding:8px 14px}
 }
+
+/* ===== 页内导航面板（leifengmap.js） ===== */
+.lf-nav{margin-top:14px;border:1px solid var(--line2,#e2e6ea);border-radius:12px;padding:12px 14px;background:#fff}
+.lf-nav-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lf-nav-l{font-size:13px;color:var(--tx2,#667);flex:none}
+.lf-sel{border:1px solid var(--line2,#e2e6ea);border-radius:8px;padding:8px 10px;font-size:13px;background:#fff;max-width:150px;min-width:96px}
+.lf-swap{border:1px solid var(--line2,#e2e6ea);background:#fff;border-radius:8px;padding:8px 10px;font-size:14px;cursor:pointer;color:#1565c0}
+.lf-swap:hover{background:#f2f6fb}
+#lfGo{padding:9px 16px;font-size:14px}
+#lfClear{padding:8px 12px;font-size:13px}
+.lf-rt-h{font-size:15px;font-weight:600;margin-top:12px;color:#1565c0}
+.lf-rt-s{font-size:13px;color:var(--tx2,#667);margin-top:4px}
+.lf-rt-s b{color:#0f6e56;font-size:15px}
+.lf-steps{margin-top:10px;display:flex;flex-direction:column;gap:7px}
+.lf-step{display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.55}
+.lf-step-i{flex:none;width:20px;height:20px;border-radius:50%;background:#e8f0fb;color:#1565c0;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.lf-step-t b{color:#1565c0}
+.lf-rt-n{margin-top:9px;font-size:11px;color:#9aa3a9}
+.lf-rt-err{margin-top:10px;font-size:13px;color:#c0392b}
+@media(max-width:900px){
+  .lf-sel{max-width:none;flex:1 1 40%}
+  #lfGo{flex:1 1 100%;justify-content:center}
+  .lf-nav-row{gap:7px}
+}
