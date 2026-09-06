@@ -23,7 +23,6 @@
   .gate-err{color:#c0392b;font-size:12.5px;min-height:18px;margin-top:10px}
   .gate-foot{font-size:11px;color:#9aa8a6;margin-top:16px}
   /* 未解锁时隐藏页面内容 */
-  body:not(.unlocked) .topbar,body:not(.unlocked) .main,body:not(.unlocked) .wm,body:not(.unlocked) .fab,body:not(.unlocked) .ai-hint,body:not(.unlocked) .ai-toast,body:not(.unlocked) .chat,body:not(.unlocked) .modal,body:not(.unlocked) .rw-bar,body:not(.unlocked) .rw-fly,body:not(.unlocked) .rw-pop{display:none!important}
 </style>
 <script>if(/[?&]clean=1/.test(location.search)){document.documentElement.classList.add("clean");}</script>
 </head>
@@ -225,6 +224,7 @@
 <script>
 /* 访问口令门已移除（2026-09-06）：站点对新生公开访问 */
 (function(){
+  document.body && document.body.classList.add("unlocked");
   var gate = document.getElementById("gate");
   if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
 })();
