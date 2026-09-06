@@ -875,3 +875,21 @@ body{background:
 .clean .ad-slot,
 .clean .t2-err,
 .clean .ad-invite{display:none !important}
+
+/* ===== 开学倒计时（countdown.json 驱动） ===== */
+.cd-card{display:flex;gap:16px;align-items:stretch;border:2px solid #9dbfe8;background:#f4f9ff;border-radius:16px;padding:14px 16px}
+.cd-l{flex:1;min-width:0}
+.cd-tag{display:inline-block;background:#e6f0fb;color:#1565c0;font-size:12px;padding:3px 10px;border-radius:999px;margin-bottom:7px}
+.cd-head{font-size:17px;font-weight:600;color:#1f2a24;line-height:1.4}
+.cd-head b{color:#c0392b;font-size:20px}
+.cd-sub{font-size:12.5px;color:#6b7c70;margin-top:4px;line-height:1.6}
+.cd-up{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+.cd-up-i{font-size:12px;color:#4a5b50;background:#fff;border:1px solid #dbe6f0;border-radius:999px;padding:3px 10px}
+.cd-up-i i{font-style:normal;color:#1565c0;margin-right:4px}
+.cd-r{flex:none;width:300px;max-width:42%;border-left:1px dashed #c8dcef;padding-left:16px}
+.cd-r-h{font-size:13px;font-weight:600;color:#1565c0;margin-bottom:6px}
+.cd-todo{margin:0;padding-left:18px;font-size:12.5px;color:#3b4a40;line-height:1.75}
+@media(max-width:900px){
+  .cd-card{flex-direction:column}
+  .cd-r{width:auto;max-width:none;border-left:none;border-top:1px dashed #c8dcef;padding-left:0;padding-top:10px;margin-top:4px}
+}

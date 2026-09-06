@@ -131,6 +131,8 @@
       </div>
     </div>
 
+    ${countdownHtml() ? `<div class="sec">${countdownHtml()}</div>` : ""}
+
     ${top2}
 
     <div class="sec">
@@ -1649,6 +1651,43 @@
   }
 
   /* ============================ 校园代办 ============================ */
+  /* 开学倒计时：距下一个节点还有几天 + 现在该做什么（数据在 countdown.json） */
+  function countdownHtml() {
+    try {
+      const C = D().countdown;
+      if (!C) return "";
+      const evs = (C.events || []).slice().sort((a, b) => a.date.localeCompare(b.date));
+      if (!evs.length) return "";
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+      const dayMs = 86400000;
+      let idx = evs.findIndex(e => new Date(e.date + "T00:00:00").getTime() >= today);
+      if (idx < 0) idx = evs.length - 1;
+      const next = evs[idx];
+      const days = Math.round((new Date(next.date + "T00:00:00").getTime() - today) / dayMs);
+      const fmt = d => (+d.slice(5, 7)) + " 月 " + (+d.slice(8, 10)) + " 日";
+      const head = days === 0 ? `今天 · ${next.name}`
+        : (days > 0 ? `距「${next.name}」还有 <b>${days}</b> 天` : `${next.name} · 进行中`);
+      const sub = days > 0 ? fmt(next.date) + " · " + (next.desc || "") : (next.desc || "");
+      const todos = (next.todo || []).slice(0, 4).map(x => `<li>${esc(x)}</li>`).join("");
+      const up = evs.slice(idx + 1, idx + 4).map(e =>
+        `<span class="cd-up-i"><i>${fmt(e.date)}</i>${esc(e.name)}</span>`).join("");
+      return `
+      <div class="cd-card">
+        <div class="cd-l">
+          <div class="cd-tag">⏰ ${esc(C.title || "开学倒计时")}</div>
+          <div class="cd-head">${head}</div>
+          <div class="cd-sub">${esc(sub)}</div>
+          ${up ? `<div class="cd-up">${up}</div>` : ""}
+        </div>
+        <div class="cd-r">
+          <div class="cd-r-h">✅ 现在该准备</div>
+          <ul class="cd-todo">${todos}</ul>
+        </div>
+      </div>`;
+    } catch (e) { return ""; }
+  }
+
   /* 邀请有礼板块（数据在 errands.json 的 invite 字段，改数据即可调整规则） */
   function inviteSec(e) {
     const iv = e && e.invite;
