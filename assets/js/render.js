@@ -98,8 +98,8 @@
     <div class="sec">
       <div class="ad-card" onclick="go('errands')">
         <div class="ad-l">
-          <div class="ad-tag">📣 校园代办 · 新生专属</div>
-          <div class="ad-h">开学这些事，交给学长学姐</div>
+          <div class="ad-tag">🤝 这些事我也能帮忙</div>
+          <div class="ad-h">开学这些事，交给同校同学</div>
           <div class="ad-s">${(er.services || []).map(v => esc(v.name)).join(" · ")}</div>
           <div class="ad-why">${(er.whyUs || []).slice(0, 4).map(w =>
             `<span class="ad-w"><i>${esc(w.icon || "✓")}</i>${esc(w.title)}</span>`).join("")}</div>
@@ -176,7 +176,7 @@
           <div class="maker-tt">🌟 作者碎碎念：其实我也是 2026 级新生</div>
           <p class="maker-tx">说真的，做这个站不是因为我多厉害，而是因为我刚拿到录取通知那会儿，对着一堆官方文件也是一头雾水：宿舍长啥样？校区在哪儿？要带啥？卡怎么办理？问的人多、答案还散。所以我就把自己<b>一点点摸清楚的东西整理出来</b>，希望你报到前少踩坑，把精力花在更值得的事上。</p>
           <p class="maker-tx">我和你一样是<b>同年级新生（工程软件专业）</b>，这些攻略不是"官方口径"，而是一个刚走过的人的真实笔记——能帮到你的信息我都会放上来，也欢迎你随时来补充、纠错。它<b>非 AI 生成、逐条人工整理</b>，转载引用请注明出处 🤝。</p>
-          <p class="maker-tx">作为同校学长，我能帮你的不只是"查资料"：<b>办校园卡、买电脑、做 PPT、订宿舍用品、找兼职</b>这些我都在做，同校对接、价格透明、不推销。需要的时候，去「校园代办」看看，或直接加我微信聊都行。你的每份支持，都是这个站继续更新下去的动力 💪。</p>
+          <p class="maker-tx">作为同校学长，我能帮你的不只是"查资料"：<b>办校园卡、买电脑、做 PPT、订宿舍用品</b>这些我都在做，另外<b>快递代拿、校园跑腿、校园兼职</b>也能对接，同校靠谱、价格透明、不推销。需要的时候，去「校园代办」看看，或直接加我微信聊都行。你的每份支持，都是这个站继续更新下去的动力 💪。</p>
           <p class="maker-tx" style="margin-top:10px">📅 <b>这个站还在长大</b>：2026 年 8 月第一版 → 开学季持续更新（最近 2026-09-06），大一到大四的内容会慢慢补齐，记得常回来看看～</p>
           <div class="maker-acts">
             <button class="maker-btn" id="blessBtn">💛 为作者加油</button>
