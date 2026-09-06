@@ -81,7 +81,7 @@
       { ic: "📋", t: "我要报到", id: "checklist" },
       { ic: "🛏️", t: "我要找宿舍", id: "dorm" },
       { ic: "📱", t: "我要办卡", id: "cards" },
-      { ic: "💻", t: "我要买电脑", id: "laptop" },
+      { ic: "💰", t: "我要缴费", id: "fees" },
       { ic: "🗺️", t: "我要找路", id: "map" },
       { ic: "🗓️", t: "我要查课表", id: "course" },
     ];
