@@ -869,3 +869,9 @@ body{background:
   .ad-slot-btn{width:100%;text-align:center}
   .inv-sc-wx{display:block;margin:8px 0 0}
 }
+
+/* ===== 纯净模式（?clean=1）：投稿 / 对外合作时隐藏全部广告与商业入口 ===== */
+.clean .ad-card,
+.clean .ad-slot,
+.clean .t2-err,
+.clean .ad-invite{display:none !important}
