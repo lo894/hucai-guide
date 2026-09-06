@@ -896,3 +896,14 @@ body{background:
 .t2-ck{border-color:#7fc4a3;background:linear-gradient(0deg,#f4fbf7,#f4fbf7)}
 .t2-ck .t2-go{color:#0f6e56}
 .hero-sub{font-size:14px;color:rgba(255,255,255,.85);margin-top:8px;letter-spacing:.5px}
+
+/* 场景入口：我要… */
+.scn{display:flex;flex-wrap:wrap;gap:10px}
+.scn-b{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #e4e8f0;border-radius:999px;
+  padding:10px 15px;font-size:14px;font-weight:600;color:#243b53;cursor:pointer;transition:.15s;
+  box-shadow:0 1px 2px rgba(20,40,80,.05)}
+.scn-b:hover{transform:translateY(-1px);border-color:#7fc4a3;box-shadow:0 4px 12px rgba(20,80,60,.12)}
+.scn-ic{font-size:17px}
+
+/* 地图加载占位（图未下完前给底色，不再像"图没了"） */
+.lf-map{background:#e9eef2 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><text x="50%" y="50%" font-size="11" fill="%239bb" text-anchor="middle" dominant-baseline="middle">地图加载中…</text></svg>') center/160px no-repeat}

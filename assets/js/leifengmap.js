@@ -419,7 +419,7 @@
         if (!e.touches || e.touches.length < 2) setTimeout(() => { try { map && map.dragging.disable(); } catch (x) {} }, 80);
       }, { passive: true });
     }
-    L.imageOverlay("assets/img/leifeng-map.jpg", bounds).addTo(map);
+    L.imageOverlay("assets/img/leifeng-map.webp", bounds).addTo(map);
     map.fitBounds(bounds, { padding: [4, 4] });
 
     renderChips(D);

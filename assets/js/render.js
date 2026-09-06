@@ -69,9 +69,27 @@
 
     // 快速入口：由 app.js 的 PAGES 自动生成（排除首页本身），新增板块会自动出现
     const allPages = (window.PAGES || []).filter(p => p.id !== "home");
-    const entries = allPages.map(p =>
+    // 网格顺序：🔥 重点项优先，其余按新生当前需求排；防骗不置顶
+    const QORDER = ["dorm", "map", "errands", "checklist", "cards", "fees", "laptop", "classCampaign", "campus", "training", "course", "channels", "antiScam", "about", "majors", "policies", "transfer", "resources", "compete", "skills", "timeline", "cert", "postgrad", "job", "feed", "faq"];
+    const qrank = id => { const i = QORDER.indexOf(id); return i < 0 ? 999 : i; };
+    const entries = allPages.slice().sort((a, b) => qrank(a.id) - qrank(b.id)).map(p =>
       `<div class="entry${p.hot ? " hot" : ""}" title="${esc((p.hot ? "🔥 重点 · " : "") + p.name + (p.sub ? " · " + p.sub : ""))}" onclick="go('${p.id}')"><div class="ei">${p.icon}</div><div class="et">${p.hot ? "🔥 " : ""}${esc(p.name)}</div></div>`
     ).join("");
+
+    // 场景入口：按"我要…"直达，不用翻栏目
+    const SCN = [
+      { ic: "📋", t: "我要报到", id: "checklist" },
+      { ic: "🛏️", t: "我要找宿舍", id: "dorm" },
+      { ic: "📱", t: "我要办卡", id: "cards" },
+      { ic: "💻", t: "我要买电脑", id: "laptop" },
+      { ic: "🗺️", t: "我要找路", id: "map" },
+      { ic: "🛡️", t: "我要防骗", id: "antiScam" },
+    ];
+    const scnHtml = `
+    <div class="sec">
+      <div class="sec-h"><h2>我要…</h2><span class="d">按场景直达，不用翻栏目</span></div>
+      <div class="scn">${SCN.map(s => `<div class="scn-b" onclick="go('${s.id}')"><span class="scn-ic">${s.ic}</span>${esc(s.t)}</div>`).join("")}</div>
+    </div>`;
 
     // 首页广告位：校园代办（数据来自 errands.json，改数据即可更新）
     const er = D().errands || null;
@@ -136,6 +154,8 @@
 
     ${top2}
 
+    ${scnHtml}
+
     <div class="sec">
       <div class="sec-h"><h2>快速入口</h2><span class="d">全部 ${allPages.length} 个专栏，点一下直达</span></div>
       <div class="grid g-entry">${entries}</div>
@@ -153,11 +173,11 @@
       <div class="maker-card">
         <div class="maker-em">🌙☕️</div>
         <div class="maker-bd">
-          <div class="maker-tt">🌟 作者碎碎念：这份指南，来得不容易</div>
-          <p class="maker-tx">这份指南从 <b>2026 年 8 月</b>第一版上线那天起，就成了 <b>L.大王</b> 心头放不下的事：56 个专业、宿舍、军训、政策、交通、证件清单……一条条翻出来、核对、排版，<b>熬过的夜、改过的稿，只有自己知道</b> ☕️。它花了我很多心血，不求回报，只希望你能<b>好好利用它</b>，报到前少踩坑，把时间花在更值得的事上。</p>
-          <p class="maker-tx">它不是学校官方发布，而是一份「把自己踩过的坑，提前替你填平」的私心。里面内容基本都经过人工逐条整理核实，<b>支持原创、拒绝抄袭</b>，转载引用请注明出处——尊重别人的劳动，也是对自己的尊重 🤝。觉得有用，也欢迎顺手转给同校的新生朋友。</p>
-          <p class="maker-tx">如果你觉得这份指南真的帮到了你，也欢迎<b>用行动支持一下我们自己</b>：办校园卡、买电脑、做 PPT、订宿舍用品或其它校园代办，可以先看看「校园代办」找学长学姐，靠谱省心；<b>想赚零花、做校园兼职的新生，也欢迎直接来找我聊</b>（微信 / QQ 见上方「联系我」）。你们的每一份支持，都是这份指南继续更新下去的动力 💪。</p>
-          <p class="maker-tx" style="margin-top:10px">📅 <b>本站历程</b>：2026 年 8 月上线第一版 → 开学季至今持续打磨更新（最近一次 2026-09-04），开学前后的重要信息都会及时补上，记得常回来看看～</p>
+          <div class="maker-tt">🌟 作者碎碎念：其实我也是 2026 级新生</div>
+          <p class="maker-tx">说真的，做这个站不是因为我多厉害，而是因为我刚拿到录取通知那会儿，对着一堆官方文件也是一头雾水：宿舍长啥样？校区在哪儿？要带啥？卡怎么办理？问的人多、答案还散。所以我就把自己<b>一点点摸清楚的东西整理出来</b>，希望你报到前少踩坑，把精力花在更值得的事上。</p>
+          <p class="maker-tx">我和你一样是<b>同年级新生（工程软件专业）</b>，这些攻略不是"官方口径"，而是一个刚走过的人的真实笔记——能帮到你的信息我都会放上来，也欢迎你随时来补充、纠错。它<b>非 AI 生成、逐条人工整理</b>，转载引用请注明出处 🤝。</p>
+          <p class="maker-tx">作为同校学长，我能帮你的不只是"查资料"：<b>办校园卡、买电脑、做 PPT、订宿舍用品、找兼职</b>这些我都在做，同校对接、价格透明、不推销。需要的时候，去「校园代办」看看，或直接加我微信聊都行。你的每份支持，都是这个站继续更新下去的动力 💪。</p>
+          <p class="maker-tx" style="margin-top:10px">📅 <b>这个站还在长大</b>：2026 年 8 月第一版 → 开学季持续更新（最近 2026-09-06），大一到大四的内容会慢慢补齐，记得常回来看看～</p>
           <div class="maker-acts">
             <button class="maker-btn" id="blessBtn">💛 为作者加油</button>
             <span class="maker-cnt">已经收到 <b id="blessNum">${bless}</b> 份鼓励 🎉</span>
