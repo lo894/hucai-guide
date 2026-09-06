@@ -385,5 +385,12 @@
     setTimeout(() => { if (map) map.invalidateSize(); }, 60);
   }
 
-  window.LeifengMap = { mount, flyTo };
+  function unmount() {
+    if (map) { map.remove(); map = null; }
+    markers = [];
+    filter = "all";
+    routeLayer = null;
+  }
+
+  window.LeifengMap = { mount, unmount, flyTo };
 })();

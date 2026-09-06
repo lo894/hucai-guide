@@ -6,7 +6,7 @@
 (function () {
   "use strict";
   const esc = window.esc;
-  let cur = "main";
+  let cur = "leifeng";
   const hidden = new Set();
 
   const TYPE = {
@@ -54,9 +54,9 @@
     </div>` : "";
 
     box.innerHTML = `
-    ${panoramaSec}
-
     <div class="sec" id="lfHost"></div>
+
+    ${panoramaSec}
 
     <div class="sec">${secH("校园地图导览", "示意图，非精确测绘")}
       <div class="flt" style="margin-bottom:14px"><div class="flt-r"><span class="flt-l">校区</span>${chips}</div></div>
@@ -74,7 +74,12 @@
       <div class="note tip" style="margin-top:12px"><span class="ni">📍</span><div>${esc(c.desc || "")}<br>交通：${(c.transport || []).map(esc).join("；")}<br><span style="color:var(--tx3)">${esc(M.note || "")}</span></div></div>
     </div>`;
 
-    if (window.LeifengMap) window.LeifengMap.mount(document.getElementById("lfHost"));
+    /* 精细电子地图只在「雷锋校区」下展示，切到主校区则卸载 */
+    if (window.LeifengMap) {
+      const host = document.getElementById("lfHost");
+      if (cur === "leifeng" && host) window.LeifengMap.mount(host);
+      else if (window.LeifengMap.unmount) window.LeifengMap.unmount();
+    }
   }
 
   function secH(t, d) {
