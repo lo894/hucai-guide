@@ -25,7 +25,6 @@
     { id: "resources", name: "学习资源", icon: "📚", sub: "平台·证书" },
     { id: "compete", name: "竞赛地图", icon: "🏅", sub: "数据·计算机·双创" },
     { id: "skills", name: "技能成长", icon: "🚀", sub: "Python·SQL·ML" },
-    { id: "plan", name: "学业规划", icon: "🧭", sub: "大一到大四" },
     { id: "classCampaign", name: "竞选班干部", icon: "🗳️", sub: "班委·竞选" },
     { id: "fees", name: "缴费指南", icon: "💰", sub: "学费·住宿·银行卡" },
     { id: "antiScam", name: "防骗指南", icon: "🛡️", sub: "开学季必看" },

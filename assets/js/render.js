@@ -121,7 +121,8 @@
       <div class="hero-in">
         <span class="yr">2026 迎新季</span>
         <div class="sl">${esc(s.tagline || "岳麓山下 · 湘江之滨")}</div>
-        <h1>湖南财政经济学院<br>新生入学指南</h1>
+        <h1>湖财生存手册</h1>
+        <div class="hero-sub">2026 新生入学指南 · 湖南财政经济学院</div>
         <div class="ds">${esc(s.overview.intro.slice(0, 70))}……这里整理了 56 个专业培养计划、校园环境、宿舍、军训、政策与入学清单，还有一个随时能问的 AI 学长。</div>
         <div class="hero-btns">
           <div class="btn" onclick="go('majors')">查看专业培养 →</div>
@@ -1201,6 +1202,19 @@
       </div>`).join("");
     const cps = (T.checkpoints || []).map(c =>
       `<div class="tl-i"><div class="tl-t">${esc(c.when)} · ${esc(c.title)}</div><div class="tl-c"><div class="tl-d">${esc(c.desc)}</div></div></div>`).join("");
+    /* 原「学业规划」板块内容已合并进来（PAGES 中不再单列，数据仍来自 plan.json） */
+    const PL = D()['plan'];
+    const planSec = PL ? `
+    <div class="sec">${secH("分年级行动清单", "每一年具体做什么 · 补充版")}
+      <div class="note tip" style="margin-bottom:12px"><span class="ni">ℹ️</span><div>${esc(PL.intro || "")}</div></div>
+      <div class="grid g2">${(PL.grades || []).map(g => `
+        <div class="card" style="margin-bottom:0">
+          <div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:15px">${esc(g.icon || "")} ${esc(g.year)}</h2><span class="d">${esc(g.theme || "")}</span></div>
+          <div style="margin-bottom:6px"><b style="color:var(--tx2)">📌 重点</b><ul class="lst">${(g.focus || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
+          <div><b style="color:var(--green)">✅ 行动</b><ul class="lst">${(g.todo || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
+          ${g.warn ? `<div class="note" style="margin-top:8px"><span class="ni">⚠️</span><div>${esc(g.warn)}</div></div>` : ""}
+        </div>`).join("")}</div>
+    </div>` : "";
     return `
     <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(T.intro)}</div></div>
     <div class="sec">${secH("分年级路线图", "大一到大四每年该抓什么")}
@@ -1208,7 +1222,8 @@
     </div>
     <div class="sec">${secH("大学四年关键节点", "照着这张表走不慌")}
       <div class="tl">${cps}</div>
-    </div>`;
+    </div>
+    ${planSec}`;
   }
 
   /* ============================ 考证指南 ============================ */
