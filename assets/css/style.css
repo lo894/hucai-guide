@@ -756,3 +756,9 @@ body{background:
   #lfGo{flex:1 1 100%;justify-content:center}
   .lf-nav-row{gap:7px}
 }
+.lf-cum{font-size:11px;color:#9aa3a9;margin-left:2px}
+.lf-pass{margin-top:5px;padding:5px 9px;background:#f4f8fd;border-radius:7px;font-size:12px;color:#33475b;line-height:1.7}
+.lf-pass b{color:#1565c0}
+.lf-pass.ref{background:#f7f7f4;color:#6b6f63}
+.lf-pass.ref b{color:#6b6f63}
+.lf-step-i.end{background:#e3f3ea;color:#0f6e56}

@@ -176,27 +176,65 @@
     return names[Math.round(deg / 45) % 8];
   }
 
+  function mPt(p) {
+    const x = Array.isArray(p) ? p[0] : p.x;   /* 路线点是 [x,y]，POI 是 {x,y} */
+    const y = Array.isArray(p) ? p[1] : p.y;
+    return [x * 9.0, y * 12.85];
+  }
+
+  /* 计算每个建筑到路线的最短距离 / 沿线位置 / 在行进方向的左侧还是右侧 */
+  function routeSights(pts, P) {
+    const mp = pts.map(mPt);
+    const cum = [0];
+    for (let i = 1; i < mp.length; i++) {
+      cum.push(cum[i - 1] + Math.hypot(mp[i][0] - mp[i - 1][0], mp[i][1] - mp[i - 1][1]));
+    }
+    const out = [];
+    P.forEach(poi => {
+      const q = mPt(poi);
+      let best = { d: Infinity, t: 0, side: "right" };
+      for (let i = 0; i < mp.length - 1; i++) {
+        const a = mp[i], b = mp[i + 1];
+        const vx = b[0] - a[0], vy = b[1] - a[1];
+        const len2 = vx * vx + vy * vy || 1;
+        let t = ((q[0] - a[0]) * vx + (q[1] - a[1]) * vy) / len2;
+        t = Math.max(0, Math.min(1, t));
+        const px = a[0] + t * vx, py = a[1] + t * vy;
+        const d = Math.hypot(q[0] - px, q[1] - py);
+        if (d < best.d) {
+          const cross = vx * (q[1] - a[1]) - vy * (q[0] - a[0]);
+          best = { d, t: cum[i] + t * Math.sqrt(len2), side: cross > 0 ? "right" : "left" };
+        }
+      }
+      if (best.d < 85) out.push({ poi, d: best.d, t: best.t, side: best.side });
+    });
+    return out.sort((a, b) => a.t - b.t);
+  }
+
   function stepsOf(pts) {
     const segs = [];
+    let run = 0;
     for (let i = 0; i < pts.length - 1; i++) {
       const d = Math.hypot((pts[i + 1][0] - pts[i][0]) * 9.0, (pts[i + 1][1] - pts[i][1]) * 12.85);
+      const t0 = run; run += d;
       if (d < 8) continue; /* 忽略零碎段 */
-      segs.push({ b: bearing(pts[i], pts[i + 1]), d });
+      segs.push({ b: bearing(pts[i], pts[i + 1]), d, t0, t1: run });
     }
     if (!segs.length) return [];
     const out = [];
-    let acc = segs[0].d, curB = segs[0].b;
+    let acc = segs[0].d, curB = segs[0].b, t0 = segs[0].t0, t1 = segs[0].t1;
     const label = t => t > 0 ? "right" : "left";
+    const push = (turn, from, to) => out.push({ turn, dir: dirName(curB), m: acc, t0: from, t1: to });
     for (let i = 1; i < segs.length; i++) {
       const turn = ((segs[i].b - curB + 540) % 360) - 180;
-      if (Math.abs(turn) <= 35) { acc += segs[i].d; }
+      if (Math.abs(turn) <= 35) { acc += segs[i].d; t1 = segs[i].t1; }
       else {
-        out.push({ turn: out.length ? label(turn) : "go", dir: dirName(curB), m: acc });
-        acc = segs[i].d; curB = segs[i].b;
+        push(out.length ? label(turn) : "go", t0, t1);
+        acc = segs[i].d; curB = segs[i].b; t0 = segs[i].t0; t1 = segs[i].t1;
       }
     }
     const finalTurn = segs.length > 1 ? (((segs[segs.length - 1].b - curB + 540) % 360) - 180) : 0;
-    out.push({ turn: out.length && Math.abs(finalTurn) > 35 ? label(finalTurn) : "go", dir: dirName(curB), m: acc });
+    push(out.length && Math.abs(finalTurn) > 35 ? label(finalTurn) : "go", t0, t1);
     return out;
   }
 
@@ -236,10 +274,34 @@
     map.fitBounds(L.latLngBounds(ll).pad(0.25));
 
     const st = stepsOf(pts);
+    const sights = routeSights(pts, P).filter(s => s.poi.id !== A.id && s.poi.id !== B.id);
+    const sideTx = s => (s.side === "right" ? "右手边" : "左手边");
+    const announced = new Set([A.id, B.id]); /* 同一栋楼只播报一次 */
     const rows = st.map((s, i) => {
       const act = i === 0 ? "出发" : (s.turn === "right" ? "右转" : (s.turn === "left" ? "左转" : "继续"));
-      return `<div class="lf-step"><span class="lf-step-i">${i + 1}</span><span class="lf-step-t"><b>${act}</b> · 向${s.dir}走约 <b>${Math.round(s.m)}</b> 米</span></div>`;
-    }).join("");
+      const inStep = x => x.t >= s.t0 - 3 && x.t <= s.t1 + 3 && !announced.has(x.poi.id);
+      const pass = sights.filter(x => x.d < 45 && inStep(x)).slice(0, 5);
+      pass.forEach(x => announced.add(x.poi.id));
+      const refs = sights.filter(x => x.d >= 45 && x.d < 95 && inStep(x)).slice(0, 3);
+      refs.forEach(x => announced.add(x.poi.id));
+      const passTx = pass.map(x =>
+        `走约 <b>${Math.max(5, Math.round(x.t - s.t0))}</b> 米，${sideTx(x)}经过 <b>【${esc(x.poi.name)}】</b>`
+      ).join("<br>");
+      const refL = refs.filter(x => x.side === "left"), refR = refs.filter(x => x.side === "right");
+      const nm = x => `【${esc(x.poi.name)}】`;
+      const parts = [];
+      if (refL.length) parts.push(`左手边可见 ${refL.map(nm).join("、")}`);
+      if (refR.length) parts.push(`右手边可见 ${refR.map(nm).join("、")}`);
+      const refTx = parts.length ? `参照：${parts.join("；")}` : "";
+      return `<div class="lf-step">
+        <span class="lf-step-i">${i + 1}</span>
+        <span class="lf-step-t"><b>${act}</b> · 向${s.dir}走约 <b>${Math.round(s.m)}</b> 米
+          <span class="lf-cum">（已走 ${Math.round(s.t1)} / ${Math.round(total)} 米）</span>
+          ${passTx ? `<div class="lf-pass">${passTx}</div>` : ""}
+          ${refTx ? `<div class="lf-pass ref">${refTx}</div>` : ""}
+        </span></div>`;
+    }).join("")
+      + `<div class="lf-step"><span class="lf-step-i end">✓</span><span class="lf-step-t"><b>到达</b> <b>【${esc(B.name)}】</b></span></div>`;
     document.getElementById("lfRoute").innerHTML = `
       <div class="lf-rt-h">🚶 ${esc(A.name)} → ${esc(B.name)}</div>
       <div class="lf-rt-s">全程约 <b>${Math.round(total)}</b> 米 · 步行约 <b>${mins}</b> 分钟（按 80 米/分钟估算）</div>
