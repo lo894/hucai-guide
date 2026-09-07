@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>湖财生存手册 · A3 宣传海报</title>
+<style>
+  :root{
+    --navy-d:#0c2a28; --navy:#134e4a; --navy-l:#1d6b63;
+    --gold:#e8643e; --gold2:#d4a017; --ink:#1c2b29; --tx2:#5a6b68;
+    --line:#e3e9e7; --bg:#f4f7f6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:#dfe6e4;color:var(--ink);-webkit-font-smoothing:antialiased}
+  .toolbar{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;gap:10px;justify-content:center;align-items:center;padding:10px;background:rgba(12,42,40,.92);backdrop-filter:blur(6px)}
+  .toolbar button{border:none;background:var(--gold);color:#fff;font-size:14px;font-weight:700;padding:9px 18px;border-radius:10px;cursor:pointer}
+  .toolbar .hint{color:#cfe3df;font-size:12.5px}
+  .stage{padding:64px 16px 40px;display:flex;justify-content:center}
+  .poster{
+    width:1123px;height:1587px;background:#fff;border-radius:18px;overflow:hidden;
+    box-shadow:0 30px 80px rgba(8,30,28,.35);transform-origin:top center;
+    display:flex;flex-direction:column;
+  }
+  /* 顶部 */
+  .hd{position:relative;background:linear-gradient(135deg,var(--navy-d) 0%,var(--navy) 52%,var(--navy-l) 100%);color:#fff;padding:54px 64px 46px;overflow:hidden}
+  .hd:after{content:"";position:absolute;right:-90px;top:-90px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(232,100,62,.34),transparent 68%);pointer-events:none}
+  .hd .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:14px;letter-spacing:.5px}
+  .hd h1{font-size:78px;line-height:1.04;font-weight:800;margin:22px 0 6px;letter-spacing:2px}
+  .hd h1 .em{color:var(--gold)}
+  .hd .sub{font-size:25px;opacity:.92;font-weight:500}
+  .hd .tag{margin-top:20px;display:inline-block;background:var(--gold);color:#fff;font-size:18px;font-weight:700;padding:8px 18px;border-radius:10px}
+  .hd .by{position:absolute;right:64px;bottom:42px;text-align:right;font-size:15px;opacity:.85;line-height:1.6}
+  /* 我要… 场景条 */
+  .scn{background:var(--bg);padding:26px 64px 22px}
+  .scn .lab{font-size:16px;color:var(--tx2);font-weight:700;margin-bottom:14px}
+  .scn .row{display:flex;flex-wrap:wrap;gap:14px}
+  .scn .pill{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:13px 22px;font-size:21px;font-weight:700;color:var(--navy);box-shadow:0 4px 14px rgba(12,42,40,.05)}
+  .scn .pill .ic{font-size:24px}
+  /* 功能网格 */
+  .feat{padding:30px 64px 26px;flex:1}
+  .feat .h{font-size:30px;font-weight:800;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:12px}
+  .feat .h:before{content:"";width:8px;height:34px;border-radius:4px;background:var(--gold)}
+  .feat .d{font-size:16px;color:var(--tx2);margin-bottom:22px;padding-left:20px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;display:flex;flex-direction:column;gap:7px;box-shadow:0 4px 16px rgba(12,42,40,.04);transition:.15s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(12,42,40,.1)}
+  .card .ic{font-size:32px}
+  .card .t{font-size:19px;font-weight:800;color:var(--ink)}
+  .card .x{font-size:13.5px;color:var(--tx2);line-height:1.5}
+  /* 底部二维码 */
+  .foot{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--navy-d);color:#fff}
+  .qr{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:40px 30px}
+  .qr+.qr{border-left:1px solid rgba(255,255,255,.12)}
+  .qr .box{width:230px;height:230px;background:#fff;border-radius:16px;display:flex;align-items:center;justify-content:center;padding:12px;overflow:hidden}
+  .qr .box img{width:100%;height:100%;object-fit:contain;display:block}
+  .qr .ph{width:100%;height:100%;display:none;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#9bb;border:2px dashed #c7d3d0;border-radius:12px;text-align:center;font-size:15px;line-height:1.5}
+  .qr .ttl{font-size:24px;font-weight:800}
+  .qr .sub{font-size:15px;opacity:.85;text-align:center;line-height:1.6}
+  .qr .code{font-size:14px;opacity:.7;font-family:ui-monospace,monospace}
+  .credit{padding:14px 64px;background:#fff;font-size:14px;color:var(--tx2);text-align:center;border-top:1px solid var(--line)}
+  .credit b{color:var(--navy)}
+  @media print{
+    @page{size:A3;margin:0}
+    body{background:#fff}
+    .toolbar{display:none}
+    .stage{padding:0}
+    .poster{box-shadow:none;border-radius:0;transform:none!important}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">🖨️ 打印 / 存为 PDF（A3）</button>
+  <span class="hint">建议用 A3 纸打印；微信二维码位置暂为占位，替换 assets/img/wechat_qr.png 即可</span>
+</div>
+
+<div class="stage">
+  <div class="poster" id="poster">
+    <!-- 顶部标题 -->
+    <div class="hd">
+      <span class="badge">🎓 湖南财政经济学院 · 2026 新生入学指南</span>
+      <h1>湖财<span class="em">生存手册</span></h1>
+      <div class="sub">同校同学亲手整理 · 全免费 · 帮你开学少踩坑</div>
+      <div class="tag">新生入学，这一份就够了</div>
+      <div class="by">© L.大王 原创整理<br>以 vibe coding 独立搭建</div>
+    </div>
+
+    <!-- 我要… 场景条 -->
+    <div class="scn">
+      <div class="lab">入学最常被问的 6 件事 👇</div>
+      <div class="row">
+        <span class="pill"><span class="ic">📋</span>我要报到</span>
+        <span class="pill"><span class="ic">🛏️</span>我要找宿舍</span>
+        <span class="pill"><span class="ic">📱</span>我要办卡</span>
+        <span class="pill"><span class="ic">💰</span>我要缴费</span>
+        <span class="pill"><span class="ic">🗺️</span>我要找路</span>
+        <span class="pill"><span class="ic">🗓️</span>我要查课表</span>
+      </div>
+    </div>
+
+    <!-- 功能网格 -->
+    <div class="feat">
+      <div class="h">它能帮你做什么</div>
+      <div class="d">27 个实用专栏，点一下直达 · 内容持续更新</div>
+      <div class="grid">
+        <div class="card"><span class="ic">🛏️</span><span class="t">宿舍攻略</span><span class="x">床品好物、宿舍整理、避坑</span></div>
+        <div class="card"><span class="ic">🗺️</span><span class="t">校园地图</span><span class="x">雷锋校区精细导航、找楼不迷路</span></div>
+        <div class="card"><span class="ic">📋</span><span class="t">校园代办</span><span class="x">PPT / 办卡 / 快递代拿 / 跑腿</span></div>
+        <div class="card"><span class="ic">✅</span><span class="t">入学清单</span><span class="x">勾选准备，不漏不带错</span></div>
+        <div class="card"><span class="ic">📱</span><span class="t">办卡指南</span><span class="x">校园卡 / 流量卡怎么选</span></div>
+        <div class="card"><span class="ic">💰</span><span class="t">缴费指南</span><span class="x">学费 / 住宿费 / 银行卡</span></div>
+        <div class="card"><span class="ic">🗓️</span><span class="t">选课攻略</span><span class="x">系统 / 轮次 / 抢课技巧</span></div>
+        <div class="card"><span class="ic">🛡️</span><span class="t">防骗指南</span><span class="x">开学季诈骗套路必看</span></div>
+        <div class="card"><span class="ic">🎖️</span><span class="t">军训指南</span><span class="x">安排 / 装备 / 注意事项</span></div>
+        <div class="card"><span class="ic">💻</span><span class="t">电脑选购</span><span class="x">按专业配，不花冤枉钱</span></div>
+        <div class="card"><span class="ic">🧭</span><span class="t">四年时间轴</span><span class="x">大一到大四路线规划</span></div>
+        <div class="card"><span class="ic">📜</span><span class="t">考证 / 转专业</span><span class="x">证书怎么考、怎么转</span></div>
+      </div>
+    </div>
+
+    <!-- 底部二维码 -->
+    <div class="foot">
+      <div class="qr">
+        <div class="box">
+          <img src="assets/img/site_qr.png" alt="网站二维码">
+        </div>
+        <div class="ttl">📲 扫码用网站</div>
+        <div class="sub">手机扫一扫，打开「湖财生存手册」<br>随时查、随时看</div>
+        <div class="code">lo894.github.io/hucai-guide</div>
+      </div>
+      <div class="qr">
+        <div class="box">
+          <img src="assets/img/contact_qr.jpg" alt="微信二维码" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ph">＋<br>在此放入你的<br>微信二维码</div>
+        </div>
+        <div class="ttl">💬 加我个人微信</div>
+        <div class="sub">有问必答 · 代办 / 代拿 / 做PPT<br>同校同学亲自帮</div>
+        <div class="code">微信号：Rat_millet5015</div>
+      </div>
+    </div>
+
+    <div class="credit">© L.大王 原创整理 · 以 vibe coding 独立搭建，内容均为人工整理，非 AI 生成 · 仅供湖财新生个人参考，请勿商用或冒用原创</div>
+  </div>
+</div>
+
+<script>
+  function fit(){
+    var p=document.getElementById('poster');
+    var s=Math.min((window.innerWidth-32)/1123, 1);
+    p.style.transform='scale('+s+')';
+    p.parentElement.style.height=(1587*s)+'px';
+  }
+  window.addEventListener('resize',fit); fit();
+</script>
+</body>
+</html>
