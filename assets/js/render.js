@@ -70,7 +70,7 @@
     // 快速入口：由 app.js 的 PAGES 自动生成（排除首页本身），新增板块会自动出现
     const allPages = (window.PAGES || []).filter(p => p.id !== "home");
     // 网格顺序：🔥 重点项优先，其余按新生当前需求排；防骗不置顶
-    const QORDER = ["dorm", "map", "errands", "checklist", "cards", "fees", "laptop", "classCampaign", "campus", "training", "course", "channels", "antiScam", "about", "majors", "policies", "transfer", "resources", "compete", "skills", "timeline", "cert", "postgrad", "job", "feed", "faq"];
+    const QORDER = ["dorm", "map", "errands", "checklist", "cards", "fees", "laptop", "classCampaign", "campus", "training", "course", "channels", "antiScam", "about", "majors", "policies", "transfer", "resources", "compete", "skills", "cert", "postgrad", "job", "feed", "faq"];
     const qrank = id => { const i = QORDER.indexOf(id); return i < 0 ? 999 : i; };
     const entries = allPages.slice().sort((a, b) => qrank(a.id) - qrank(b.id)).map(p =>
       `<div class="entry${p.hot ? " hot" : ""}" title="${esc((p.hot ? "🔥 重点 · " : "") + p.name + (p.sub ? " · " + p.sub : ""))}" onclick="go('${p.id}')"><div class="ei">${p.icon}</div><div class="et">${p.hot ? "🔥 " : ""}${esc(p.name)}</div></div>`
@@ -1209,43 +1209,6 @@
     ${tipsSec}`;
   }
 
-  /* ============================ 大学四年时间轴 ============================ */
-  function timeline() {
-    const T = D().timeline;
-    if (!T) return "";
-    const yrs = (T.years || []).map(y => `
-      <div class="card" style="border-left:4px solid var(--${y.color || 'navy'})">
-        <div class="sec-h" style="border:none;padding:0;margin-bottom:10px"><h2 style="font-size:16px">${esc(y.year)}</h2><span class="d">${esc(y.tag || "")}</span></div>
-        <div style="margin-bottom:8px"><b style="color:var(--tx2)">🎯 目标</b><div class="crs" style="margin-top:4px">${(y.goals || []).map(g => `<span>${esc(g)}</span>`).join("")}</div></div>
-        <div style="margin-bottom:8px"><b style="color:var(--green)">✅ 该做</b><ul class="lst">${(y.do || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
-        <div><b style="color:var(--red)">⛔ 别踩</b><ul class="lst">${(y.avoid || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
-      </div>`).join("");
-    const cps = (T.checkpoints || []).map(c =>
-      `<div class="tl-i"><div class="tl-t">${esc(c.when)} · ${esc(c.title)}</div><div class="tl-c"><div class="tl-d">${esc(c.desc)}</div></div></div>`).join("");
-    /* 原「学业规划」板块内容已合并进来（PAGES 中不再单列，数据仍来自 plan.json） */
-    const PL = D()['plan'];
-    const planSec = PL ? `
-    <div class="sec">${secH("分年级行动清单", "每一年具体做什么 · 补充版")}
-      <div class="note tip" style="margin-bottom:12px"><span class="ni">ℹ️</span><div>${esc(PL.intro || "")}</div></div>
-      <div class="grid g2">${(PL.grades || []).map(g => `
-        <div class="card" style="margin-bottom:0">
-          <div class="sec-h" style="border:none;padding:0;margin-bottom:8px"><h2 style="font-size:15px">${esc(g.icon || "")} ${esc(g.year)}</h2><span class="d">${esc(g.theme || "")}</span></div>
-          <div style="margin-bottom:6px"><b style="color:var(--tx2)">📌 重点</b><ul class="lst">${(g.focus || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
-          <div><b style="color:var(--green)">✅ 行动</b><ul class="lst">${(g.todo || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
-          ${g.warn ? `<div class="note" style="margin-top:8px"><span class="ni">⚠️</span><div>${esc(g.warn)}</div></div>` : ""}
-        </div>`).join("")}</div>
-    </div>` : "";
-    return `
-    <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(T.intro)}</div></div>
-    <div class="sec">${secH("分年级路线图", "大一到大四每年该抓什么")}
-      <div class="grid g2">${yrs}</div>
-    </div>
-    <div class="sec">${secH("大学四年关键节点", "照着这张表走不慌")}
-      <div class="tl">${cps}</div>
-    </div>
-    ${planSec}`;
-  }
-
   /* ============================ 考证指南 ============================ */
   function cert() {
     const C = D().cert;
@@ -1542,28 +1505,6 @@
     <div class="sec">${secH("免费学习路线（长期可复用）", "跟着走就行")}${paths}</div>`;
   }
 
-  /* ============================ 学业规划 ============================ */
-  function plan() {
-    const P = D().plan;
-    if (!P) return "<div class='note warn'><span class='ni'>⚠️</span><div>规划数据加载失败，请刷新重试。</div></div>";
-    const grades = (P.grades || []).map(g => {
-      const focus = (g.focus || []).map(f => `<li>${esc(f)}</li>`).join("");
-      const todo = (g.todo || []).map(t => `<li>${esc(t)}</li>`).join("");
-      const warn = (g.warn || []).map(w => `<li>${esc(w)}</li>`).join("");
-      return `<div class="card" style="margin-bottom:14px;padding:16px">
-        <div class="sec-h" style="border:none;padding:0;margin-bottom:10px"><h2 style="font-size:17px">${esc(g.icon || "")} ${esc(g.year)} · <span style="color:var(--navy)">${esc(g.theme || "")}</span></h2></div>
-        <div class="grid g2">
-          <div><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:6px">🎯 本学年重点</div><ul class="lst">${focus}</ul></div>
-          <div><div class="l" style="font-weight:700;color:var(--navy);margin-bottom:6px">✅ 建议去做</div><ul class="lst">${todo}</ul></div>
-        </div>
-        ${warn ? `<div class="note warn" style="margin-top:10px"><span class="ni">⚠️</span><div><ul class="lst" style="margin:0">${warn}</ul></div></div>` : ""}
-      </div>`;
-    }).join("");
-    return `
-    <div class="note tip" style="margin-bottom:14px"><span class="ni">ℹ️</span><div>${esc(P.intro)}</div></div>
-    <div class="sec">${secH("大学四年每年该盯什么", "全年级都能用")}${grades}</div>`;
-  }
-
   /* ============================ 竞选班干部 ============================ */
   function classCampaign() {
     const CC = D()['class-campaign'];
@@ -1815,7 +1756,7 @@
   // 暴露给 map / ai / app 使用
   window.Render = {
     home, about, majors, engsoft, campus, dorm, checklist, training, laptop, policies, resources, courseSelection, faq,
-    timeline, cert, channels, postgrad, job, transfer, compete, skills, plan, classCampaign, antiScam, fees, simCards, errands,
+    cert, channels, postgrad, job, transfer, compete, skills, classCampaign, antiScam, fees, simCards, errands,
     majorHTML, findMajor,
     _mjF, _mjK,
     mjGrid, // 供首次渲染后调用

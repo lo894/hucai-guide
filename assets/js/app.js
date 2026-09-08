@@ -29,7 +29,6 @@
     { id: "fees", name: "缴费指南", icon: "💰", sub: "学费·住宿·银行卡" },
     { id: "antiScam", name: "防骗指南", icon: "🛡️", sub: "开学季必看" },
     { id: "course", name: "选课攻略", icon: "🗓️", sub: "系统·轮次·技巧" },
-    { id: "timeline", name: "四年时间轴", icon: "🧭", sub: "大一到大四路线" },
     { id: "cert", name: "考证指南", icon: "📜", sub: "证书怎么考" },
     { id: "channels", name: "信息渠道", icon: "📡", sub: "官方·校内·平台" },
     { id: "postgrad", name: "考研保研", icon: "🎯", sub: "升学全攻略" },
@@ -66,7 +65,7 @@
   function renderPage(id) {
     if (id === "map") return MapView.render();
     if (id === "feed") return Collector.render();
-    const fns = { home: Render.home, about: Render.about, majors: Render.majors, engsoft: Render.engsoft, campus: Render.campus, dorm: Render.dorm, checklist: Render.checklist, training: Render.training, laptop: Render.laptop, policies: Render.policies, transfer: Render.transfer, resources: Render.resources, course: Render.courseSelection, faq: Render.faq, timeline: Render.timeline, cert: Render.cert, channels: Render.channels, postgrad: Render.postgrad, job: Render.job, compete: Render.compete, skills: Render.skills, plan: Render.plan, classCampaign: Render.classCampaign, antiScam: Render.antiScam, fees: Render.fees, cards: Render.simCards, errands: Render.errands };
+    const fns = { home: Render.home, about: Render.about, majors: Render.majors, engsoft: Render.engsoft, campus: Render.campus, dorm: Render.dorm, checklist: Render.checklist, training: Render.training, laptop: Render.laptop, policies: Render.policies, transfer: Render.transfer, resources: Render.resources, course: Render.courseSelection, faq: Render.faq, cert: Render.cert, channels: Render.channels, postgrad: Render.postgrad, job: Render.job, compete: Render.compete, skills: Render.skills, classCampaign: Render.classCampaign, antiScam: Render.antiScam, fees: Render.fees, cards: Render.simCards, errands: Render.errands };
     const el = pg(id);
     if (el && fns[id]) el.innerHTML = fns[id]();
     if (id === "majors" && Render.mjGrid) Render.mjGrid();

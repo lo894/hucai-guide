@@ -10,7 +10,7 @@ window.esc = function (s) {
 };
 
 const KB = (() => {
-  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','timeline','cert','channels','postgrad','job','transfer','competitions','skills','plan','class-campaign','antiscam','fees','cards','dorm-extra','channels-extra','policies-aid','errands','leifeng-map','around','ads','countdown'];
+  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','cert','channels','postgrad','job','transfer','competitions','skills','class-campaign','antiscam','fees','cards','dorm-extra','channels-extra','policies-aid','errands','leifeng-map','around','ads','countdown'];
   const D = {};                 // 原始数据
   let docs = [];                // 知识片段
   let idx = new Map();          // 倒排索引 term -> [{d,tf}]
