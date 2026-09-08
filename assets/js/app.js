@@ -14,12 +14,10 @@
     { id: "map", name: "校园地图", icon: "🗺️", sub: "雷锋电子地图·导航", hot: 1 },
     { id: "errands", name: "校园代办", icon: "📋", sub: "PPT·校园卡·学生互助", hot: 1 },
     { id: "checklist", name: "入学清单", icon: "📋", sub: "勾选准备", hot: 1 },
-    { id: "cards", name: "办卡指南", icon: "📱", sub: "校园卡·流量卡", hot: 1 },
     { id: "about", name: "学校概况", icon: "🏫", sub: "校史·校区·学费" },
     { id: "majors", name: "专业培养", icon: "🎓", sub: "56 个专业" },
     { id: "campus", name: "校园生活", icon: "🌳", sub: "宿舍·食堂·设施" },
     { id: "training", name: "军训指南", icon: "🎖️", sub: "安排·装备" },
-    { id: "laptop", name: "电脑选购", icon: "💻", sub: "按专业配" },
     { id: "policies", name: "政策文件", icon: "📑", sub: "学籍·奖助" },
     { id: "transfer", name: "转专业", icon: "🔁", sub: "政策·路线·准备" },
     { id: "resources", name: "学习资源", icon: "📚", sub: "平台·证书" },
@@ -65,7 +63,7 @@
   function renderPage(id) {
     if (id === "map") return MapView.render();
     if (id === "feed") return Collector.render();
-    const fns = { home: Render.home, about: Render.about, majors: Render.majors, engsoft: Render.engsoft, campus: Render.campus, dorm: Render.dorm, checklist: Render.checklist, training: Render.training, laptop: Render.laptop, policies: Render.policies, transfer: Render.transfer, resources: Render.resources, course: Render.courseSelection, faq: Render.faq, cert: Render.cert, channels: Render.channels, postgrad: Render.postgrad, job: Render.job, compete: Render.compete, skills: Render.skills, classCampaign: Render.classCampaign, antiScam: Render.antiScam, fees: Render.fees, cards: Render.simCards, errands: Render.errands };
+    const fns = { home: Render.home, about: Render.about, majors: Render.majors, engsoft: Render.engsoft, campus: Render.campus, dorm: Render.dorm, checklist: Render.checklist, training: Render.training, policies: Render.policies, transfer: Render.transfer, resources: Render.resources, course: Render.courseSelection, faq: Render.faq, cert: Render.cert, channels: Render.channels, postgrad: Render.postgrad, job: Render.job, compete: Render.compete, skills: Render.skills, classCampaign: Render.classCampaign, antiScam: Render.antiScam, fees: Render.fees, errands: Render.errands };
     const el = pg(id);
     if (el && fns[id]) el.innerHTML = fns[id]();
     if (id === "majors" && Render.mjGrid) Render.mjGrid();

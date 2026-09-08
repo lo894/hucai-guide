@@ -10,7 +10,7 @@ window.esc = function (s) {
 };
 
 const KB = (() => {
-  const FILES = ['school','majors','campus-life','campus-map','checklist','training','laptop','policies','resources','faq','feed','course-selection','dorm','cert','channels','postgrad','job','transfer','competitions','skills','class-campaign','antiscam','fees','cards','dorm-extra','channels-extra','policies-aid','errands','leifeng-map','around','ads','countdown'];
+  const FILES = ['school','majors','campus-life','campus-map','checklist','training','policies','resources','faq','feed','course-selection','dorm','cert','channels','postgrad','job','transfer','competitions','skills','class-campaign','antiscam','fees','dorm-extra','channels-extra','policies-aid','errands','leifeng-map','around','ads','countdown'];
   const D = {};                 // 原始数据
   let docs = [];                // 知识片段
   let idx = new Map();          // 倒排索引 term -> [{d,tf}]
@@ -165,18 +165,6 @@ const KB = (() => {
       tr.faq.forEach(f => addDoc({ title: f.q, page: 'training', module: '军训问答', w: 1.2, text: f.q + ' ' + f.a }));
     }
 
-    const lp = D.laptop;
-    if (lp) {
-      addDoc({ title: '电脑选购五大原则', page: 'laptop', module: '电脑', w: 1.2,
-        text: lp.intro + ' ' + lp.principles.map(p => `${p.rank}.${p.name}：${p.desc}`).join(' ') });
-      addDoc({ title: '电脑选购避坑要点', page: 'laptop', module: '电脑', w: 1.2,
-        text: lp.warnings.map(w => `${w.title}：${w.desc}`).join('；') });
-      lp.byMajor.forEach(b => addDoc({ title: `电脑配置推荐·${b.group}`, page: 'laptop', module: '电脑', w: 1.3,
-        text: `适用专业：${b.majors.join('、')}。使用需求：${b.need}。推荐配置：CPU ${b.cpu}；内存 ${b.ram}；硬盘 ${b.disk}；显卡 ${b.gpu}；屏幕 ${b.screen}；重量 ${b.weight}；预算 ${b.budget}。${b.note}` }));
-      addDoc({ title: '电脑购买时机与验机清单', page: 'laptop', module: '电脑',
-        text: lp.buyTiming.map(t => `${t.time}（${t.score}）：${t.reason}`).join('；') + '。验机清单：' + lp.checklist.join('；') });
-      lp.faq.forEach(f => addDoc({ title: f.q, page: 'laptop', module: '电脑问答', w: 1.2, text: f.q + ' ' + f.a }));
-    }
 
     (D.policies?.categories || []).forEach(c => c.items.forEach(i => addDoc({
       title: i.title, page: 'policies', module: '政策·' + c.name, w: 1.25,
@@ -367,12 +355,6 @@ const KB = (() => {
       addDoc({ title: '缴费方式与智慧财务', page: 'fees', module: '缴费', text: (FE.pay.ways || []).join('；') + ' ' + FE.pay.smartFinance + ' ' + FE.bank.name + ' ' + FE.bank.card + ' ' + FE.bank.online });
     }
 
-    /* 校园卡 / 流量卡（新专栏，可检索） */
-    const SC2 = D.cards;
-    if (SC2) {
-      addDoc({ title: '校园卡与流量卡对比', page: 'cards', module: '办卡', w: 1.4, text: SC2.intro + ' ' + (SC2.cards || []).map(c => `${c.name}（${c.tag}）${c.monthly}：` + (c.rows || []).map(r => `${r[0]}${r[1]}`).join('；')).join(' ') + ' ' + (SC2.choose || []).join('；') + ' ' + SC2.consult + ' ' + (SC2.tips || []).join('；') });
-      (SC2.faq || []).forEach(f => addDoc({ title: f.q, page: 'cards', module: '办卡问答', w: 1.2, text: f.q + ' ' + f.a }));
-    }
 
     /* 校园代办 */
     const ER = D.errands;

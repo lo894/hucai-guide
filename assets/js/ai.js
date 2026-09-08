@@ -8,7 +8,7 @@
   "use strict";
   const esc = window.esc;
   const KEY = "hucai_ai_v1";
-  const PAGE_NAME = { home: "首页", about: "学校概况", majors: "专业培养", campus: "校园生活", map: "校园地图", checklist: "入学清单", training: "军训指南", laptop: "电脑选购", policies: "政策文件", resources: "学习资源", feed: "最新动态", faq: "常见问题" };
+  const PAGE_NAME = { home: "首页", about: "学校概况", majors: "专业培养", campus: "校园生活", map: "校园地图", checklist: "入学清单", training: "军训指南", policies: "政策文件", resources: "学习资源", feed: "最新动态", faq: "常见问题" };
   const pageName = p => PAGE_NAME[p] || p;
 
   function getCfg() {
@@ -93,7 +93,7 @@
   function welcome() {
     const body = document.getElementById("chatBody");
     if (!body) return;
-    body.innerHTML = `<div class="msg a"><div class="mav">🎓</div><div class="mc"><div class="bub"><p>嗨，我是湖财 AI 新生助手 👋</p><p>你问我答，专业、宿舍、军训、转专业、电脑选购都能聊。下面是几个常问的：</p></div></div></div>
+    body.innerHTML = `<div class="msg a"><div class="mav">🎓</div><div class="mc"><div class="bub"><p>嗨，我是湖财 AI 新生助手 👋</p><p>你问我答，专业、宿舍、军训、转专业都能聊。下面是几个常问的：</p></div></div></div>
       <div class="qk">${SUG.map(s => `<span onclick="AI.send('${esc(s)}')">${esc(s)}</span>`).join("")}</div>`;
   }
 

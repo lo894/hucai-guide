@@ -70,7 +70,7 @@
     // 快速入口：由 app.js 的 PAGES 自动生成（排除首页本身），新增板块会自动出现
     const allPages = (window.PAGES || []).filter(p => p.id !== "home");
     // 网格顺序：🔥 重点项优先，其余按新生当前需求排；防骗不置顶
-    const QORDER = ["dorm", "map", "errands", "checklist", "cards", "fees", "laptop", "classCampaign", "campus", "training", "course", "channels", "antiScam", "about", "majors", "policies", "transfer", "resources", "compete", "skills", "cert", "postgrad", "job", "feed", "faq"];
+    const QORDER = ["dorm", "map", "errands", "checklist", "fees", "classCampaign", "campus", "training", "course", "channels", "antiScam", "about", "majors", "policies", "transfer", "resources", "compete", "skills", "cert", "postgrad", "job", "feed", "faq"];
     const qrank = id => { const i = QORDER.indexOf(id); return i < 0 ? 999 : i; };
     const entries = allPages.slice().sort((a, b) => qrank(a.id) - qrank(b.id)).map(p =>
       `<div class="entry${p.hot ? " hot" : ""}" title="${esc((p.hot ? "🔥 重点 · " : "") + p.name + (p.sub ? " · " + p.sub : ""))}" onclick="go('${p.id}')"><div class="ei">${p.icon}</div><div class="et">${p.hot ? "🔥 " : ""}${esc(p.name)}</div></div>`
@@ -80,7 +80,6 @@
     const SCN = [
       { ic: "📋", t: "我要报到", id: "checklist" },
       { ic: "🛏️", t: "我要找宿舍", id: "dorm" },
-      { ic: "📱", t: "我要办卡", id: "cards" },
       { ic: "💰", t: "我要缴费", id: "fees" },
       { ic: "🗺️", t: "我要找路", id: "map" },
       { ic: "🗓️", t: "我要查课表", id: "course" },
@@ -546,48 +545,6 @@
     </div>`;
   }
 
-  /* ============================ 校园卡 / 流量卡 ============================ */
-  function simCards() {
-    const c = D().cards;
-    const cards = c.cards.map(x => {
-      const rows = x.rows.map(r => `<div class="sim-row"><div class="sim-k">${esc(r[0])}</div><div class="sim-v">${esc(r[1])}</div></div>`).join("");
-      return `<div class="card sim-card ${esc(x.color)}">
-        <div class="sim-h"><span class="sim-name">${esc(x.name)}</span><span class="tag ${esc(x.color)}">${esc(x.tag)}</span></div>
-        <div class="sim-month">${esc(x.monthly)}</div>
-        <div class="sim-rows">${rows}</div>
-      </div>`;
-    }).join("");
-    const choose = (c.choose || []).map(t => `<li>${esc(t)}</li>`).join("");
-    const tips = (c.tips || []).map(t => `<div class="note tip"><span class="ni">💡</span><div>${esc(t)}</div></div>`).join("");
-    const faq = (c.faq || []).map(f =>
-      `<div class="acc"><div class="acc-h" onclick="this.parentElement.classList.toggle('on')"><span class="ai">❓</span><span class="at">${esc(f.q)}</span><span class="ax">▾</span></div><div class="acc-b"><div class="pol"><div class="ps">${esc(f.a)}</div></div></div></div>`
-    ).join("");
-
-    return `
-    <div class="note warn" style="margin-bottom:16px"><span class="ni">⚠️</span><div>${esc(c.clarify)}</div></div>
-    <div class="sec">${secH("两种卡对比", c.intro)}
-      <div class="grid g2">${cards}</div>
-    </div>
-    ${(c.contact && c.contact.wechat) ? `
-    <div class="sec">${secH("校园卡咨询 · 找学姐", "拿不准办哪种就直接问")}
-      <div class="card sim-contact">
-        <div class="sim-c-info">
-          <div class="sim-c-top"><span class="sim-c-name">${esc(c.contact.name)}</span><span class="tag green">${esc(c.contact.title || "校园卡办理")}</span></div>
-          <div class="sim-c-wx">微信号：<b>${esc(c.contact.wechat)}</b>${c.contact.img ? `<button class="btn sm" style="margin-left:8px" onclick="copyText('${esc(c.contact.wechat)}')">复制</button>` : ""}</div>
-          <div class="sim-c-note">${esc(c.contact.note || "")}</div>
-        </div>
-        ${c.contact.img ? `<div class="sim-c-qr"><img src="${esc(c.contact.img)}" alt="小玲学姐微信二维码" onerror="this.parentElement.style.display='none'"></div>` : ""}
-      </div>
-    </div>` : ""}
-    <div class="sec">${secH("怎么选 · 看需求", "办什么卡看自己具体情况")}
-      <div class="card"><ul class="lst">${choose}</ul></div>
-    </div>
-    <div class="sec">${secH("办卡提醒 · 避坑", "以辅导员 / 学校通知为准")}
-      ${tips}
-      <div class="note ok" style="margin-top:10px"><span class="ni">📞</span><div>${esc(c.consult)}</div></div>
-    </div>
-    <div class="sec" style="margin-top:20px">${secH("常见问题", "")}<div class="grid g2">${faq}</div></div>`;
-  }
 
   /* ============================ 军训指南 ============================ */
   function training() {
@@ -622,46 +579,6 @@
     <div class="sec">${secH("军训生存法则", "")}<div class="grid g2">${surv}</div></div>`;
   }
 
-  /* ============================ 电脑选购 ============================ */
-  function laptop() {
-    const lp = D().laptop;
-    const pr = (lp.principles || []).map(p =>
-      `<div class="gr"><div class="gr-h"><span class="gt">${p.rank}. ${esc(p.name)}</span></div><div class="gr-b"><div class="gi-i"><div class="w">${esc(p.desc)}</div></div></div></div>`
-    ).join("");
-    const warn = (lp.warnings || []).map(w =>
-      `<div class="gr"><div class="gr-h"><span class="ai">${esc(w.icon || "⚠️")}</span><span class="gt">${esc(w.title)}</span></div><div class="gr-b"><div class="gi-i"><div class="w">${esc(w.desc)}</div></div></div></div>`
-    ).join("");
-    const by = (lp.byMajor || []).map(b => {
-      const rows = [["CPU", b.cpu], ["内存", b.ram], ["硬盘", b.disk], ["显卡", b.gpu], ["屏幕", b.screen], ["重量", b.weight], ["预算", b.budget]]
-        .map(([k, v]) => `<tr><td style="white-space:nowrap"><b>${esc(k)}</b></td><td>${esc(v)}</td></tr>`).join("");
-      return `<div class="card" style="margin-bottom:12px">
-        <div class="sec-h" style="border:none;margin-bottom:8px;padding:0"><h2 style="font-size:16px">${esc(b.group)}</h2><span class="d">${b.majors.length} 个专业</span></div>
-        <div class="tag gold" style="margin-bottom:8px">适用：${b.majors.map(esc).join("、")}</div>
-        <p style="margin:4px 0 8px;color:var(--tx2)"><b>需求：</b>${esc(b.need)}</p>
-        <div class="tw" style="margin-bottom:8px"><table class="tb"><tbody>${rows}</tbody></table></div>
-        <div class="note ok" style="margin:0"><span class="ni">✅</span><div>${esc(b.note)}</div></div>
-      </div>`;
-    }).join("");
-    const timing = (lp.buyTiming || []).map(t =>
-      `<tr><td><b>${esc(t.time)}</b></td><td>${esc(t.reason)}</td><td>${tag(t.score, t.score === "推荐" ? "green" : t.score === "老手推荐" ? "purple" : "navy")}</td></tr>`
-    ).join("");
-    const cl = (lp.checklist || []).map(x => `<li>${esc(x)}</li>`).join("");
-    const faq = (lp.faq || []).map(f =>
-      `<div class="acc"><div class="acc-h" onclick="this.parentElement.classList.toggle('on')"><span class="ai">❓</span><span class="at">${esc(f.q)}</span><span class="ax">▾</span></div><div class="acc-b"><div class="pol"><div class="ps">${esc(f.a)}</div></div></div></div>`
-    ).join("");
-
-    return `
-    <div class="note tip" style="margin-bottom:16px"><span class="ni">💻</span><div>${esc(lp.intro)}</div></div>
-    <div class="sec">${secH("选购五大原则", "")}<div class="grid g3">${pr}</div></div>
-    <div class="sec">${secH("避坑要点", "")}<div class="grid g3">${warn}</div></div>
-    <div class="sec">${secH("按专业配电脑", "直接看这一节")}${by}</div>
-    <div class="grid g2">
-      <div class="sec" style="margin:0">${secH("购买时机", "")}<div class="tw"><table class="tb"><thead><tr><th>时间</th><th>说明</th><th></th></tr></thead><tbody>${timing}</tbody></table></div></div>
-      <div class="sec" style="margin:0">${secH("验机清单", "")}<div class="card"><ul class="lst">${cl}</ul></div></div>
-    </div>
-    <div class="sec">${secH("常见问题", "")}<div class="grid g2">${faq}</div></div>
-    <div class="note warn" style="margin-top:8px"><span class="ni">📝</span><div>${esc(lp.source || "")}</div></div>`;
-  }
 
   /* ============================ 政策文件 ============================ */
   function policies() {
@@ -1755,8 +1672,8 @@
 
   // 暴露给 map / ai / app 使用
   window.Render = {
-    home, about, majors, engsoft, campus, dorm, checklist, training, laptop, policies, resources, courseSelection, faq,
-    cert, channels, postgrad, job, transfer, compete, skills, classCampaign, antiScam, fees, simCards, errands,
+    home, about, majors, engsoft, campus, dorm, checklist, training, policies, resources, courseSelection, faq,
+    cert, channels, postgrad, job, transfer, compete, skills, classCampaign, antiScam, fees, errands,
     majorHTML, findMajor,
     _mjF, _mjK,
     mjGrid, // 供首次渲染后调用
