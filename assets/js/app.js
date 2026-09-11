@@ -8,12 +8,23 @@
   const $ = id => document.getElementById(id);
   const pg = id => document.getElementById("p-" + id);
 
+  /* 迎新季判定：每年 7/1 – 9/10 为报到季，期间显示入学清单/校园地图等季节性内容；
+     其余时间自动归档（导航/首页隐藏），但仍可在「历史存档」随时查看，次年迎新季自动恢复 */
+  const ENROLL_START = { m: 7, d: 1 }, ENROLL_END = { m: 9, d: 10 };
+  function isEnrollSeason(now) {
+    const t = now || new Date();
+    const m = t.getMonth() + 1, d = t.getDate();
+    return (m > ENROLL_START.m || (m === ENROLL_START.m && d >= ENROLL_START.d)) &&
+           (m < ENROLL_END.m || (m === ENROLL_END.m && d <= ENROLL_END.d));
+  }
+  window.isEnrollSeason = isEnrollSeason;
+
   const PAGES = [
     { id: "home", name: "首页", icon: "🏠", sub: "入学速览" },
     { id: "dorm", name: "宿舍攻略", icon: "🛏️", sub: "床品·好物·整理", hot: 1 },
-    { id: "map", name: "校园地图", icon: "🗺️", sub: "雷锋电子地图·导航", hot: 1 },
+    { id: "map", name: "校园地图", icon: "🗺️", sub: "雷锋电子地图·导航", hot: 1, seasonal: true },
     { id: "errands", name: "校园代办", icon: "📋", sub: "PPT·校园卡·学生互助", hot: 1 },
-    { id: "checklist", name: "入学清单", icon: "📋", sub: "勾选准备", hot: 1 },
+    { id: "checklist", name: "入学清单", icon: "📋", sub: "勾选准备", hot: 1, seasonal: true },
     { id: "about", name: "学校概况", icon: "🏫", sub: "校史·校区·学费" },
     { id: "majors", name: "专业培养", icon: "🎓", sub: "56 个专业" },
     { id: "campus", name: "校园生活", icon: "🌳", sub: "宿舍·食堂·设施" },
@@ -33,6 +44,7 @@
     { id: "job", name: "实习求职", icon: "💼", sub: "校招·简历·面试" },
     { id: "feed", name: "最新动态", icon: "📰", sub: "自主收集" },
     { id: "faq", name: "常见问题", icon: "💡", sub: "FAQ" },
+    { id: "archive", name: "历史存档", icon: "🗄️", sub: "往年报到专区" },
   ];
   window.PAGES = PAGES; // 供 render.js 生成首页快速入口（自动同步，新增板块无需再改两处）
   const rendered = new Set();
@@ -41,7 +53,7 @@
   function buildNav() {
     const nav = $("nav");
     if (!nav) return;
-    nav.innerHTML = PAGES.map(p =>
+    nav.innerHTML = PAGES.filter(p => !p.seasonal || isEnrollSeason()).map(p =>
       `<div class="nav-i${p.hot ? " hot" : ""}" data-id="${p.id}" onclick="go('${p.id}')"><span class="ic">${p.icon}</span><span>${p.hot ? "🔥 " : ""}${esc(p.name)}</span><span class="bd" id="bd-${p.id}" style="display:none"></span></div>`
     ).join("");
   }
@@ -63,7 +75,7 @@
   function renderPage(id) {
     if (id === "map") return MapView.render();
     if (id === "feed") return Collector.render();
-    const fns = { home: Render.home, about: Render.about, majors: Render.majors, engsoft: Render.engsoft, campus: Render.campus, dorm: Render.dorm, checklist: Render.checklist, training: Render.training, policies: Render.policies, transfer: Render.transfer, resources: Render.resources, course: Render.courseSelection, faq: Render.faq, cert: Render.cert, channels: Render.channels, postgrad: Render.postgrad, job: Render.job, compete: Render.compete, skills: Render.skills, classCampaign: Render.classCampaign, antiScam: Render.antiScam, fees: Render.fees, errands: Render.errands };
+    const fns = { home: Render.home, about: Render.about, majors: Render.majors, engsoft: Render.engsoft, campus: Render.campus, dorm: Render.dorm, checklist: Render.checklist, training: Render.training, policies: Render.policies, transfer: Render.transfer, resources: Render.resources, course: Render.courseSelection, faq: Render.faq, cert: Render.cert, channels: Render.channels, postgrad: Render.postgrad, job: Render.job, compete: Render.compete, skills: Render.skills, classCampaign: Render.classCampaign, antiScam: Render.antiScam, fees: Render.fees, errands: Render.errands, archive: Render.archive };
     const el = pg(id);
     if (el && fns[id]) el.innerHTML = fns[id]();
     if (id === "majors" && Render.mjGrid) Render.mjGrid();

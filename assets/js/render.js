@@ -60,6 +60,7 @@
   function home() {
     const s = D().school;
     const bless = (() => { try { return +(localStorage.getItem("hucai_reward") || 0) + +(localStorage.getItem("hucai_heart") || 0); } catch (e) { return 0; } })();
+    const inSeason = !!(window.isEnrollSeason && window.isEnrollSeason());
     const qf = (s.quickFacts || []).map(f =>
       `<div class="qf"><div class="qi">${esc(f.icon || "•")}</div><div class="ql">${esc(f.label)}</div><div class="qv">${esc(f.value)}</div><div class="qn">${esc(f.note || "")}</div></div>`
     ).join("");
@@ -68,7 +69,7 @@
     ).join("");
 
     // 快速入口：由 app.js 的 PAGES 自动生成（排除首页本身），新增板块会自动出现
-    const allPages = (window.PAGES || []).filter(p => p.id !== "home");
+    const allPages = (window.PAGES || []).filter(p => p.id !== "home" && (!p.seasonal || inSeason));
     // 网格顺序：🔥 重点项优先，其余按新生当前需求排；防骗不置顶
     const QORDER = ["dorm", "map", "errands", "checklist", "fees", "classCampaign", "campus", "training", "course", "channels", "antiScam", "about", "majors", "policies", "transfer", "resources", "compete", "skills", "cert", "postgrad", "job", "feed", "faq"];
     const qrank = id => { const i = QORDER.indexOf(id); return i < 0 ? 999 : i; };
@@ -83,7 +84,7 @@
       { ic: "💰", t: "我要缴费", id: "fees" },
       { ic: "🗺️", t: "我要找路", id: "map" },
       { ic: "🗓️", t: "我要查课表", id: "course" },
-    ];
+    ].filter(s => inSeason || (s.id !== "checklist" && s.id !== "map"));
     const scnHtml = `
     <div class="sec">
       <div class="sec-h"><h2>我要…</h2><span class="d">按场景直达，不用翻栏目</span></div>
@@ -117,7 +118,7 @@
     // 首页顶部两个重点入口：校园地图 / 校园代办（图标与副标取自 PAGES，自动同步）
     const PG = id => (window.PAGES || []).find(p => p.id === id) || {};
     const pm = PG("map"), pc = PG("checklist");
-    const top2 = `
+    const top2 = inSeason ? `
     <div class="sec">
       <div class="top2">
         <div class="t2 t2-map" onclick="go('map')">
@@ -131,7 +132,7 @@
           <div class="t2-go">开始勾选 →</div>
         </div>
       </div>
-    </div>`;
+    </div>` : "";
 
     return `
     <div class="hero">
@@ -141,11 +142,11 @@
         <h1>湖财生存手册</h1>
         <div class="hero-sub">2026 新生入学指南 · 湖南财政经济学院</div>
         <div class="ds">${esc(s.overview.intro.slice(0, 70))}……这里整理了 56 个专业培养计划、校园环境、宿舍、军训、政策与入学清单，还有一个随时能问的 AI 学长。</div>
-        <div class="hero-btns">
-          <div class="btn" onclick="go('majors')">查看专业培养 →</div>
-          <div class="btn o" onclick="go('checklist')">入学准备清单</div>
-          <div class="btn o" onclick="openAI()">🎓 问问 AI 学长</div>
-        </div>
+      <div class="hero-btns">
+        <div class="btn" onclick="go('majors')">查看专业培养 →</div>
+        ${inSeason ? '<div class="btn o" onclick="go(\'checklist\')">入学准备清单</div>' : ''}
+        <div class="btn o" onclick="openAI()">🎓 问问 AI 学长</div>
+      </div>
       </div>
     </div>
 
@@ -1670,10 +1671,25 @@
     </div>`;
   }
 
+  function archive() {
+    const inSeason = window.isEnrollSeason && window.isEnrollSeason();
+    const items = (window.PAGES || []).filter(p => p.seasonal);
+    const cards = items.map(p =>
+      `<div class="entry" title="${esc((p.name || "") + (p.sub ? " · " + p.sub : ""))}" onclick="go('${p.id}')"><div class="ei">${p.icon}</div><div class="et">${esc(p.name || "")}</div></div>`
+    ).join("");
+    return `
+    <div class="sec">
+      <div class="sec-h"><h2>🗄️ 历史存档 · 往年新生报到专区</h2><span class="d">已归档内容，随时可看；迎新季自动回首页</span></div>
+      <div class="note tip" style="margin:6px 0 14px"><span class="ni">🗓️</span><div>以下内容是「入学报到季」专用，平时已收进存档、不占首页导航。每年 <b>7 月 1 日 – 9 月 10 日</b>迎新季会自动重新出现在导航与首页；现在你也能随时点开回顾。</div></div>
+      <div class="grid g-entry">${cards}</div>
+      ${inSeason ? '<div class="note tip" style="margin-top:14px"><span class="ni">🟢</span><div>当前正处于迎新季，以上入口也已显示在首页导航中。</div></div>' : ''}
+    </div>`;
+  }
+
   // 暴露给 map / ai / app 使用
   window.Render = {
     home, about, majors, engsoft, campus, dorm, checklist, training, policies, resources, courseSelection, faq,
-    cert, channels, postgrad, job, transfer, compete, skills, classCampaign, antiScam, fees, errands,
+    cert, channels, postgrad, job, transfer, compete, skills, classCampaign, antiScam, fees, errands, archive,
     majorHTML, findMajor,
     _mjF, _mjK,
     mjGrid, // 供首次渲染后调用
