@@ -84,7 +84,7 @@
       { ic: "💰", t: "我要缴费", id: "fees" },
       { ic: "🗺️", t: "我要找路", id: "map" },
       { ic: "🗓️", t: "我要查课表", id: "course" },
-    ].filter(s => inSeason || (s.id !== "checklist" && s.id !== "map"));
+    ].filter(s => inSeason || s.id !== "checklist");
     const scnHtml = `
     <div class="sec">
       <div class="sec-h"><h2>我要…</h2><span class="d">按场景直达，不用翻栏目</span></div>
@@ -118,7 +118,7 @@
     // 首页顶部两个重点入口：校园地图 / 校园代办（图标与副标取自 PAGES，自动同步）
     const PG = id => (window.PAGES || []).find(p => p.id === id) || {};
     const pm = PG("map"), pc = PG("checklist");
-    const top2 = inSeason ? `
+    const top2 = `
     <div class="sec">
       <div class="top2">
         <div class="t2 t2-map" onclick="go('map')">
@@ -126,13 +126,13 @@
           <div class="t2-tx"><b>${esc(pm.name || "校园地图")}</b><span>${esc(pm.sub || "")}</span></div>
           <div class="t2-go">找楼导航 →</div>
         </div>
-        <div class="t2 t2-ck" onclick="go('checklist')">
+        ${inSeason ? `<div class="t2 t2-ck" onclick="go('checklist')">
           <div class="t2-ic">${pc.icon || "📋"}</div>
           <div class="t2-tx"><b>${esc(pc.name || "入学清单")}</b><span>可勾选 · 照着准备不遗漏</span></div>
           <div class="t2-go">开始勾选 →</div>
-        </div>
+        </div>` : ""}
       </div>
-    </div>` : "";
+    </div>`;
 
     return `
     <div class="hero">

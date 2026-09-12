@@ -22,7 +22,7 @@
   const PAGES = [
     { id: "home", name: "首页", icon: "🏠", sub: "入学速览" },
     { id: "dorm", name: "宿舍攻略", icon: "🛏️", sub: "床品·好物·整理", hot: 1 },
-    { id: "map", name: "校园地图", icon: "🗺️", sub: "雷锋电子地图·导航", hot: 1, seasonal: true },
+    { id: "map", name: "校园地图", icon: "🗺️", sub: "雷锋电子地图·导航", hot: 1 },
     { id: "errands", name: "校园代办", icon: "📋", sub: "PPT·校园卡·学生互助", hot: 1 },
     { id: "checklist", name: "入学清单", icon: "📋", sub: "勾选准备", hot: 1, seasonal: true },
     { id: "about", name: "学校概况", icon: "🏫", sub: "校史·校区·学费" },
