@@ -45,7 +45,6 @@
       "items": [
         { "title": "Wind 金融终端", "url": "https://www.wind.com.cn", "desc": "金融数据与研究终端，校内机房/图书馆常配，研报与行情齐全。", "tag": "数据" },
         { "title": "同花顺", "url": "https://www.10jqka.com.cn", "desc": "行情、资讯与模拟交易，入门看盘与投教内容实用。", "tag": "行情" },
-        { "title": "CSMAR 国泰安数据", "url": "https://www.cnrar.com", "desc": "经济金融研究数据库，写论文、做实证分析常用数据源。", "tag": "数据库" },
         { "title": "Excel 学习", "url": "https://support.microsoft.com/zh-cn/excel", "desc": "财务建模与数据处理基本功，函数透视表必练。", "tag": "办公" },
         { "title": "Python 官网", "url": "https://www.python.org", "desc": "数据分析与爬虫入门语言，配合B站教程动手练。", "tag": "编程" }
       ]
