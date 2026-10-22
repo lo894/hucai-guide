@@ -17,18 +17,15 @@
   "zipcode": "410205",
   "contact": {
     "name": "L.大王",
-    "role": "本站建立者与维护者 · 湖财准大一新生",
+    "role": "本站建立者与维护者 · 湖财 2026 级在校生",
     "wechat": "Rat_millet5015",
-    "qq": "2909246447",
-    "qqName": "L.",
     "qr": "assets/img/contact_qr.jpg",
-    "note": "欢迎新生加微信咨询，备注「湖财新生」更快通过。"
+    "note": "欢迎加微信交流，备注「湖财」更快通过。"
   },
   "share": {
-    "url": "https://68b4dec0759245a69baff0d0d9a77194.bj5.agentos-app.net",
-    "password": "hucai2026",
+    "url": "https://f60f48fcb62a43de9912079b24b87adc.bj6.agentos-app.net",
     "qr": "assets/img/site_qr.png",
-    "note": "扫码直接访问主站；内容已同步最新（选课攻略、交通、参考声明）。"
+    "note": "扫码直接访问主站；内容持续更新（选课攻略、校园地图、最新动态）。"
   },
   "offices": {
     "updated": "2026-08-07",

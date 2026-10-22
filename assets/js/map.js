@@ -74,12 +74,39 @@
       <div class="note tip" style="margin-top:12px"><span class="ni">📍</span><div>${esc(c.desc || "")}<br>交通：${(c.transport || []).map(esc).join("；")}<br><span style="color:var(--tx3)">${esc(M.note || "")}</span></div></div>
     </div>`;
 
-    /* 精细电子地图只在「雷锋校区」下展示，切到主校区则卸载 */
+    /* 精细电子地图只在「雷锋校区」下展示，切到主校区则卸载。
+       Leaflet 已改成按需加载（首页不再下载 144KB 的地图库）：
+       进地图页时才注入 leaflet.js/css，加载完再挂载地图 */
     if (window.LeifengMap) {
-      const host = document.getElementById("lfHost");
-      if (cur === "leifeng" && host) window.LeifengMap.mount(host);
-      else if (window.LeifengMap.unmount) window.LeifengMap.unmount();
+      if (cur === "leifeng") {
+        loadLeaflet().then(() => {
+          const host = document.getElementById("lfHost");
+          if (host && cur === "leifeng") window.LeifengMap.mount(host);
+        });
+      } else if (window.LeifengMap.unmount) {
+        window.LeifengMap.unmount();
+      }
     }
+  }
+
+  /* 按需加载 Leaflet（只加载一次，之后复用） */
+  let leafletReady = null;
+  function loadLeaflet() {
+    if (window.L) return Promise.resolve();
+    if (leafletReady) return leafletReady;
+    leafletReady = new Promise(resolve => {
+      const css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "assets/vendor/leaflet.css?v=1.9.4";
+      document.head.appendChild(css);
+      const s = document.createElement("script");
+      s.src = "assets/vendor/leaflet.js?v=1.9.4";
+      s.async = true;
+      s.onload = () => resolve();
+      s.onerror = () => { leafletReady = null; resolve(); }; // 失败也放行，mount 内有降级提示
+      document.head.appendChild(s);
+    });
+    return leafletReady;
   }
 
   function secH(t, d) {
