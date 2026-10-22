@@ -8,9 +8,39 @@
   const $ = id => document.getElementById(id);
   const pg = id => document.getElementById("p-" + id);
 
-  /* 迎新季判定：每年 7/1 – 9/10 为报到季，期间显示入学清单/校园地图等季节性内容；
+  /* 迎新季判定：每年 7/1 – 9/10 为报到季，期间显示入学清单等季节性内容；
      其余时间自动归档（导航/首页隐藏），但仍可在「历史存档」随时查看，次年迎新季自动恢复 */
   const ENROLL_START = { m: 7, d: 1 }, ENROLL_END = { m: 9, d: 10 };
+
+  /* 通用“时间窗”判定：用于军训指南、竞选班干部这类「只在某个时段有用」的内容。
+     窗口格式 { m, d }，只比月/日，跨年（如 11 月中 – 次年 2 月）也能正确处理 */
+  function inWindow(w, now) {
+    if (!w) return true;
+    const t = now || new Date();
+    const cur = (t.getMonth() + 1) * 100 + t.getDate();
+    const a = w.from.m * 100 + w.from.d, b = w.to.m * 100 + w.to.d;
+    return a <= b ? (cur >= a && cur <= b) : (cur >= a || cur <= b); // 跨年窗口
+  }
+  window.inWindow = inWindow;
+
+  /* 季节性板块定义：
+     - enroll：报到季窗口（上面 isEnrollSeason）
+     - window：自定义时间窗
+     在窗口内正常显示在导航/首页；窗口外自动收进「历史存档」，随时可点开 */
+  const SEASONAL = {
+    checklist: { type: "enroll", label: "报到季", tip: "每年 7/1 – 9/10" },
+    training:  { type: "window", from: { m: 9, d: 20 }, to: { m: 10, d: 31 }, label: "军训期", tip: "9 月下旬 – 10 月底" },
+    classCampaign: { type: "window", from: { m: 9, d: 1 }, to: { m: 10, d: 20 }, label: "新生开学首月", tip: "开学初班委竞选期" },
+  };
+  function isSeasonalActive(id, now) {
+    const s = SEASONAL[id];
+    if (!s) return true; // 非季节内容永远显示
+    if (s.type === "enroll") return isEnrollSeason(now);
+    if (s.type === "window") return inWindow(s, now);
+    return true;
+  }
+  window.SEASONAL = SEASONAL;
+  window.isSeasonalActive = isSeasonalActive;
   function isEnrollSeason(now) {
     const t = now || new Date();
     const m = t.getMonth() + 1, d = t.getDate();
@@ -20,31 +50,31 @@
   window.isEnrollSeason = isEnrollSeason;
 
   const PAGES = [
-    { id: "home", name: "首页", icon: "🏠", sub: "入学速览" },
+    { id: "home", name: "首页", icon: "🏠", sub: "在校速览" },
     { id: "dorm", name: "宿舍攻略", icon: "🛏️", sub: "床品·好物·整理", hot: 1 },
     { id: "map", name: "校园地图", icon: "🗺️", sub: "雷锋电子地图·导航", hot: 1 },
     { id: "errands", name: "校园代办", icon: "📋", sub: "PPT·校园卡·学生互助", hot: 1 },
-    { id: "checklist", name: "入学清单", icon: "📋", sub: "勾选准备", hot: 1, seasonal: true },
+    { id: "course", name: "选课攻略", icon: "🗓️", sub: "系统·轮次·技巧", hot: 1 },
+    { id: "checklist", name: "入学清单", icon: "📋", sub: "勾选准备", seasonal: true },
+    { id: "training", name: "军训指南", icon: "🎖️", sub: "安排·装备", seasonal: true },
+    { id: "classCampaign", name: "竞选班干部", icon: "🗳️", sub: "班委·竞选", seasonal: true },
     { id: "about", name: "学校概况", icon: "🏫", sub: "校史·校区·学费" },
     { id: "majors", name: "专业培养", icon: "🎓", sub: "56 个专业" },
     { id: "campus", name: "校园生活", icon: "🌳", sub: "宿舍·食堂·设施" },
-    { id: "training", name: "军训指南", icon: "🎖️", sub: "安排·装备" },
     { id: "policies", name: "政策文件", icon: "📑", sub: "学籍·奖助" },
     { id: "transfer", name: "转专业", icon: "🔁", sub: "政策·路线·准备" },
     { id: "resources", name: "学习资源", icon: "📚", sub: "平台·证书" },
     { id: "compete", name: "竞赛地图", icon: "🏅", sub: "数据·计算机·双创" },
     { id: "skills", name: "技能成长", icon: "🚀", sub: "Python·SQL·ML" },
-    { id: "classCampaign", name: "竞选班干部", icon: "🗳️", sub: "班委·竞选" },
     { id: "fees", name: "缴费指南", icon: "💰", sub: "学费·住宿·银行卡" },
     { id: "antiScam", name: "防骗指南", icon: "🛡️", sub: "开学季必看" },
-    { id: "course", name: "选课攻略", icon: "🗓️", sub: "系统·轮次·技巧" },
     { id: "cert", name: "考证指南", icon: "📜", sub: "证书怎么考" },
     { id: "channels", name: "信息渠道", icon: "📡", sub: "官方·校内·平台" },
     { id: "postgrad", name: "考研保研", icon: "🎯", sub: "升学全攻略" },
     { id: "job", name: "实习求职", icon: "💼", sub: "校招·简历·面试" },
     { id: "feed", name: "最新动态", icon: "📰", sub: "自主收集" },
     { id: "faq", name: "常见问题", icon: "💡", sub: "FAQ" },
-    { id: "archive", name: "历史存档", icon: "🗄️", sub: "往年报到专区" },
+    { id: "archive", name: "历史存档", icon: "🗄️", sub: "报到季·军训·竞选" },
   ];
   window.PAGES = PAGES; // 供 render.js 生成首页快速入口（自动同步，新增板块无需再改两处）
   const rendered = new Set();
@@ -53,7 +83,7 @@
   function buildNav() {
     const nav = $("nav");
     if (!nav) return;
-    nav.innerHTML = PAGES.filter(p => !p.seasonal || isEnrollSeason()).map(p =>
+    nav.innerHTML = PAGES.filter(p => !p.seasonal || isSeasonalActive(p.id)).map(p =>
       `<div class="nav-i${p.hot ? " hot" : ""}" data-id="${p.id}" onclick="go('${p.id}')"><span class="ic">${p.icon}</span><span>${p.hot ? "🔥 " : ""}${esc(p.name)}</span><span class="bd" id="bd-${p.id}" style="display:none"></span></div>`
     ).join("");
   }
@@ -101,6 +131,11 @@
     $("pgTitle").textContent = p.name;
     $("pgSub").textContent = p.sub || "";
     document.querySelectorAll(".nav-i").forEach(n => n.classList.toggle("on", n.getAttribute("data-id") === id));
+    // 打开的是已归档的季节板块（导航里没有它）：把「历史存档」高亮起来，让用户知道自己在哪
+    const archivedNow = p.seasonal && !isSeasonalActive(p.id);
+    if (archivedNow) {
+      document.querySelectorAll(".nav-i").forEach(n => n.classList.toggle("on", n.getAttribute("data-id") === "archive"));
+    }
     const c = document.querySelector(".content"); if (c) c.scrollTop = 0;
     window.scrollTo(0, 0);
     hideSug();

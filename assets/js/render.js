@@ -56,11 +56,55 @@
     </div>`;
   }
 
+  /* ============================ 首页 · 学期阶段文案 ============================ */
+  /* 按月份给首页换上「现在这个阶段该看什么」的标题和一句话说明。
+     改文案只改这里，不用动首页结构。年份跨级时自动沿用同一套月份规则。 */
+  function termPhase(now) {
+    const t = now || new Date();
+    const m = t.getMonth() + 1, d = t.getDate();
+    const k = m * 100 + d;
+    if (k >= 1010 && k <= 1031) return {
+      tag: "军训结束后 · 正式开课",
+      desc: "军训已经收官，真正的大学生活从课表和选课开始：先稳住绩点、把学习节奏跑起来，再慢慢挑社团和竞赛。专业课、奖学金政策、转专业条件都在下面，随时翻。"
+    };
+    if (k >= 1001 && k < 1010) return {
+      tag: "军训进行中",
+      desc: "军训正在收尾，站完最后一班岗就是正式上课。防晒、补水、鞋垫这些细节照着「军训指南」来；同时提前把选课系统和课表摸熟，别到开学第一天才慌。"
+    };
+    if (m === 11 || m === 12) return {
+      tag: "期中 · 期末复习季",
+      desc: "大学第一个学期过半，作业、实验报告和期末复习开始压过来。先把平时分和作业分守住，再按「考证指南」「技能成长」给自己排一条能走完的计划。"
+    };
+    if (m === 1 || m === 2) return {
+      tag: "寒假 · 蓄力期",
+      desc: "寒假是拉开差距的时间：补基础、刷竞赛、准备证书，或者把简历和作品集先搭起来。下学期想转专业、想冲奖学金的，这段时间正好准备材料。"
+    };
+    if (m === 3 || m === 4) return {
+      tag: "春季学期 · 起步",
+      desc: "新学期开局，课表重新洗牌。这时候适合把竞赛、科研、学生工作排进日程，别等到期末才发现机会都错过了。"
+    };
+    if (m === 5 || m === 6) return {
+      tag: "期末冲刺 · 学年收尾",
+      desc: "期末和学年总结一起到了。守住绩点、把该拿的证书和竞赛报了，暑假前给自己留一份能写进简历的东西。"
+    };
+    if (m === 7 || m === 8) return {
+      tag: "暑假 · 实践季",
+      desc: "暑假别全用来躺平：实习、社会实践、竞赛集训、技能自学，都是开学后能立刻变现的积累。新生报到相关内容已收进「历史存档」，随时可查。"
+    };
+    return {
+      tag: "2026 在校生活",
+      desc: "军训结束了，这里依旧是你的湖财生存手册：专业培养、宿舍、选课、奖助政策、竞赛与考证，随时翻得到。"
+    };
+  }
+
   /* ============================ 首页 ============================ */
   function home() {
     const s = D().school;
     const bless = (() => { try { return +(localStorage.getItem("hucai_reward") || 0) + +(localStorage.getItem("hucai_heart") || 0); } catch (e) { return 0; } })();
     const inSeason = !!(window.isEnrollSeason && window.isEnrollSeason());
+    // 通用季节判定：入学清单看报到季，军训/竞选看各自时间窗（窗口外自动收进历史存档）
+    const seasonalOn = id => !window.isSeasonalActive || window.isSeasonalActive(id);
+    const SEASONAL_OF = id => !!(window.SEASONAL && window.SEASONAL[id]);
     const qf = (s.quickFacts || []).map(f =>
       `<div class="qf"><div class="qi">${esc(f.icon || "•")}</div><div class="ql">${esc(f.label)}</div><div class="qv">${esc(f.value)}</div><div class="qn">${esc(f.note || "")}</div></div>`
     ).join("");
@@ -69,22 +113,23 @@
     ).join("");
 
     // 快速入口：由 app.js 的 PAGES 自动生成（排除首页本身），新增板块会自动出现
-    const allPages = (window.PAGES || []).filter(p => p.id !== "home" && (!p.seasonal || inSeason));
+    const allPages = (window.PAGES || []).filter(p => p.id !== "home" && (!p.seasonal || seasonalOn(p.id)));
     // 网格顺序：🔥 重点项优先，其余按新生当前需求排；防骗不置顶
-    const QORDER = ["dorm", "map", "errands", "checklist", "fees", "classCampaign", "campus", "training", "course", "channels", "antiScam", "about", "majors", "policies", "transfer", "resources", "compete", "skills", "cert", "postgrad", "job", "feed", "faq"];
+    const QORDER = ["course", "dorm", "map", "errands", "checklist", "training", "classCampaign", "fees", "campus", "channels", "antiScam", "about", "majors", "policies", "transfer", "resources", "compete", "skills", "cert", "postgrad", "job", "feed", "faq"];
     const qrank = id => { const i = QORDER.indexOf(id); return i < 0 ? 999 : i; };
     const entries = allPages.slice().sort((a, b) => qrank(a.id) - qrank(b.id)).map(p =>
       `<div class="entry${p.hot ? " hot" : ""}" title="${esc((p.hot ? "🔥 重点 · " : "") + p.name + (p.sub ? " · " + p.sub : ""))}" onclick="go('${p.id}')"><div class="ei">${p.icon}</div><div class="et">${p.hot ? "🔥 " : ""}${esc(p.name)}</div></div>`
     ).join("");
 
-    // 场景入口：按"我要…"直达，不用翻栏目
+    // 场景入口：按"我要…"直达，不用翻栏目（季节性入口随窗口自动显隐）
     const SCN = [
-      { ic: "📋", t: "我要报到", id: "checklist" },
+      { ic: "🗓️", t: "我要查课表", id: "course" },
+      { ic: "📋", t: "我要看清单", id: "checklist" },
+      { ic: "🎖️", t: "我在军训", id: "training" },
       { ic: "🛏️", t: "我要找宿舍", id: "dorm" },
       { ic: "💰", t: "我要缴费", id: "fees" },
       { ic: "🗺️", t: "我要找路", id: "map" },
-      { ic: "🗓️", t: "我要查课表", id: "course" },
-    ].filter(s => inSeason || s.id !== "checklist");
+    ].filter(s => !SEASONAL_OF(s.id) || seasonalOn(s.id));
     const scnHtml = `
     <div class="sec">
       <div class="sec-h"><h2>我要…</h2><span class="d">按场景直达，不用翻栏目</span></div>
@@ -115,9 +160,10 @@
       </div>
     </div>` : "";
 
-    // 首页顶部两个重点入口：校园地图 / 校园代办（图标与副标取自 PAGES，自动同步）
+    // 首页顶部两个重点入口：校园地图 / 报到季时追加入学清单（图标与副标取自 PAGES，自动同步）
     const PG = id => (window.PAGES || []).find(p => p.id === id) || {};
     const pm = PG("map"), pc = PG("checklist");
+    const showCk = seasonalOn("checklist");
     const top2 = `
     <div class="sec">
       <div class="top2">
@@ -126,7 +172,7 @@
           <div class="t2-tx"><b>${esc(pm.name || "校园地图")}</b><span>${esc(pm.sub || "")}</span></div>
           <div class="t2-go">找楼导航 →</div>
         </div>
-        ${inSeason ? `<div class="t2 t2-ck" onclick="go('checklist')">
+        ${showCk ? `<div class="t2 t2-ck" onclick="go('checklist')">
           <div class="t2-ic">${pc.icon || "📋"}</div>
           <div class="t2-tx"><b>${esc(pc.name || "入学清单")}</b><span>可勾选 · 照着准备不遗漏</span></div>
           <div class="t2-go">开始勾选 →</div>
@@ -134,17 +180,18 @@
       </div>
     </div>`;
 
+    const term = termPhase(); // 当前学期阶段（军训刚结束 / 期中 / 期末复习 / 假期）
     return `
     <div class="hero">
       <div class="hero-in">
-        <span class="yr">2026 迎新季</span>
+        <span class="yr">${esc(term.tag)}</span>
         <div class="sl">${esc(s.tagline || "岳麓山下 · 湘江之滨")}</div>
         <h1>湖财生存手册</h1>
-        <div class="hero-sub">2026 新生入学指南 · 湖南财政经济学院</div>
-        <div class="ds">${esc(s.overview.intro.slice(0, 70))}……这里整理了 56 个专业培养计划、校园环境、宿舍、军训、政策与入学清单，还有一个随时能问的 AI 学长。</div>
+        <div class="hero-sub">湖南财政经济学院 · 在校生实用手册（2026 级）</div>
+        <div class="ds">${esc(term.desc)}</div>
       <div class="hero-btns">
         <div class="btn" onclick="go('majors')">查看专业培养 →</div>
-        ${inSeason ? '<div class="btn o" onclick="go(\'checklist\')">入学准备清单</div>' : ''}
+        <div class="btn o" onclick="go('course')">选课攻略</div>
         <div class="btn o" onclick="openAI()">🎓 问问 AI 学长</div>
       </div>
       </div>
@@ -177,19 +224,19 @@
           <p class="maker-tx">说真的，做这个站不是因为我多厉害，而是因为我刚拿到录取通知那会儿，对着一堆官方文件也是一头雾水：宿舍长啥样？校区在哪儿？要带啥？卡怎么办理？问的人多、答案还散。所以我就把自己<b>一点点摸清楚的东西整理出来</b>，希望你报到前少踩坑，把精力花在更值得的事上。</p>
           <p class="maker-tx">我和你一样是<b>同年级新生（工程软件专业）</b>，这些攻略不是"官方口径"，而是一个刚走过的人的真实笔记——能帮到你的信息我都会放上来，也欢迎你随时来补充、纠错。它<b>非 AI 生成、逐条人工整理</b>，转载引用请注明出处 🤝。</p>
           <p class="maker-tx">作为同校同学（我也是 26 级新生），我能帮你的不只是"查资料"：<b>办校园卡、买电脑、做 PPT、订宿舍用品</b>这些我都在做，另外<b>快递代拿、校园跑腿、校园兼职</b>也能对接，同校靠谱、价格透明、不推销。需要的时候，去「校园代办」看看，或直接加我微信聊都行。你的每份支持，都是这个站继续更新下去的动力 💪。</p>
-          <p class="maker-tx" style="margin-top:10px">📅 <b>这个站还在长大</b>：2026 年 8 月第一版 → 开学季持续更新（最近 2026-09-06），大一到大四的内容会慢慢补齐，记得常回来看看～</p>
+          <p class="maker-tx" style="margin-top:10px">📅 <b>这个站还在长大</b>：2026 年 8 月第一版 → 报到季、军训期持续更新 → 现在进入<b>在校日常</b>（最近 2026-10-22），选课、竞赛、考证、考研求职会慢慢补齐，记得常回来看看～</p>
           <div class="maker-acts">
             <button class="maker-btn" id="blessBtn">💛 为作者加油</button>
             <span class="maker-cnt">已经收到 <b id="blessNum">${bless}</b> 份鼓励 🎉</span>
           </div>
           <div class="maker-tip">👉 左下角有「🪙 打赏 +1 / 💗 比个心」，点点试试，有惊喜音效～</div>
-          <div class="maker-tip">🔄 若无特殊情况，本网站会<b>持续更新</b>，开学前后的重要信息和政策都会及时补上，记得常回来看看～</div>
+          <div class="maker-tip">🔄 若无特殊情况，本网站会<b>持续更新</b>，选课、考试、奖助政策这类跟学期走的信息都会及时补上，记得常回来看看～</div>
         </div>
       </div>
     </div>
 
     <div class="sec">
-      <div class="sec-h"><h2>新生速查</h2><span class="d">报到前先看这一屏</span></div>
+      <div class="sec-h"><h2>湖财速查</h2><span class="d">日常用得上的关键信息</span></div>
       <div class="grid g6">${qf}</div>
     </div>
 
@@ -1545,23 +1592,27 @@
   }
 
   /* ============================ 校园代办 ============================ */
-  /* 开学倒计时：距下一个节点还有几天 + 现在该做什么（数据在 countdown.json） */
+  /* 校园日历卡：自动显示「下一个节点还有几天」；若节点已过（比如军训结束），
+     自动切换到还没到的那条，并过滤掉已过期的大事项，不会出现「已过去 XX 天」的尴尬文案 */
   function countdownHtml() {
     try {
       const C = D().countdown;
       if (!C) return "";
-      const evs = (C.events || []).slice().sort((a, b) => a.date.localeCompare(b.date));
-      if (!evs.length) return "";
       const now = new Date();
       const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
       const dayMs = 86400000;
+      const evs = (C.events || [])
+        .filter(e => new Date(e.date + "T00:00:00").getTime() + dayMs * (e.expireAfter || 0) >= today)
+        .sort((a, b) => a.date.localeCompare(b.date));
+      if (!evs.length) return "";
       let idx = evs.findIndex(e => new Date(e.date + "T00:00:00").getTime() >= today);
-      if (idx < 0) idx = evs.length - 1;
+      const isPast = idx < 0;                       // 全部是「进行中/刚过但还留着」的节点
+      if (isPast) idx = evs.length - 1;
       const next = evs[idx];
       const days = Math.round((new Date(next.date + "T00:00:00").getTime() - today) / dayMs);
       const fmt = d => (+d.slice(5, 7)) + " 月 " + (+d.slice(8, 10)) + " 日";
       const head = days === 0 ? `今天 · ${next.name}`
-        : (days > 0 ? `距「${next.name}」还有 <b>${days}</b> 天` : `${next.name} · 进行中`);
+        : (days > 0 ? `距「${next.name}」还有 <b>${days}</b> 天` : `${next.name} · 已开始`);
       const sub = days > 0 ? fmt(next.date) + " · " + (next.desc || "") : (next.desc || "");
       const todos = (next.todo || []).slice(0, 4).map(x => `<li>${esc(x)}</li>`).join("");
       const up = evs.slice(idx + 1, idx + 4).map(e =>
@@ -1569,7 +1620,7 @@
       return `
       <div class="cd-card">
         <div class="cd-l">
-          <div class="cd-tag">⏰ ${esc(C.title || "开学倒计时")}</div>
+          <div class="cd-tag">⏰ ${esc(C.title || "校园日历")}</div>
           <div class="cd-head">${head}</div>
           <div class="cd-sub">${esc(sub)}</div>
           ${up ? `<div class="cd-up">${up}</div>` : ""}
@@ -1672,17 +1723,37 @@
   }
 
   function archive() {
-    const inSeason = window.isEnrollSeason && window.isEnrollSeason();
+    const SE = window.SEASONAL || {};
+    const act = id => !window.isSeasonalActive || window.isSeasonalActive(id);
     const items = (window.PAGES || []).filter(p => p.seasonal);
-    const cards = items.map(p =>
-      `<div class="entry" title="${esc((p.name || "") + (p.sub ? " · " + p.sub : ""))}" onclick="go('${p.id}')"><div class="ei">${p.icon}</div><div class="et">${esc(p.name || "")}</div></div>`
-    ).join("");
+    const onCount = items.filter(p => act(p.id)).length;
+    const cards = items.map(p => {
+      const s = SE[p.id] || {};
+      const on = act(p.id);
+      return `<div class="arc-i${on ? " arc-on" : ""}" onclick="go('${p.id}')">
+        <div class="arc-ic">${p.icon || "📄"}</div>
+        <div class="arc-tx">
+          <div class="arc-tt">${esc(p.name || "")}${on ? '<span class="arc-bd">当前开放</span>' : ""}</div>
+          <div class="arc-ss">${esc(p.sub || "")}</div>
+        </div>
+        <div class="arc-go">${on ? "📌 现在也在导航里" : "查看存档 →"}</div>
+      </div>`;
+    }).join("");
     return `
     <div class="sec">
-      <div class="sec-h"><h2>🗄️ 历史存档 · 往年新生报到专区</h2><span class="d">已归档内容，随时可看；迎新季自动回首页</span></div>
-      <div class="note tip" style="margin:6px 0 14px"><span class="ni">🗓️</span><div>以下内容是「入学报到季」专用，平时已收进存档、不占首页导航。每年 <b>7 月 1 日 – 9 月 10 日</b>迎新季会自动重新出现在导航与首页；现在你也能随时点开回顾。</div></div>
-      <div class="grid g-entry">${cards}</div>
-      ${inSeason ? '<div class="note tip" style="margin-top:14px"><span class="ni">🟢</span><div>当前正处于迎新季，以上入口也已显示在首页导航中。</div></div>' : ''}
+      <div class="sec-h"><h2>🗄️ 历史存档 · 阶段性内容专区</h2><span class="d">${items.length} 个板块 · 现在开放 ${onCount} 个</span></div>
+      <div class="note tip" style="margin:6px 0 16px"><span class="ni">🗓️</span><div>
+        这些内容<b>只在特定阶段有用</b>，过了窗口会自动从导航和首页收起（不占地方），但仍然<b>随时可以在这里点开回顾</b>。<br>
+        · <b>入学清单</b>：每年 <b>7 月 1 日 – 9 月 10 日</b> 报到季自动出现<br>
+        · <b>军训指南</b>：每年 <b>9 月下旬 – 10 月底</b> 自动出现<br>
+        · <b>竞选班干部</b>：每年 <b>9 月 1 日 – 10 月 20 日</b> 自动出现<br>
+        不需要手动开关，到点自己回来。
+      </div></div>
+      <div class="arc-list">${cards}</div>
+      <div class="note ok" style="margin-top:16px"><span class="ni">💡</span><div>
+        <b>说明：</b>2026 级的报到与军训已经在 10 月 21 日全部结束，所以这三块现在都收在存档里。
+        军训里那些「装备怎么准备」「纪律怎么请假的」经验，明年带学弟学妹时还能翻回来用。
+      </div></div>
     </div>`;
   }
 

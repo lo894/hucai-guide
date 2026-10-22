@@ -69,6 +69,10 @@ const KB = (() => {
     o.id = docs.length;
     o.text = (o.text || '').replace(/\s+/g, ' ').trim();
     if (!o.text && !o.title) return;
+    // 季节性板块（入学清单/军训/竞选）过了时间窗会自动收进「历史存档」：
+    // 给这类片段打上 archived 标记，检索时照样能答，但会提示"内容已归档，在历史存档里"，
+    // 不会让用户点进一个导航上根本找不到的页面还以为站点出问题了。
+    if (o.archived) o.text = '（以下内容已归档到「历史存档」，仍可查看）' + o.text;
     docs.push(o);
   }
 
@@ -144,25 +148,27 @@ const KB = (() => {
     });
 
     const ck = D.checklist;
+    const ckArc = !(window.isSeasonalActive && window.isSeasonalActive('checklist'));
     if (ck) {
-      ck.groups.forEach(g => addDoc({ title: `入学清单·${g.name}`, page: 'checklist', module: '清单', w: 1.2,
+      ck.groups.forEach(g => addDoc({ title: `入学清单·${g.name}`, page: 'checklist', module: '清单', w: 1.2, archived: ckArc,
         text: `${g.note} ${g.items.map(i => `${i.name}【${({ must: '必带', rec: '建议带', buy: '到校再买', no: '别带' })[i.level]}】${i.desc}`).join('；')}` }));
-      addDoc({ title: '入学准备时间轴', page: 'checklist', module: '清单', w: 1.1,
+      addDoc({ title: '入学准备时间轴', page: 'checklist', module: '清单', w: 1.1, archived: ckArc,
         text: ck.timeline.map(t => `${t.when}：${t.todo.join('；')}`).join('。') });
     }
 
     const tr = D.training;
+    const trArc = !(window.isSeasonalActive && window.isSeasonalActive('training'));
     if (tr) {
-      addDoc({ title: '军训基本安排', page: 'training', module: '军训', w: 1.4,
+      addDoc({ title: '军训基本安排', page: 'training', module: '军训', w: 1.4, archived: trArc,
         text: `${tr.intro} ${tr.basic.map(b => `${b.label}：${b.value}（${b.note}）`).join('；')}` });
-      addDoc({ title: '军训进度与各阶段安排', page: 'training', module: '军训', w: 1.1,
+      addDoc({ title: '军训进度与各阶段安排', page: 'training', module: '军训', w: 1.1, archived: trArc,
         text: tr.schedule.map(s => `${s.phase}${s.title}：${s.content.join('、')}。提示：${s.tip}`).join(' ') });
-      tr.gear.forEach(g => addDoc({ title: `军训装备·${g.group}`, page: 'training', module: '军训', w: 1.2,
+      tr.gear.forEach(g => addDoc({ title: `军训装备·${g.group}`, page: 'training', module: '军训', w: 1.2, archived: trArc,
         text: g.items.map(i => `${i.name}（${i.spec}）——${i.why}`).join('；') }));
-      addDoc({ title: '军训纪律与请假规定', page: 'training', module: '军训', w: 1.2,
+      addDoc({ title: '军训纪律与请假规定', page: 'training', module: '军训', w: 1.2, archived: trArc,
         text: tr.rules.map(r => `${r.type}：${r.items.join('；')}`).join('。') });
-      addDoc({ title: '军训生存法则', page: 'training', module: '军训', text: tr.survival.join(' ') });
-      tr.faq.forEach(f => addDoc({ title: f.q, page: 'training', module: '军训问答', w: 1.2, text: f.q + ' ' + f.a }));
+      addDoc({ title: '军训生存法则', page: 'training', module: '军训', archived: trArc, text: tr.survival.join(' ') });
+      tr.faq.forEach(f => addDoc({ title: f.q, page: 'training', module: '军训问答', w: 1.2, archived: trArc, text: f.q + ' ' + f.a }));
     }
 
 
@@ -323,19 +329,20 @@ const KB = (() => {
       });
     }
 
-    /* 竞选班干部 */
+    /* 竞选班干部（秋季开学首月之后归档） */
     const CC = D['class-campaign'];
+    const ccArc = !(window.isSeasonalActive && window.isSeasonalActive('classCampaign'));
     if (CC) {
       const roleTxt = r => `${r.name}（${r.quota || '1名'}${r.req ? '，要求' + r.req : ''}）：${r.duty} ${r.why}`;
-      addDoc({ title: '竞选班干部总览', page: 'classCampaign', module: '班委', w: 1.3,
+      addDoc({ title: '竞选班干部总览', page: 'classCampaign', module: '班委', w: 1.3, archived: ccArc,
         text: CC.intro + ' ' + (CC.roles || []).map(roleTxt).join('；') });
-      (CC.roles || []).forEach(r => addDoc({ title: '班委·' + r.name, page: 'classCampaign', module: '班委', w: 1.2, text: roleTxt(r) }));
-      (CC.steps || []).forEach(s => addDoc({ title: '竞选步骤·' + s.step, page: 'classCampaign', module: '班委', text: s.detail }));
-      (CC.faq || []).forEach(f => addDoc({ title: f.q, page: 'classCampaign', module: '班委问答', w: 1.2, text: f.q + ' ' + f.a }));
+      (CC.roles || []).forEach(r => addDoc({ title: '班委·' + r.name, page: 'classCampaign', module: '班委', w: 1.2, archived: ccArc, text: roleTxt(r) }));
+      (CC.steps || []).forEach(s => addDoc({ title: '竞选步骤·' + s.step, page: 'classCampaign', module: '班委', archived: ccArc, text: s.detail }));
+      (CC.faq || []).forEach(f => addDoc({ title: f.q, page: 'classCampaign', module: '班委问答', w: 1.2, archived: ccArc, text: f.q + ' ' + f.a }));
       const OF2 = CC.official;
-      if (OF2) addDoc({ title: '班干部岗位设置（官方）', page: 'classCampaign', module: '班委', w: 1.3, text: OF2.note + ' ' + (CC.roles || []).map(r => r.name + (r.quota || '')).join('、') });
+      if (OF2) addDoc({ title: '班干部岗位设置（官方）', page: 'classCampaign', module: '班委', w: 1.3, archived: ccArc, text: OF2.note + ' ' + (CC.roles || []).map(r => r.name + (r.quota || '')).join('、') });
       const FM2 = CC.form;
-      if (FM2) addDoc({ title: FM2.title, page: 'classCampaign', module: '班委·申请表', w: 1.3, text: FM2.source + ' ' + (FM2.fields || []).map(f => `${f.name}：${f.detail}`).join('；') + ' ' + FM2.tips });
+      if (FM2) addDoc({ title: FM2.title, page: 'classCampaign', module: '班委·申请表', w: 1.3, archived: ccArc, text: FM2.source + ' ' + (FM2.fields || []).map(f => `${f.name}：${f.detail}`).join('；') + ' ' + FM2.tips });
     }
 
     /* 防骗指南 */
