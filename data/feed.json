@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22 16:12",
+ "updated": "2026-10-22 16:24",
  "total": 89,
  "freshmanCount": 47,
  "sources": [
@@ -22,7 +22,7 @@
   {
    "id": "zsw",
    "name": "招生网首页",
-   "url": "https://zs.hufe.edu.cn/",
+   "url": "https://www.hufe.edu.cn/zsw/",
    "status": "ok",
    "count": 34,
    "time": "2026-08-07 00:51"
@@ -30,7 +30,7 @@
   {
    "id": "zsgg",
    "name": "招生公告",
-   "url": "https://zs.hufe.edu.cn/zsgg/zsgg.htm",
+   "url": "https://www.hufe.edu.cn/zsw/zsgg/zsgg.htm",
    "status": "ok",
    "count": 15,
    "time": "2026-08-07 00:51"
@@ -38,7 +38,7 @@
   {
    "id": "zszc",
    "name": "招生政策",
-   "url": "https://zs.hufe.edu.cn/zszt/zszc.htm",
+   "url": "https://www.hufe.edu.cn/zsw/zszt/zszc.htm",
    "status": "ok",
    "count": 15,
    "time": "2026-08-07 00:51"
@@ -46,7 +46,7 @@
   {
    "id": "yxzy",
    "name": "院系专业",
-   "url": "https://zs.hufe.edu.cn/zszt/yxzy.htm",
+   "url": "https://www.hufe.edu.cn/zsw/zszt/yxzy.htm",
    "status": "ok",
    "count": 4,
    "time": "2026-08-07 00:51"
@@ -54,7 +54,7 @@
   {
    "id": "zsjz",
    "name": "招生简章",
-   "url": "https://zs.hufe.edu.cn/zszt/zsjz.htm",
+   "url": "https://www.hufe.edu.cn/zsw/zszt/zsjz.htm",
    "status": "ok",
    "count": 15,
    "time": "2026-08-07 00:51"
@@ -195,7 +195,7 @@
   },
   {
    "title": "2026年青海省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7311.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7311.htm",
    "date": "2026-07-24",
    "source": "招生公告",
    "category": "招生公告",
@@ -207,7 +207,7 @@
   },
   {
    "title": "2026年贵州省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7301.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7301.htm",
    "date": "2026-07-23",
    "source": "招生公告",
    "category": "招生公告",
@@ -219,7 +219,7 @@
   },
   {
    "title": "2026年云南省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7291.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7291.htm",
    "date": "2026-07-23",
    "source": "招生公告",
    "category": "招生公告",
@@ -231,7 +231,7 @@
   },
   {
    "title": "2026年河南省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7281.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7281.htm",
    "date": "2026-07-23",
    "source": "招生公告",
    "category": "招生公告",
@@ -243,7 +243,7 @@
   },
   {
    "title": "2026年黑龙江录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7271.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7271.htm",
    "date": "2026-07-23",
    "source": "招生公告",
    "category": "招生公告",
@@ -255,7 +255,7 @@
   },
   {
    "title": "2026年河北省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7261.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7261.htm",
    "date": "2026-07-23",
    "source": "招生公告",
    "category": "招生公告",
@@ -267,7 +267,7 @@
   },
   {
    "title": "2026年陕西省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7251.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7251.htm",
    "date": "2026-07-23",
    "source": "招生公告",
    "category": "招生公告",
@@ -395,7 +395,7 @@
   },
   {
    "title": "经济地理学院（湖南省经济地理研究所）",
-   "url": "https://zs.hufe.edu.cn/info/1096/1313.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1096/1313.htm",
    "date": "2025-06-25",
    "source": "院系专业",
    "category": "院系专业",
@@ -405,7 +405,7 @@
   },
   {
    "title": "法学与公共管理学院",
-   "url": "https://zs.hufe.edu.cn/info/1096/1316.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1096/1316.htm",
    "date": "2025-06-25",
    "source": "院系专业",
    "category": "院系专业",
@@ -415,7 +415,7 @@
   },
   {
    "title": "信息技术与管理学院",
-   "url": "https://zs.hufe.edu.cn/info/1096/1328.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1096/1328.htm",
    "date": "2025-06-25",
    "source": "院系专业",
    "category": "院系专业",
@@ -425,7 +425,7 @@
   },
   {
    "title": "湖南财政经济学院2025年招生指南",
-   "url": "https://zs.hufe.edu.cn/info/1106/6611.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/6611.htm",
    "date": "2025-06-25",
    "source": "招生简章",
    "category": "招生简章",
@@ -437,7 +437,7 @@
   },
   {
    "title": "关于公布《湖南财政经济学院2025年专升本考试免试生综合测试方案》的通知",
-   "url": "https://zs.hufe.edu.cn/info/1093/6451.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6451.htm",
    "date": "2025-03-16",
    "source": "招生政策",
    "category": "招生政策",
@@ -449,7 +449,7 @@
   },
   {
    "title": "关于公布湖南财政经济学院2025年专升本专业综合科目考核大纲的通知",
-   "url": "https://zs.hufe.edu.cn/info/1093/6441.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6441.htm",
    "date": "2025-03-07",
    "source": "招生政策",
    "category": "招生政策",
@@ -459,7 +459,7 @@
   },
   {
    "title": "湖南财政经济学院2025年专升本招生章程",
-   "url": "https://zs.hufe.edu.cn/info/1093/6431.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6431.htm",
    "date": "2025-02-21",
    "source": "招生政策",
    "category": "招生政策",
@@ -471,7 +471,7 @@
   },
   {
    "title": "湖南财政经济学院2024年普通本科招生章程",
-   "url": "https://zs.hufe.edu.cn/info/1093/6011.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6011.htm",
    "date": "2024-05-13",
    "source": "招生政策",
    "category": "招生政策",
@@ -483,7 +483,7 @@
   },
   {
    "title": "关于公布《湖南财政经济学院2024年专升本考试免试生综合测试方案》的通知",
-   "url": "https://zs.hufe.edu.cn/info/1093/5971.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/5971.htm",
    "date": "2024-03-20",
    "source": "招生政策",
    "category": "招生政策",
@@ -495,7 +495,7 @@
   },
   {
    "title": "关于公布湖南财政经济学院2024年专升本专业综合科目考核大纲的通知",
-   "url": "https://zs.hufe.edu.cn/info/1093/5941.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/5941.htm",
    "date": "2024-03-14",
    "source": "招生政策",
    "category": "招生政策",
@@ -505,7 +505,7 @@
   },
   {
    "title": "湖南财政经济学院2024年专升本招生章程",
-   "url": "https://zs.hufe.edu.cn/info/1093/5931.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/5931.htm",
    "date": "2024-03-12",
    "source": "招生政策",
    "category": "招生政策",
@@ -517,7 +517,7 @@
   },
   {
    "title": "未发个人简历的学生名单公示",
-   "url": "https://zs.hufe.edu.cn/info/1106/1335.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1335.htm",
    "date": "2022-04-09",
    "source": "招生简章",
    "category": "招生简章",
@@ -527,7 +527,7 @@
   },
   {
    "title": "未发个人简历的学生名单",
-   "url": "https://zs.hufe.edu.cn/info/1106/1334.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1334.htm",
    "date": "2022-04-08",
    "source": "招生简章",
    "category": "招生简章",
@@ -537,7 +537,7 @@
   },
   {
    "title": "湖南财政经济学院2022年专升本免试生未缴费名单公布",
-   "url": "https://zs.hufe.edu.cn/info/1106/1332.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1332.htm",
    "date": "2022-04-07",
    "source": "招生简章",
    "category": "招生简章",
@@ -547,7 +547,7 @@
   },
   {
    "title": "湖南财政经济学院2022年专升本考试 免试生综合测试实施细则",
-   "url": "https://zs.hufe.edu.cn/info/1106/1330.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1330.htm",
    "date": "2022-04-05",
    "source": "招生简章",
    "category": "招生简章",
@@ -559,7 +559,7 @@
   },
   {
    "title": "湖南财政经济学院2022年专升本考试 免试生综合测试方案",
-   "url": "https://zs.hufe.edu.cn/info/1106/1327.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1327.htm",
    "date": "2022-03-25",
    "source": "招生简章",
    "category": "招生简章",
@@ -571,7 +571,7 @@
   },
   {
    "title": "湖南财政经济学院2022年专升本体育学生技能测试方案",
-   "url": "https://zs.hufe.edu.cn/info/1106/1324.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1324.htm",
    "date": "2022-03-24",
    "source": "招生简章",
    "category": "招生简章",
@@ -581,7 +581,7 @@
   },
   {
    "title": "湖南财政经济学院2022年专升本招生章程（修订稿）",
-   "url": "https://zs.hufe.edu.cn/info/1106/1321.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1321.htm",
    "date": "2022-03-23",
    "source": "招生简章",
    "category": "招生简章",
@@ -593,7 +593,7 @@
   },
   {
    "title": "2022年专升本课程考试大纲",
-   "url": "https://zs.hufe.edu.cn/info/1106/1318.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1318.htm",
    "date": "2022-03-23",
    "source": "招生简章",
    "category": "招生简章",
@@ -605,7 +605,7 @@
   },
   {
    "title": "湖南财政经济学院厚生国际教育学院2021年招生简章",
-   "url": "https://zs.hufe.edu.cn/info/1106/1317.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1317.htm",
    "date": "2021-06-09",
    "source": "招生简章",
    "category": "招生简章",
@@ -617,7 +617,7 @@
   },
   {
    "title": "湖南财政经济学院2021年招生章程",
-   "url": "https://zs.hufe.edu.cn/info/1106/1314.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1314.htm",
    "date": "2021-06-09",
    "source": "招生简章",
    "category": "招生简章",
@@ -629,7 +629,7 @@
   },
   {
    "title": "厚生国际教育学院2020年招生简章",
-   "url": "https://zs.hufe.edu.cn/info/1106/1311.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1311.htm",
    "date": "2020-07-10",
    "source": "招生简章",
    "category": "招生简章",
@@ -641,7 +641,7 @@
   },
   {
    "title": "湖南财政经济学院2020年招生章程",
-   "url": "https://zs.hufe.edu.cn/info/1106/1308.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1308.htm",
    "date": "2020-07-06",
    "source": "招生简章",
    "category": "招生简章",
@@ -653,7 +653,7 @@
   },
   {
    "title": "湖南财政经济学院2019级新生收费项目及收费标准",
-   "url": "https://zs.hufe.edu.cn/info/1106/1305.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1305.htm",
    "date": "2019-07-24",
    "source": "招生简章",
    "category": "招生简章",
@@ -665,7 +665,7 @@
   },
   {
    "title": "2019年金融学专业(CFA®&FRM®方向班) 招生简章",
-   "url": "https://zs.hufe.edu.cn/info/1106/1302.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1106/1302.htm",
    "date": "2019-06-25",
    "source": "招生简章",
    "category": "招生简章",
@@ -677,7 +677,7 @@
   },
   {
    "title": "湖南财政经济学院2026年专升本普通计…",
-   "url": "https://zs.hufe.edu.cn/info/1098/7001.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7001.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -687,7 +687,7 @@
   },
   {
    "title": "湖南财政经济学院2026年专升本招生考…",
-   "url": "https://zs.hufe.edu.cn/info/1098/6981.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/6981.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -699,7 +699,7 @@
   },
   {
    "title": "湖南财政经济学院2026年“专升本”免…",
-   "url": "https://zs.hufe.edu.cn/info/1098/6971.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/6971.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -709,7 +709,7 @@
   },
   {
    "title": "2026年湖北省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7361.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7361.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -721,7 +721,7 @@
   },
   {
    "title": "2026年四川省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7351.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7351.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -733,7 +733,7 @@
   },
   {
    "title": "2026年安徽省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7341.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7341.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -745,7 +745,7 @@
   },
   {
    "title": "2026年福建省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7331.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7331.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -757,7 +757,7 @@
   },
   {
    "title": "2026年山西省录取信息",
-   "url": "https://zs.hufe.edu.cn/info/1098/7321.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1098/7321.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -769,7 +769,7 @@
   },
   {
    "title": "湖南财政经济学院2026年普通本科招生…",
-   "url": "https://zs.hufe.edu.cn/info/1093/6991.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6991.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -781,7 +781,7 @@
   },
   {
    "title": "关于公布湖南财政经济学院2026年专升…",
-   "url": "https://zs.hufe.edu.cn/info/1093/6961.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6961.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -791,7 +791,7 @@
   },
   {
    "title": "湖南财政经济学院2026年专升本考试报…",
-   "url": "https://zs.hufe.edu.cn/info/1093/6951.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6951.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -803,7 +803,7 @@
   },
   {
    "title": "关于公布《湖南财政经济学院2026年专…",
-   "url": "https://zs.hufe.edu.cn/info/1093/6941.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6941.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -813,7 +813,7 @@
   },
   {
    "title": "关于公布湖南财政经济学院2026年专升…",
-   "url": "https://zs.hufe.edu.cn/info/1093/6931.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6931.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -823,7 +823,7 @@
   },
   {
    "title": "湖南财政经济学院2026年专升本招生章…",
-   "url": "https://zs.hufe.edu.cn/info/1093/6921.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6921.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -835,7 +835,7 @@
   },
   {
    "title": "湖南财政经济学院2025年普通本科招生…",
-   "url": "https://zs.hufe.edu.cn/info/1093/6501.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6501.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -847,7 +847,7 @@
   },
   {
    "title": "湖南财政经济学院关于推迟2025年专升…",
-   "url": "https://zs.hufe.edu.cn/info/1093/6481.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1093/6481.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -857,7 +857,7 @@
   },
   {
    "title": "2026年招生来源计划综合统计表",
-   "url": "https://zs.hufe.edu.cn/info/1094/7021.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1094/7021.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -869,7 +869,7 @@
   },
   {
    "title": "2025年招生来源计划综合统计表",
-   "url": "https://zs.hufe.edu.cn/info/1094/6591.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1094/6591.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -881,7 +881,7 @@
   },
   {
    "title": "湖南财政经济学院2024年招生来源计划…",
-   "url": "https://zs.hufe.edu.cn/info/1094/6041.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1094/6041.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -893,7 +893,7 @@
   },
   {
    "title": "2023年北京招生计划",
-   "url": "https://zs.hufe.edu.cn/info/1094/1456.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1094/1456.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -905,7 +905,7 @@
   },
   {
    "title": "2023年宁夏招生计划",
-   "url": "https://zs.hufe.edu.cn/info/1094/1455.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1094/1455.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -917,7 +917,7 @@
   },
   {
    "title": "2023年山西招生计划",
-   "url": "https://zs.hufe.edu.cn/info/1094/1454.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1094/1454.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -929,7 +929,7 @@
   },
   {
    "title": "2023年内蒙古招生计划",
-   "url": "https://zs.hufe.edu.cn/info/1094/1453.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1094/1453.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -941,7 +941,7 @@
   },
   {
    "title": "2023年吉林招生计划",
-   "url": "https://zs.hufe.edu.cn/info/1094/1452.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1094/1452.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -953,7 +953,7 @@
   },
   {
    "title": "湖南财政经济学院2023—2025年各招生省",
-   "url": "https://zs.hufe.edu.cn/info/1095/7011.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1095/7011.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -965,7 +965,7 @@
   },
   {
    "title": "湖南财政经济学院2022-2024年各招生省",
-   "url": "https://zs.hufe.edu.cn/info/1095/6601.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1095/6601.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -977,7 +977,7 @@
   },
   {
    "title": "湖南财政经济学院2021—2023年各招生省",
-   "url": "https://zs.hufe.edu.cn/info/1095/6031.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1095/6031.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -989,7 +989,7 @@
   },
   {
    "title": "湖南财政经济学院2022年湖南省内各专业",
-   "url": "https://zs.hufe.edu.cn/info/1095/1338.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1095/1338.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -999,7 +999,7 @@
   },
   {
    "title": "湖南财政经济学院2020—2022年各招生省",
-   "url": "https://zs.hufe.edu.cn/info/1095/1339.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1095/1339.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -1011,7 +1011,7 @@
   },
   {
    "title": "湖南财政经济学院2022年各省份各专业招",
-   "url": "https://zs.hufe.edu.cn/info/1095/1337.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1095/1337.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -1021,7 +1021,7 @@
   },
   {
    "title": "湖南财政经济学院2021年省内各专业录取",
-   "url": "https://zs.hufe.edu.cn/info/1095/1336.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1095/1336.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -1033,7 +1033,7 @@
   },
   {
    "title": "湖南财政经济学院2021年各省份各专业招",
-   "url": "https://zs.hufe.edu.cn/info/1095/1333.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1095/1333.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -1043,7 +1043,7 @@
   },
   {
    "title": "厚生国际教育学院",
-   "url": "https://zs.hufe.edu.cn/info/1096/1312.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1096/1312.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
@@ -1053,7 +1053,7 @@
   },
   {
    "title": "湖南财政经济学院赋",
-   "url": "https://zs.hufe.edu.cn/info/1260/5751.htm",
+   "url": "https://www.hufe.edu.cn/zsw/info/1260/5751.htm",
    "date": "",
    "source": "招生网首页",
    "category": "招生资讯",
