@@ -1,1250 +1,1304 @@
 {
- "updated": "2026-10-22 16:43",
- "total": 105,
- "freshmanCount": 51,
- "sources": [
-  {
-   "id": "tzgg",
-   "name": "学校通知公告",
-   "url": "https://www.hufe.edu.cn/index/tzgg.htm",
-   "status": "ok",
-   "count": 13,
-   "time": "2026-10-22 16:43"
-  },
-  {
-   "id": "home",
-   "name": "学校首页要闻",
-   "url": "https://www.hufe.edu.cn/",
-   "status": "ok",
-   "count": 8,
-   "time": "2026-10-22 16:43"
-  },
-  {
-   "id": "zsw",
-   "name": "招生网首页",
-   "url": "https://www.hufe.edu.cn/zsw/",
-   "status": "ok",
-   "count": 34,
-   "time": "2026-10-22 16:43"
-  },
-  {
-   "id": "zsgg",
-   "name": "招生公告",
-   "url": "https://www.hufe.edu.cn/zsw/zsgg/zsgg.htm",
-   "status": "ok",
-   "count": 15,
-   "time": "2026-10-22 16:43"
-  },
-  {
-   "id": "zszc",
-   "name": "招生政策",
-   "url": "https://www.hufe.edu.cn/zsw/zszt/zszc.htm",
-   "status": "ok",
-   "count": 15,
-   "time": "2026-10-22 16:43"
-  },
-  {
-   "id": "yxzy",
-   "name": "院系专业",
-   "url": "https://www.hufe.edu.cn/zsw/zszt/yxzy.htm",
-   "status": "ok",
-   "count": 4,
-   "time": "2026-10-22 16:43"
-  },
-  {
-   "id": "zsjz",
-   "name": "招生简章",
-   "url": "https://www.hufe.edu.cn/zsw/zszt/zsjz.htm",
-   "status": "ok",
-   "count": 15,
-   "time": "2026-10-22 16:43"
-  }
- ],
- "items": [
-  {
-   "title": "中共湖南财政经济学院委员会 关于巡视整改进展情况的通报",
-   "url": "https://www.hufe.edu.cn/info/1048/173671.htm",
-   "date": "2026-10-20",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院模块化机房项目结果公告（采购包1）",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=l8TBfp86wtXC3kHzihcuqw==",
-   "date": "2026-10-14",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "【外媒】新湖南：湖南财院党委书记易棉阳深入雷锋书院倾听学子心声、现场破解难题2026.10.09",
-   "url": "https://m.voc.com.cn/xhn/news/202610/33941123.html",
-   "date": "2026-10-09",
-   "source": "学校首页要闻",
-   "category": "湖财新闻",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "【外媒】新湖南：湖南财院在全国定向锦标赛中斩获1银1铜2026.10.09",
-   "url": "https://m.voc.com.cn/xhn/news/202610/33941098.html",
-   "date": "2026-10-09",
-   "source": "学校首页要闻",
-   "category": "湖财新闻",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "【外媒】新湖南：湖南财院举办2027届毕业生首场校园双选会2026.10.09",
-   "url": "https://m.voc.com.cn/xhn/news/202610/33941023.html",
-   "date": "2026-10-09",
-   "source": "学校首页要闻",
-   "category": "湖财新闻",
-   "tags": [
-    "就业"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "第三期“新青年全球胜任力人才培养班”学员遴选通知",
-   "url": "https://www.hufe.edu.cn/info/1048/173441.htm",
-   "date": "2026-10-08",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南财政经济学院2026年度财产保险招标公告",
-   "url": "https://www.hufe.edu.cn/info/1048/173161.htm",
-   "date": "2026-09-18",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务(三次)公开招标招标公告",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=tmR0EEO9eTtucuiQXqAeQw==",
-   "date": "2026-09-18",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务(二次)结果公告（采购包2）",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=DXobt1O7vmgexVRm/ApAEA==",
-   "date": "2026-09-17",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院模块化机房项目公开招标招标公告",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=qV14QVQqU0dGB8Shcil8Pw==",
-   "date": "2026-09-14",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "2026级军训时间确定：10月8日–10月21日（共14天）",
-   "url": "https://www.hufe.edu.cn/",
-   "date": "2026-09-03",
-   "source": "学校官方通知（以辅导员为准）",
-   "category": "入学须知",
-   "tags": [
-    "军训",
-    "时间安排"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "《2026级新生入学须知》发布：网上报到9月1日–9月8日，现场报到9月8日–9月9日",
-   "url": "https://www.hufe.edu.cn/xsgznew/",
-   "date": "2026-09-03",
-   "source": "学生工作部·武装部",
-   "category": "入学须知",
-   "tags": [
-    "报到",
-    "网上报到",
-    "现场报到"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "易班新生入学教育须于9月1日前完成（课群邀请码 ACVNSFNB）",
-   "url": "https://www.yooc.me/",
-   "date": "2026-09-03",
-   "source": "易班工作站·学工在线",
-   "category": "入学须知",
-   "tags": [
-    "易班",
-    "入学教育"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2026年第一批专任教师公开招聘资格审查通过人员公示及直接考核安排公告",
-   "url": "https://www.hufe.edu.cn/info/1048/172671.htm",
-   "date": "2026-08-31",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "就业"
-   ],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务(二次)公开招标招标公告",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=tt5GbhyJapCtpKejHQ/jvw==",
-   "date": "2026-08-26",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南财政经济学院学生校园集装箱项目（第二次）中标结果公告",
-   "url": "https://www.hufe.edu.cn/info/1048/172561.htm",
-   "date": "2026-08-21",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南财政经济学院雷锋校区12#栋学生公寓建设项目造价咨询（第二次）中标结果公告",
-   "url": "https://www.hufe.edu.cn/info/1048/172571.htm",
-   "date": "2026-08-21",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "住宿"
-   ],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务结果公告",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=+4P/MV/L0NI0f4Ba/S/LrA==",
-   "date": "2026-08-19",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院2026年度离退休教职工节日福利发放项目项目中标（成交）公告",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=ih+xFm0IOwB/i6g+z1mmdg==",
-   "date": "2026-07-30",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南财政经济学院主校区学生宿舍1-6栋、7-15栋 热水、直饮水系统建设服务项目结果公告",
-   "url": "https://www.hufe.edu.cn/info/1048/172181.htm",
-   "date": "2026-07-30",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "住宿"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "【外媒】新湖南：全国亚军！湖南财院龙狮队再创佳绩2026.07.30",
-   "url": "https://m.voc.com.cn/xhn/news/202607/33334550.html",
-   "date": "2026-07-30",
-   "source": "学校首页要闻",
-   "category": "湖财新闻",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "【外媒】新湖南：湖南财院学子在“三创赛”全国总决赛中荣获一等奖、二等奖2026.07.30",
-   "url": "https://m.voc.com.cn/xhn/news/202607/33334580.html",
-   "date": "2026-07-30",
-   "source": "学校首页要闻",
-   "category": "湖财新闻",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "【外媒】新湖南：湖南财院副校长曹松林率队开展访企拓岗专项行动2026.07.30",
-   "url": "https://m.voc.com.cn/xhn/news/202607/33334625.html",
-   "date": "2026-07-30",
-   "source": "学校首页要闻",
-   "category": "湖财新闻",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务公开招标招标公告",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=0j1laHztsB21JDo0AuSy5A==",
-   "date": "2026-07-28",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "2026年青海省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7311.htm",
-   "date": "2026-07-24",
-   "source": "招生公告",
-   "category": "招生公告",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院食堂劳务服务采购公开招标招标公告",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=rrf1dOddPYkXBwrNoJ0w5A==",
-   "date": "2026-07-24",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "2026年贵州省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7301.htm",
-   "date": "2026-07-23",
-   "source": "招生公告",
-   "category": "招生公告",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2026年云南省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7291.htm",
-   "date": "2026-07-23",
-   "source": "招生公告",
-   "category": "招生公告",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2026年河南省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7281.htm",
-   "date": "2026-07-23",
-   "source": "招生公告",
-   "category": "招生公告",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2026年黑龙江录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7271.htm",
-   "date": "2026-07-23",
-   "source": "招生公告",
-   "category": "招生公告",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2026年河北省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7261.htm",
-   "date": "2026-07-23",
-   "source": "招生公告",
-   "category": "招生公告",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2026年陕西省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7251.htm",
-   "date": "2026-07-23",
-   "source": "招生公告",
-   "category": "招生公告",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院关于湖南省2026年省直事业单位第二次公开招聘面试公告",
-   "url": "https://www.hufe.edu.cn/info/1048/171891.htm",
-   "date": "2026-07-22",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "就业"
-   ],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南财政经济学院关于湖南省2026年省直事业单位第二次公开招聘第三次资格复审有关事项的通知",
-   "url": "https://www.hufe.edu.cn/info/1048/171861.htm",
-   "date": "2026-07-21",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "就业"
-   ],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖财2026年军训教官暑期集训启动，共90名学生教官",
-   "url": "https://news.hufe.edu.cn/info/1022/63801.htm",
-   "date": "2026-07-20",
-   "source": "学校新闻网",
-   "category": "湖财新闻",
-   "tags": [
-    "军训",
-    "教官集训"
-   ],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院关于湖南省2026年省直事业单位第二次公开招聘第二次资格复审有关事项的通知",
-   "url": "https://www.hufe.edu.cn/info/1048/171851.htm",
-   "date": "2026-07-20",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "就业"
-   ],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院湖南财政经济学院2026年7月-2027年7月零星维修施工采购项目项目中标（成交）公告",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=qAwPPp/9E/z2JhBByIZugQ==",
-   "date": "2026-07-20",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南财政经济学院主校区学生宿舍1-6栋、7-15栋热水、直饮水系统建设服务项目公开招标公告",
-   "url": "https://www.hufe.edu.cn/info/1048/171401.htm",
-   "date": "2026-07-17",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "住宿"
-   ],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南财政经济学院关于湖南省2026年省直事业单位第二次公开招聘资格复审有关事项的通知",
-   "url": "https://www.hufe.edu.cn/info/1048/171371.htm",
-   "date": "2026-07-16",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "就业"
-   ],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院14、15栋学生宿舍维修改造工程项目项目中标（成交）公告",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=nSE5ksqTa6iXf2rJFUhmEA==",
-   "date": "2026-07-15",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "住宿"
-   ],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院2026年度离退休教职工节日福利发放项目项目竞争性磋商邀请公告",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=j+YXIVQddYN0nZxUMpwh7w==",
-   "date": "2026-07-13",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "湖南省政府采购网：湖南财政经济学院主校区学生宿舍14栋、15栋及校内盘活床位家具更新项目公开招标中标公示",
-   "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=fsE1aQvNkhVsShGvZH9wTw==",
-   "date": "2026-07-07",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "住宿"
-   ],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "校地合作：湖财与十八洞村签乡村振兴全面战略合作协议",
-   "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_2286a8562bf17652",
-   "date": "2026-07",
-   "source": "学校新闻/官微",
-   "category": "湖财新闻",
-   "tags": [
-    "校地合作",
-    "乡村振兴"
-   ],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖财2支志愿服务队入选2026年国家级专项宣讲团",
-   "url": "https://www.hufe.edu.cn/xtw/info/1112/14433.htm",
-   "date": "2026-07",
-   "source": "校团委",
-   "category": "湖财新闻",
-   "tags": [
-    "志愿服务",
-    "国家级专项"
-   ],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2026年高层次人才公开招聘公告",
-   "url": "https://www.hufe.edu.cn/info/1048/168161.htm",
-   "date": "2026-03-30",
-   "source": "学校通知公告",
-   "category": "通知公告",
-   "tags": [
-    "就业"
-   ],
-   "freshman": false,
-   "noise": true
-  },
-  {
-   "title": "经济地理学院（湖南省经济地理研究所）",
-   "url": "https://www.hufe.edu.cn/zsw/info/1096/1313.htm",
-   "date": "2025-06-25",
-   "source": "院系专业",
-   "category": "院系专业",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "法学与公共管理学院",
-   "url": "https://www.hufe.edu.cn/zsw/info/1096/1316.htm",
-   "date": "2025-06-25",
-   "source": "院系专业",
-   "category": "院系专业",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "信息技术与管理学院",
-   "url": "https://www.hufe.edu.cn/zsw/info/1096/1328.htm",
-   "date": "2025-06-25",
-   "source": "院系专业",
-   "category": "院系专业",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2025年招生指南",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/6611.htm",
-   "date": "2025-06-25",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "关于公布《湖南财政经济学院2025年专升本考试免试生综合测试方案》的通知",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6451.htm",
-   "date": "2025-03-16",
-   "source": "招生政策",
-   "category": "招生政策",
-   "tags": [
-    "教务"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "关于公布湖南财政经济学院2025年专升本专业综合科目考核大纲的通知",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6441.htm",
-   "date": "2025-03-07",
-   "source": "招生政策",
-   "category": "招生政策",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2025年专升本招生章程",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6431.htm",
-   "date": "2025-02-21",
-   "source": "招生政策",
-   "category": "招生政策",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2024年普通本科招生章程",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6011.htm",
-   "date": "2024-05-13",
-   "source": "招生政策",
-   "category": "招生政策",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "关于公布《湖南财政经济学院2024年专升本考试免试生综合测试方案》的通知",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/5971.htm",
-   "date": "2024-03-20",
-   "source": "招生政策",
-   "category": "招生政策",
-   "tags": [
-    "教务"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "关于公布湖南财政经济学院2024年专升本专业综合科目考核大纲的通知",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/5941.htm",
-   "date": "2024-03-14",
-   "source": "招生政策",
-   "category": "招生政策",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2024年专升本招生章程",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/5931.htm",
-   "date": "2024-03-12",
-   "source": "招生政策",
-   "category": "招生政策",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "未发个人简历的学生名单公示",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1335.htm",
-   "date": "2022-04-09",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "未发个人简历的学生名单",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1334.htm",
-   "date": "2022-04-08",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2022年专升本免试生未缴费名单公布",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1332.htm",
-   "date": "2022-04-07",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2022年专升本考试 免试生综合测试实施细则",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1330.htm",
-   "date": "2022-04-05",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "教务"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2022年专升本考试 免试生综合测试方案",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1327.htm",
-   "date": "2022-03-25",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "教务"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2022年专升本体育学生技能测试方案",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1324.htm",
-   "date": "2022-03-24",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2022年专升本招生章程（修订稿）",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1321.htm",
-   "date": "2022-03-23",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2022年专升本课程考试大纲",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1318.htm",
-   "date": "2022-03-23",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "教务"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院厚生国际教育学院2021年招生简章",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1317.htm",
-   "date": "2021-06-09",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2021年招生章程",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1314.htm",
-   "date": "2021-06-09",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "厚生国际教育学院2020年招生简章",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1311.htm",
-   "date": "2020-07-10",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2020年招生章程",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1308.htm",
-   "date": "2020-07-06",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2019级新生收费项目及收费标准",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1305.htm",
-   "date": "2019-07-24",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "迎新"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2019年金融学专业(CFA®&FRM®方向班) 招生简章",
-   "url": "https://www.hufe.edu.cn/zsw/info/1106/1302.htm",
-   "date": "2019-06-25",
-   "source": "招生简章",
-   "category": "招生简章",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2026年专升本普通计…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7001.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2026年专升本招生考…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/6981.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2026年“专升本”免…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/6971.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "2026年湖北省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7361.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2026年四川省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7351.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2026年安徽省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7341.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2026年福建省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7331.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2026年山西省录取信息",
-   "url": "https://www.hufe.edu.cn/zsw/info/1098/7321.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2026年普通本科招生…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6991.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "关于公布湖南财政经济学院2026年专升…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6961.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2026年专升本考试报…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6951.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "教务"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "关于公布《湖南财政经济学院2026年专…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6941.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "关于公布湖南财政经济学院2026年专升…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6931.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2026年专升本招生章…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6921.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2025年普通本科招生…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6501.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院关于推迟2025年专升…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1093/6481.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "2026年招生来源计划综合统计表",
-   "url": "https://www.hufe.edu.cn/zsw/info/1094/7021.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2025年招生来源计划综合统计表",
-   "url": "https://www.hufe.edu.cn/zsw/info/1094/6591.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2024年招生来源计划…",
-   "url": "https://www.hufe.edu.cn/zsw/info/1094/6041.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2023年北京招生计划",
-   "url": "https://www.hufe.edu.cn/zsw/info/1094/1456.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2023年宁夏招生计划",
-   "url": "https://www.hufe.edu.cn/zsw/info/1094/1455.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2023年山西招生计划",
-   "url": "https://www.hufe.edu.cn/zsw/info/1094/1454.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2023年内蒙古招生计划",
-   "url": "https://www.hufe.edu.cn/zsw/info/1094/1453.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2023年吉林招生计划",
-   "url": "https://www.hufe.edu.cn/zsw/info/1094/1452.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "2026年湖南财政经济学院湖南省各专业录",
-   "url": "https://www.hufe.edu.cn/zsw/info/1095/7371.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2023—2025年各招生省",
-   "url": "https://www.hufe.edu.cn/zsw/info/1095/7011.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2022-2024年各招生省",
-   "url": "https://www.hufe.edu.cn/zsw/info/1095/6601.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2021—2023年各招生省",
-   "url": "https://www.hufe.edu.cn/zsw/info/1095/6031.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2022年湖南省内各专业",
-   "url": "https://www.hufe.edu.cn/zsw/info/1095/1338.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2020—2022年各招生省",
-   "url": "https://www.hufe.edu.cn/zsw/info/1095/1339.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2022年各省份各专业招",
-   "url": "https://www.hufe.edu.cn/zsw/info/1095/1337.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2021年省内各专业录取",
-   "url": "https://www.hufe.edu.cn/zsw/info/1095/1336.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [
-    "招生"
-   ],
-   "freshman": true,
-   "noise": false
-  },
-  {
-   "title": "厚生国际教育学院",
-   "url": "https://www.hufe.edu.cn/zsw/info/1096/1312.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院赋",
-   "url": "https://www.hufe.edu.cn/zsw/info/1260/5751.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  },
-  {
-   "title": "湖南财政经济学院2021年各省份各专业招",
-   "url": "https://www.hufe.edu.cn/zsw/info/1095/1333.htm",
-   "date": "",
-   "source": "招生网首页",
-   "category": "招生资讯",
-   "tags": [],
-   "freshman": false,
-   "noise": false
-  }
- ]
+  "updated": "2026-10-26 09:40",
+  "total": 110,
+  "freshmanCount": 53,
+  "sources": [
+    {
+      "id": "tzgg",
+      "name": "学校通知公告",
+      "url": "https://www.hufe.edu.cn/index/tzgg.htm",
+      "status": "ok",
+      "count": 14,
+      "time": "2026-10-26 09:40"
+    },
+    {
+      "id": "home",
+      "name": "学校首页要闻",
+      "url": "https://www.hufe.edu.cn/",
+      "status": "ok",
+      "count": 8,
+      "time": "2026-10-26 09:40"
+    },
+    {
+      "id": "zsw",
+      "name": "招生网首页",
+      "url": "https://www.hufe.edu.cn/zsw/",
+      "status": "ok",
+      "count": 34,
+      "time": "2026-10-26 09:40"
+    },
+    {
+      "id": "zsgg",
+      "name": "招生公告",
+      "url": "https://www.hufe.edu.cn/zsw/zsgg/zsgg.htm",
+      "status": "ok",
+      "count": 15,
+      "time": "2026-10-26 09:40"
+    },
+    {
+      "id": "zszc",
+      "name": "招生政策",
+      "url": "https://www.hufe.edu.cn/zsw/zszt/zszc.htm",
+      "status": "ok",
+      "count": 15,
+      "time": "2026-10-26 09:40"
+    },
+    {
+      "id": "yxzy",
+      "name": "院系专业",
+      "url": "https://www.hufe.edu.cn/zsw/zszt/yxzy.htm",
+      "status": "ok",
+      "count": 4,
+      "time": "2026-10-26 09:40"
+    },
+    {
+      "id": "zsjz",
+      "name": "招生简章",
+      "url": "https://www.hufe.edu.cn/zsw/zszt/zsjz.htm",
+      "status": "ok",
+      "count": 15,
+      "time": "2026-10-26 09:40"
+    }
+  ],
+  "items": [
+    {
+      "title": "关于报名参加2027年寒假系列访学项目的通知",
+      "url": "https://www.hufe.edu.cn/info/1048/173851.htm",
+      "date": "2026-10-23",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院毕业生图像采集采购项目（第二次）公开招标公告",
+      "url": "https://www.hufe.edu.cn/info/1048/173771.htm",
+      "date": "2026-10-22",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "中共湖南财政经济学院委员会 关于巡视整改进展情况的通报",
+      "url": "https://www.hufe.edu.cn/info/1048/173671.htm",
+      "date": "2026-10-20",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南：湖南财院计算机与人工智能学院开展节前学生宿舍安全隐患排查整治行动2026.10.19",
+      "url": "https://m.voc.com.cn/xhn/news/202610/34026038.html",
+      "date": "2026-10-19",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [
+        "住宿"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南：湖南财院数字经济学院举办2026级新生趣味运动会2026.10.19",
+      "url": "https://m.voc.com.cn/xhn/news/202610/34025903.html",
+      "date": "2026-10-19",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [
+        "迎新"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院模块化机房项目结果公告（采购包1）",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=l8TBfp86wtXC3kHzihcuqw==",
+      "date": "2026-10-14",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "关于2026年澳大利亚新南威尔士大学（UNSW） 校际交流项目报名的通知",
+      "url": "https://www.hufe.edu.cn/info/1048/173861.htm",
+      "date": "2026-10-13",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南：湖南财院党委书记易棉阳深入雷锋书院倾听学子心声、现场破解难题2026.10.09",
+      "url": "https://m.voc.com.cn/xhn/news/202610/33941123.html",
+      "date": "2026-10-09",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南：湖南财院在全国定向锦标赛中斩获1银1铜2026.10.09",
+      "url": "https://m.voc.com.cn/xhn/news/202610/33941098.html",
+      "date": "2026-10-09",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南：湖南财院举办2027届毕业生首场校园双选会2026.10.09",
+      "url": "https://m.voc.com.cn/xhn/news/202610/33941023.html",
+      "date": "2026-10-09",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [
+        "就业"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "第三期“新青年全球胜任力人才培养班”学员遴选通知",
+      "url": "https://www.hufe.edu.cn/info/1048/173441.htm",
+      "date": "2026-10-08",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南财政经济学院2026年度财产保险招标公告",
+      "url": "https://www.hufe.edu.cn/info/1048/173161.htm",
+      "date": "2026-09-18",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务(三次)公开招标招标公告",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=tmR0EEO9eTtucuiQXqAeQw==",
+      "date": "2026-09-18",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务(二次)结果公告（采购包2）",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=DXobt1O7vmgexVRm/ApAEA==",
+      "date": "2026-09-17",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院模块化机房项目公开招标招标公告",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=qV14QVQqU0dGB8Shcil8Pw==",
+      "date": "2026-09-14",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "2026级军训时间确定：10月8日–10月21日（共14天）",
+      "url": "https://www.hufe.edu.cn/",
+      "date": "2026-09-03",
+      "source": "学校官方通知（以辅导员为准）",
+      "category": "入学须知",
+      "tags": [
+        "军训",
+        "时间安排"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "《2026级新生入学须知》发布：网上报到9月1日–9月8日，现场报到9月8日–9月9日",
+      "url": "https://www.hufe.edu.cn/xsgznew/",
+      "date": "2026-09-03",
+      "source": "学生工作部·武装部",
+      "category": "入学须知",
+      "tags": [
+        "报到",
+        "网上报到",
+        "现场报到"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "易班新生入学教育须于9月1日前完成（课群邀请码 ACVNSFNB）",
+      "url": "https://www.yooc.me/",
+      "date": "2026-09-03",
+      "source": "易班工作站·学工在线",
+      "category": "入学须知",
+      "tags": [
+        "易班",
+        "入学教育"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2026年第一批专任教师公开招聘资格审查通过人员公示及直接考核安排公告",
+      "url": "https://www.hufe.edu.cn/info/1048/172671.htm",
+      "date": "2026-08-31",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "就业"
+      ],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务(二次)公开招标招标公告",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=tt5GbhyJapCtpKejHQ/jvw==",
+      "date": "2026-08-26",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南财政经济学院学生校园集装箱项目（第二次）中标结果公告",
+      "url": "https://www.hufe.edu.cn/info/1048/172561.htm",
+      "date": "2026-08-21",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南财政经济学院雷锋校区12#栋学生公寓建设项目造价咨询（第二次）中标结果公告",
+      "url": "https://www.hufe.edu.cn/info/1048/172571.htm",
+      "date": "2026-08-21",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "住宿"
+      ],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务结果公告",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=+4P/MV/L0NI0f4Ba/S/LrA==",
+      "date": "2026-08-19",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院2026年度离退休教职工节日福利发放项目项目中标（成交）公告",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=ih+xFm0IOwB/i6g+z1mmdg==",
+      "date": "2026-07-30",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南财政经济学院主校区学生宿舍1-6栋、7-15栋 热水、直饮水系统建设服务项目结果公告",
+      "url": "https://www.hufe.edu.cn/info/1048/172181.htm",
+      "date": "2026-07-30",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "住宿"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南：全国亚军！湖南财院龙狮队再创佳绩2026.07.30",
+      "url": "https://m.voc.com.cn/xhn/news/202607/33334550.html",
+      "date": "2026-07-30",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南：湖南财院学子在“三创赛”全国总决赛中荣获一等奖、二等奖2026.07.30",
+      "url": "https://m.voc.com.cn/xhn/news/202607/33334580.html",
+      "date": "2026-07-30",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南：湖南财院副校长曹松林率队开展访企拓岗专项行动2026.07.30",
+      "url": "https://m.voc.com.cn/xhn/news/202607/33334625.html",
+      "date": "2026-07-30",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务公开招标招标公告",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=0j1laHztsB21JDo0AuSy5A==",
+      "date": "2026-07-28",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "2026年青海省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7311.htm",
+      "date": "2026-07-24",
+      "source": "招生公告",
+      "category": "招生公告",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院食堂劳务服务采购公开招标招标公告",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=rrf1dOddPYkXBwrNoJ0w5A==",
+      "date": "2026-07-24",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "2026年贵州省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7301.htm",
+      "date": "2026-07-23",
+      "source": "招生公告",
+      "category": "招生公告",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2026年云南省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7291.htm",
+      "date": "2026-07-23",
+      "source": "招生公告",
+      "category": "招生公告",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2026年河南省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7281.htm",
+      "date": "2026-07-23",
+      "source": "招生公告",
+      "category": "招生公告",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2026年黑龙江录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7271.htm",
+      "date": "2026-07-23",
+      "source": "招生公告",
+      "category": "招生公告",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2026年河北省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7261.htm",
+      "date": "2026-07-23",
+      "source": "招生公告",
+      "category": "招生公告",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2026年陕西省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7251.htm",
+      "date": "2026-07-23",
+      "source": "招生公告",
+      "category": "招生公告",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院关于湖南省2026年省直事业单位第二次公开招聘面试公告",
+      "url": "https://www.hufe.edu.cn/info/1048/171891.htm",
+      "date": "2026-07-22",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "就业"
+      ],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南财政经济学院关于湖南省2026年省直事业单位第二次公开招聘第三次资格复审有关事项的通知",
+      "url": "https://www.hufe.edu.cn/info/1048/171861.htm",
+      "date": "2026-07-21",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "就业"
+      ],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖财2026年军训教官暑期集训启动，共90名学生教官",
+      "url": "https://news.hufe.edu.cn/info/1022/63801.htm",
+      "date": "2026-07-20",
+      "source": "学校新闻网",
+      "category": "湖财新闻",
+      "tags": [
+        "军训",
+        "教官集训"
+      ],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院关于湖南省2026年省直事业单位第二次公开招聘第二次资格复审有关事项的通知",
+      "url": "https://www.hufe.edu.cn/info/1048/171851.htm",
+      "date": "2026-07-20",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "就业"
+      ],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院湖南财政经济学院2026年7月-2027年7月零星维修施工采购项目项目中标（成交）公告",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=qAwPPp/9E/z2JhBByIZugQ==",
+      "date": "2026-07-20",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南财政经济学院主校区学生宿舍1-6栋、7-15栋热水、直饮水系统建设服务项目公开招标公告",
+      "url": "https://www.hufe.edu.cn/info/1048/171401.htm",
+      "date": "2026-07-17",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "住宿"
+      ],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南财政经济学院关于湖南省2026年省直事业单位第二次公开招聘资格复审有关事项的通知",
+      "url": "https://www.hufe.edu.cn/info/1048/171371.htm",
+      "date": "2026-07-16",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "就业"
+      ],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院14、15栋学生宿舍维修改造工程项目项目中标（成交）公告",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=nSE5ksqTa6iXf2rJFUhmEA==",
+      "date": "2026-07-15",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "住宿"
+      ],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院2026年度离退休教职工节日福利发放项目项目竞争性磋商邀请公告",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=j+YXIVQddYN0nZxUMpwh7w==",
+      "date": "2026-07-13",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院主校区学生宿舍14栋、15栋及校内盘活床位家具更新项目公开招标中标公示",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=fsE1aQvNkhVsShGvZH9wTw==",
+      "date": "2026-07-07",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "住宿"
+      ],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "校地合作：湖财与十八洞村签乡村振兴全面战略合作协议",
+      "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_2286a8562bf17652",
+      "date": "2026-07",
+      "source": "学校新闻/官微",
+      "category": "湖财新闻",
+      "tags": [
+        "校地合作",
+        "乡村振兴"
+      ],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖财2支志愿服务队入选2026年国家级专项宣讲团",
+      "url": "https://www.hufe.edu.cn/xtw/info/1112/14433.htm",
+      "date": "2026-07",
+      "source": "校团委",
+      "category": "湖财新闻",
+      "tags": [
+        "志愿服务",
+        "国家级专项"
+      ],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2026年高层次人才公开招聘公告",
+      "url": "https://www.hufe.edu.cn/info/1048/168161.htm",
+      "date": "2026-03-30",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [
+        "就业"
+      ],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "经济地理学院（湖南省经济地理研究所）",
+      "url": "https://www.hufe.edu.cn/zsw/info/1096/1313.htm",
+      "date": "2025-06-25",
+      "source": "院系专业",
+      "category": "院系专业",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "法学与公共管理学院",
+      "url": "https://www.hufe.edu.cn/zsw/info/1096/1316.htm",
+      "date": "2025-06-25",
+      "source": "院系专业",
+      "category": "院系专业",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "信息技术与管理学院",
+      "url": "https://www.hufe.edu.cn/zsw/info/1096/1328.htm",
+      "date": "2025-06-25",
+      "source": "院系专业",
+      "category": "院系专业",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2025年招生指南",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/6611.htm",
+      "date": "2025-06-25",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "关于公布《湖南财政经济学院2025年专升本考试免试生综合测试方案》的通知",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6451.htm",
+      "date": "2025-03-16",
+      "source": "招生政策",
+      "category": "招生政策",
+      "tags": [
+        "教务"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "关于公布湖南财政经济学院2025年专升本专业综合科目考核大纲的通知",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6441.htm",
+      "date": "2025-03-07",
+      "source": "招生政策",
+      "category": "招生政策",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2025年专升本招生章程",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6431.htm",
+      "date": "2025-02-21",
+      "source": "招生政策",
+      "category": "招生政策",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2024年普通本科招生章程",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6011.htm",
+      "date": "2024-05-13",
+      "source": "招生政策",
+      "category": "招生政策",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "关于公布《湖南财政经济学院2024年专升本考试免试生综合测试方案》的通知",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/5971.htm",
+      "date": "2024-03-20",
+      "source": "招生政策",
+      "category": "招生政策",
+      "tags": [
+        "教务"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "关于公布湖南财政经济学院2024年专升本专业综合科目考核大纲的通知",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/5941.htm",
+      "date": "2024-03-14",
+      "source": "招生政策",
+      "category": "招生政策",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2024年专升本招生章程",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/5931.htm",
+      "date": "2024-03-12",
+      "source": "招生政策",
+      "category": "招生政策",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "未发个人简历的学生名单公示",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1335.htm",
+      "date": "2022-04-09",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "未发个人简历的学生名单",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1334.htm",
+      "date": "2022-04-08",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2022年专升本免试生未缴费名单公布",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1332.htm",
+      "date": "2022-04-07",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2022年专升本考试 免试生综合测试实施细则",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1330.htm",
+      "date": "2022-04-05",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "教务"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2022年专升本考试 免试生综合测试方案",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1327.htm",
+      "date": "2022-03-25",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "教务"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2022年专升本体育学生技能测试方案",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1324.htm",
+      "date": "2022-03-24",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2022年专升本招生章程（修订稿）",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1321.htm",
+      "date": "2022-03-23",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2022年专升本课程考试大纲",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1318.htm",
+      "date": "2022-03-23",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "教务"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院厚生国际教育学院2021年招生简章",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1317.htm",
+      "date": "2021-06-09",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2021年招生章程",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1314.htm",
+      "date": "2021-06-09",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "厚生国际教育学院2020年招生简章",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1311.htm",
+      "date": "2020-07-10",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2020年招生章程",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1308.htm",
+      "date": "2020-07-06",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2019级新生收费项目及收费标准",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1305.htm",
+      "date": "2019-07-24",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "迎新"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2019年金融学专业(CFA®&FRM®方向班) 招生简章",
+      "url": "https://www.hufe.edu.cn/zsw/info/1106/1302.htm",
+      "date": "2019-06-25",
+      "source": "招生简章",
+      "category": "招生简章",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2026年专升本普通计…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7001.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2026年专升本招生考…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/6981.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2026年“专升本”免…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/6971.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "2026年湖北省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7361.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2026年四川省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7351.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2026年安徽省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7341.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2026年福建省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7331.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2026年山西省录取信息",
+      "url": "https://www.hufe.edu.cn/zsw/info/1098/7321.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2026年普通本科招生…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6991.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "关于公布湖南财政经济学院2026年专升…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6961.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2026年专升本考试报…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6951.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "教务"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "关于公布《湖南财政经济学院2026年专…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6941.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "关于公布湖南财政经济学院2026年专升…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6931.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2026年专升本招生章…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6921.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2025年普通本科招生…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6501.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院关于推迟2025年专升…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1093/6481.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "2026年招生来源计划综合统计表",
+      "url": "https://www.hufe.edu.cn/zsw/info/1094/7021.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2025年招生来源计划综合统计表",
+      "url": "https://www.hufe.edu.cn/zsw/info/1094/6591.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2024年招生来源计划…",
+      "url": "https://www.hufe.edu.cn/zsw/info/1094/6041.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2023年北京招生计划",
+      "url": "https://www.hufe.edu.cn/zsw/info/1094/1456.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2023年宁夏招生计划",
+      "url": "https://www.hufe.edu.cn/zsw/info/1094/1455.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2023年山西招生计划",
+      "url": "https://www.hufe.edu.cn/zsw/info/1094/1454.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2023年内蒙古招生计划",
+      "url": "https://www.hufe.edu.cn/zsw/info/1094/1453.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2023年吉林招生计划",
+      "url": "https://www.hufe.edu.cn/zsw/info/1094/1452.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "2026年湖南财政经济学院湖南省各专业录",
+      "url": "https://www.hufe.edu.cn/zsw/info/1095/7371.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2023—2025年各招生省",
+      "url": "https://www.hufe.edu.cn/zsw/info/1095/7011.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2022-2024年各招生省",
+      "url": "https://www.hufe.edu.cn/zsw/info/1095/6601.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2021—2023年各招生省",
+      "url": "https://www.hufe.edu.cn/zsw/info/1095/6031.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2022年湖南省内各专业",
+      "url": "https://www.hufe.edu.cn/zsw/info/1095/1338.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2020—2022年各招生省",
+      "url": "https://www.hufe.edu.cn/zsw/info/1095/1339.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2022年各省份各专业招",
+      "url": "https://www.hufe.edu.cn/zsw/info/1095/1337.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2021年省内各专业录取",
+      "url": "https://www.hufe.edu.cn/zsw/info/1095/1336.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [
+        "招生"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "厚生国际教育学院",
+      "url": "https://www.hufe.edu.cn/zsw/info/1096/1312.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院赋",
+      "url": "https://www.hufe.edu.cn/zsw/info/1260/5751.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南财政经济学院2021年各省份各专业招",
+      "url": "https://www.hufe.edu.cn/zsw/info/1095/1333.htm",
+      "date": "",
+      "source": "招生网首页",
+      "category": "招生资讯",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    }
+  ]
 }
