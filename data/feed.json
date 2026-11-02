@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-26 09:40",
-  "total": 110,
-  "freshmanCount": 53,
+  "updated": "2026-11-02 19:44",
+  "total": 116,
+  "freshmanCount": 54,
   "sources": [
     {
       "id": "tzgg",
@@ -9,15 +9,15 @@
       "url": "https://www.hufe.edu.cn/index/tzgg.htm",
       "status": "ok",
       "count": 14,
-      "time": "2026-10-26 09:40"
+      "time": "2026-11-02 19:43"
     },
     {
       "id": "home",
       "name": "学校首页要闻",
       "url": "https://www.hufe.edu.cn/",
       "status": "ok",
-      "count": 8,
-      "time": "2026-10-26 09:40"
+      "count": 9,
+      "time": "2026-11-02 19:43"
     },
     {
       "id": "zsw",
@@ -25,7 +25,7 @@
       "url": "https://www.hufe.edu.cn/zsw/",
       "status": "ok",
       "count": 34,
-      "time": "2026-10-26 09:40"
+      "time": "2026-11-02 19:43"
     },
     {
       "id": "zsgg",
@@ -33,7 +33,7 @@
       "url": "https://www.hufe.edu.cn/zsw/zsgg/zsgg.htm",
       "status": "ok",
       "count": 15,
-      "time": "2026-10-26 09:40"
+      "time": "2026-11-02 19:43"
     },
     {
       "id": "zszc",
@@ -41,7 +41,7 @@
       "url": "https://www.hufe.edu.cn/zsw/zszt/zszc.htm",
       "status": "ok",
       "count": 15,
-      "time": "2026-10-26 09:40"
+      "time": "2026-11-02 19:43"
     },
     {
       "id": "yxzy",
@@ -49,7 +49,7 @@
       "url": "https://www.hufe.edu.cn/zsw/zszt/yxzy.htm",
       "status": "ok",
       "count": 4,
-      "time": "2026-10-26 09:40"
+      "time": "2026-11-02 19:43"
     },
     {
       "id": "zsjz",
@@ -57,10 +57,40 @@
       "url": "https://www.hufe.edu.cn/zsw/zszt/zsjz.htm",
       "status": "ok",
       "count": 15,
-      "time": "2026-10-26 09:40"
+      "time": "2026-11-02 19:43"
     }
   ],
   "items": [
+    {
+      "title": "湖南财政经济学院毕业生图像采集采购项目(第二次)中标公告",
+      "url": "https://www.hufe.edu.cn/info/1048/174101.htm",
+      "date": "2026-11-02",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
+    {
+      "title": "关于2027年寒假港澳交流项目报名的通知",
+      "url": "https://www.hufe.edu.cn/info/1048/174041.htm",
+      "date": "2026-10-29",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "湖南省政府采购网：湖南财政经济学院2026-2027学年自营（托管）食堂食材（原材料)配送服务(三次)结果公告（采购包1）",
+      "url": "http://www.ccgp-hunan.gov.cn/luban/front/detail?parentId=622707&articleId=y1Rj1rgE7Bg9ISgS7tEuYA==",
+      "date": "2026-10-26",
+      "source": "学校通知公告",
+      "category": "通知公告",
+      "tags": [],
+      "freshman": false,
+      "noise": true
+    },
     {
       "title": "关于报名参加2027年寒假系列访学项目的通知",
       "url": "https://www.hufe.edu.cn/info/1048/173851.htm",
@@ -80,6 +110,38 @@
       "tags": [],
       "freshman": false,
       "noise": true
+    },
+    {
+      "title": "【外媒】新湖南：湖南财院开展“弘扬教育家精神”教育活动2026.10.22",
+      "url": "https://m.voc.com.cn/xhn/news/202610/34056823.html",
+      "date": "2026-10-22",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南：湖南财政经济学院与湖南涉外经济学院座谈交流2026.10.22",
+      "url": "https://m.voc.com.cn/xhn/news/202610/34056838.html",
+      "date": "2026-10-22",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南：湖南财院举行2026级学生军训总结表彰大会2026.10.22",
+      "url": "https://m.voc.com.cn/xhn/news/202610/34056988.html",
+      "date": "2026-10-22",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [
+        "军训"
+      ],
+      "freshman": true,
+      "noise": false
     },
     {
       "title": "中共湖南财政经济学院委员会 关于巡视整改进展情况的通报",
