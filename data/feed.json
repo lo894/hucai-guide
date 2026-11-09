@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-02 19:44",
-  "total": 116,
-  "freshmanCount": 54,
+  "updated": "2026-11-09 12:53",
+  "total": 119,
+  "freshmanCount": 55,
   "sources": [
     {
       "id": "tzgg",
@@ -9,7 +9,7 @@
       "url": "https://www.hufe.edu.cn/index/tzgg.htm",
       "status": "ok",
       "count": 14,
-      "time": "2026-11-02 19:43"
+      "time": "2026-11-09 12:52"
     },
     {
       "id": "home",
@@ -17,7 +17,7 @@
       "url": "https://www.hufe.edu.cn/",
       "status": "ok",
       "count": 9,
-      "time": "2026-11-02 19:43"
+      "time": "2026-11-09 12:52"
     },
     {
       "id": "zsw",
@@ -25,7 +25,7 @@
       "url": "https://www.hufe.edu.cn/zsw/",
       "status": "ok",
       "count": 34,
-      "time": "2026-11-02 19:43"
+      "time": "2026-11-09 12:52"
     },
     {
       "id": "zsgg",
@@ -33,7 +33,7 @@
       "url": "https://www.hufe.edu.cn/zsw/zsgg/zsgg.htm",
       "status": "ok",
       "count": 15,
-      "time": "2026-11-02 19:43"
+      "time": "2026-11-09 12:52"
     },
     {
       "id": "zszc",
@@ -41,7 +41,7 @@
       "url": "https://www.hufe.edu.cn/zsw/zszt/zszc.htm",
       "status": "ok",
       "count": 15,
-      "time": "2026-11-02 19:43"
+      "time": "2026-11-09 12:52"
     },
     {
       "id": "yxzy",
@@ -49,7 +49,7 @@
       "url": "https://www.hufe.edu.cn/zsw/zszt/yxzy.htm",
       "status": "ok",
       "count": 4,
-      "time": "2026-11-02 19:43"
+      "time": "2026-11-09 12:52"
     },
     {
       "id": "zsjz",
@@ -57,10 +57,42 @@
       "url": "https://www.hufe.edu.cn/zsw/zszt/zsjz.htm",
       "status": "ok",
       "count": 15,
-      "time": "2026-11-02 19:43"
+      "time": "2026-11-09 12:52"
     }
   ],
   "items": [
+    {
+      "title": "【外媒】新湖南：湖南财政经济学院：趣味竞技释活力 同心协作增情谊2026.11.05",
+      "url": "https://m.voc.com.cn/xhn/news/202611/34178463.html",
+      "date": "2026-11-05",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南:湖南财院学子在中国大学生程序设计竞赛女生专场比赛中首获铜奖2026.11.05",
+      "url": "https://m.voc.com.cn/xhn/news/202611/34178503.html",
+      "date": "2026-11-05",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [
+        "竞赛"
+      ],
+      "freshman": true,
+      "noise": false
+    },
+    {
+      "title": "【外媒】新湖南:湖南财院召开2026级学生“学风建设月”动员会2026.11.05",
+      "url": "https://m.voc.com.cn/xhn/news/202611/34178533.html",
+      "date": "2026-11-05",
+      "source": "学校首页要闻",
+      "category": "湖财新闻",
+      "tags": [],
+      "freshman": false,
+      "noise": false
+    },
     {
       "title": "湖南财政经济学院毕业生图像采集采购项目(第二次)中标公告",
       "url": "https://www.hufe.edu.cn/info/1048/174101.htm",
